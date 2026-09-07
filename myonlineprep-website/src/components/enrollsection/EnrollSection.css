@@ -1,0 +1,1076 @@
+/* =========================================
+   MAIN SECTION
+========================================= */
+
+.enroll-section-container {
+  width: 100%;
+  min-height: 100%;
+  padding: 48px 35px 42px;
+  position: relative;
+  overflow: hidden;
+  background: #f4f7fa;
+
+  font-family:
+    "Segoe UI",
+    Tahoma,
+    Geneva,
+    Verdana,
+    sans-serif;
+
+  color: #111827;
+}
+
+
+/* =========================================
+   DECORATIVE BACKGROUND
+========================================= */
+
+.enroll-decoration {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.enroll-decoration-left {
+  width: 190px;
+  height: 190px;
+  left: -105px;
+  top: -80px;
+
+  border: 3px solid rgba(124, 58, 237, 0.13);
+  border-radius: 50%;
+}
+
+.enroll-decoration-left::after {
+  content: "";
+  position: absolute;
+
+  width: 150px;
+  height: 150px;
+
+  left: 35px;
+  top: 25px;
+
+  border: 2px solid rgba(124, 58, 237, 0.08);
+  border-radius: 50%;
+}
+
+.enroll-decoration-right {
+  width: 150px;
+  height: 150px;
+  right: -75px;
+  bottom: -65px;
+
+  border: 3px solid rgba(124, 58, 237, 0.12);
+  border-radius: 50%;
+}
+
+.enroll-decoration-right::after {
+  content: "";
+  position: absolute;
+
+  width: 110px;
+  height: 110px;
+
+  left: 20px;
+  top: 20px;
+
+  border: 2px solid rgba(124, 58, 237, 0.07);
+  border-radius: 50%;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.enroll-header {
+  position: relative;
+  z-index: 2;
+
+  text-align: center;
+  margin: 0 auto 30px;
+}
+
+.smart-prep-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  padding: 7px 15px;
+
+  border-radius: 30px;
+
+  background: linear-gradient(
+    90deg,
+    #f1ecff,
+    #faf8ff
+  );
+
+  border: 1px solid #e6ddff;
+
+  color: #25213d;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  box-shadow:
+    0 4px 15px rgba(124, 58, 237, 0.07);
+
+  margin-bottom: 13px;
+}
+
+.smart-badge-icon {
+  width: 18px;
+  height: 18px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 5px;
+
+  color: #ffffff;
+  background: #813588;
+
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.smart-sparkle {
+  color: #813588;
+  font-size: 17px;
+  margin-left: 2px;
+}
+
+.enroll-title {
+  margin: 0;
+
+  font-size: clamp(34px, 4vw, 55px);
+  line-height: 1.08;
+
+  font-weight: 800;
+
+  letter-spacing: -1.8px;
+
+  color: #050b2b;
+}
+
+.highlight-text {
+  color: #813588;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-style: italic;
+  font-weight: 700;
+}
+
+.enroll-subtitle {
+  margin: 15px 0 0;
+
+  color: #596277;
+
+  font-size: 15px;
+  line-height: 1.65;
+
+  font-weight: 400;
+}
+
+.header-divider {
+  margin: 14px auto 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  width: 180px;
+}
+
+.header-divider span {
+  height: 1px;
+  flex: 1;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #d8d0ed
+  );
+}
+
+.header-divider span:last-child {
+  background: linear-gradient(
+    90deg,
+    #d8d0ed,
+    transparent
+  );
+}
+
+.header-divider b {
+  color: #813588;
+  font-size: 16px;
+}
+
+
+/* =========================================
+   PRICING GRID
+========================================= */
+
+.pricing-grid {
+  width: 100%;
+  max-width: 1300px;
+
+  margin: 0 auto 25px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.price-card {
+  min-width: 0;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 22px 22px 21px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid #edf0f5;
+
+  border-radius: 17px;
+
+  box-shadow:
+    0 8px 25px rgba(28, 35, 65, 0.06);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.price-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 17px 35px rgba(50, 35, 120, 0.12);
+
+  border-color: #ddd3f9;
+}
+
+
+/* =========================================
+   BESTSELLER CARD
+========================================= */
+
+.bestseller-card {
+  border: 1.5px solid #813588;
+
+  box-shadow:
+    0 10px 30px rgba(93, 48, 207, 0.14);
+
+  padding-top: 25px;
+}
+
+.bestseller-badge {
+  position: absolute;
+
+  top: -13px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  height: 27px;
+
+  padding: 0 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  white-space: nowrap;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      90deg,
+      #813588,
+      #813588
+    );
+
+  border-radius: 18px;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.3px;
+
+  box-shadow:
+    0 5px 12px rgba(103, 47, 220, 0.22);
+}
+
+.bestseller-badge span {
+  font-size: 13px;
+}
+
+
+/* =========================================
+   CARD ICON
+========================================= */
+
+.card-top-icon {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  margin-bottom: 13px;
+
+  font-size: 21px;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+}
+
+.card-icon-1 {
+  background: #eee9ff;
+}
+
+.card-icon-2 {
+  background: #eaf0ff;
+}
+
+.card-icon-3 {
+  background: #ffe8ef;
+}
+
+.card-icon-4 {
+  background: #fff3dc;
+}
+
+
+/* =========================================
+   CATEGORY
+========================================= */
+
+.plan-category {
+  display: block;
+
+  width: fit-content;
+
+  padding: 3px 8px;
+
+  border-radius: 5px;
+
+  margin-bottom: 7px;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.4px;
+}
+
+.category-1 {
+  color: #6230d8;
+  background: #f0eaff;
+}
+
+.category-2 {
+  color: #2764d9;
+  background: #e9f1ff;
+}
+
+.category-3 {
+  color: #e32d69;
+  background: #ffeaf1;
+}
+
+.category-4 {
+  color: #e69717;
+  background: #fff2dc;
+}
+
+
+/* =========================================
+   TITLE / DESCRIPTION
+========================================= */
+
+.plan-title {
+  margin: 0 0 5px;
+
+  color: #111426;
+
+  font-size: 18px;
+  line-height: 1.25;
+
+  font-weight: 750;
+
+  letter-spacing: -0.3px;
+}
+
+.plan-desc {
+  min-height: 36px;
+
+  margin: 0 0 15px;
+
+  color: #656c7c;
+
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+
+/* =========================================
+   PRICE
+========================================= */
+
+.price-box {
+  display: flex;
+  align-items: baseline;
+
+  gap: 9px;
+
+  margin-bottom: 4px;
+}
+
+.current-price {
+  color: #11142b;
+
+  font-size: 29px;
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: -0.8px;
+}
+
+.original-price {
+  color: #8b909c;
+
+  font-size: 12px;
+
+  text-decoration: line-through;
+}
+
+
+/* =========================================
+   DISCOUNT
+========================================= */
+
+.discount-tag {
+  width: fit-content;
+
+  padding: 3px 8px;
+
+  border-radius: 5px;
+
+  margin-bottom: 17px;
+
+  font-size: 9.5px;
+  font-weight: 700;
+}
+
+.light-green-tag {
+  color: #26834c;
+  background: #e7f8e9;
+}
+
+.green-tag {
+  color: #287f49;
+  background: #e4f7e5;
+}
+
+
+/* =========================================
+   PAPER TAGS
+========================================= */
+
+.paper-tags {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  margin-top: -4px;
+  margin-bottom: 13px;
+}
+
+.paper-tags span {
+  padding: 3px 6px;
+
+  border-radius: 4px;
+
+  color: #a36b14;
+  background: #fff5df;
+
+  font-size: 8.5px;
+  font-weight: 800;
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.features-list {
+  list-style: none;
+
+  padding: 0;
+  margin: 0 0 18px;
+
+  flex: 1;
+}
+
+.features-list li {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 9px;
+
+  margin-bottom: 11px;
+
+  color: #343a4a;
+
+  font-size: 11.5px;
+  line-height: 1.3;
+}
+
+.feature-check {
+  flex: 0 0 auto;
+
+  width: 16px;
+  height: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  font-size: 9px;
+  font-weight: 900;
+
+  margin-top: -1px;
+}
+
+.check-1 {
+  background: #6733df;
+}
+
+.check-2 {
+  background: #3674df;
+}
+
+.check-3 {
+  background: #ef4d82;
+}
+
+.check-4 {
+  background: #efa928;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.enroll-btn {
+  width: 100%;
+
+  min-height: 43px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border-radius: 9px;
+
+  padding: 10px 14px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.enroll-btn:hover {
+  transform: translateY(-1px);
+}
+
+.button-icon {
+  font-size: 15px;
+}
+
+
+/* Bestseller button */
+
+.gradient-btn {
+  color: #ffffff;
+
+  border: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      #813588 0%,
+      #813588 52%,
+      #813588 100%
+    );
+
+  box-shadow:
+    0 7px 17px rgba(91, 42, 211, 0.2);
+}
+
+.gradient-btn:hover {
+  box-shadow:
+    0 9px 21px rgba(91, 42, 211, 0.3);
+}
+
+
+/* Outline buttons */
+
+.outline-btn {
+  background: #ffffff;
+}
+
+.outline-btn-2 {
+  color: #2965d4;
+  border: 1px solid #aac2ed;
+}
+
+.outline-btn-3 {
+  color: #df3972;
+  border: 1px solid #f0abc1;
+}
+
+.outline-btn-4 {
+  color: #e49b22;
+  border: 1px solid #efcf93;
+}
+
+.outline-btn-2:hover {
+  background: #f5f8ff;
+}
+
+.outline-btn-3:hover {
+  background: #fff7fa;
+}
+
+.outline-btn-4:hover {
+  background: #fffaf1;
+}
+
+
+/* =========================================
+   BOTTOM STATS BAR
+========================================= */
+
+.enroll-bottom-bar {
+  width: 100%;
+  max-width: 1135px;
+
+  margin: 0 auto;
+
+  min-height: 74px;
+
+  padding: 12px 16px;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    rgba(255, 255, 255, 0.96);
+
+  border: 1px solid #f0f1f6;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 8px 25px rgba(36, 43, 75, 0.05);
+
+  position: relative;
+  z-index: 2;
+}
+
+.stat-item-erl {
+  flex: 1;
+
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 11px;
+}
+
+.stat-icon {
+  width: 43px;
+  height: 43px;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-size: 18px;
+
+  box-shadow:
+    0 3px 9px rgba(0, 0, 0, 0.07);
+}
+
+.stat-purple {
+  color: #6432d8;
+  background: #efe9ff;
+}
+
+.stat-green {
+  color: #34a853;
+  background: #e8f9e9;
+}
+
+.stat-orange {
+  color: #ee741c;
+  background: #fff0df;
+}
+
+.stat-blue {
+  color: #2c68d7;
+  background: #e7f0ff;
+}
+
+.stat-content {
+  min-width: 0;
+}
+
+.stat-item-erl h4 {
+  margin: 0 0 2px;
+
+  color: #111735;
+
+  font-size: 15px;
+  line-height: 1.15;
+
+  font-weight: 800;
+}
+
+.stat-item-erl p {
+  margin: 0;
+
+  color: #687083 !important;
+
+  font-size: 8.5px;
+  line-height: 1.35;
+}
+
+.stat-separator {
+  width: 1px;
+  height: 40px;
+
+  flex: 0 0 auto;
+
+  background: #e7e9ef;
+}
+
+
+/* =========================================
+   BROWSE BUTTON
+========================================= */
+
+.browse-all-btn {
+  min-height: 44px;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 17px;
+
+  padding: 0 18px;
+
+  margin-left: 12px;
+
+  color: #ffffff;
+
+  border: none;
+  border-radius: 8px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #813588,
+      #813588
+    );
+
+  font-size: 11.5px;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 15px rgba(83, 32, 207, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.browse-all-btn strong {
+  font-size: 21px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.browse-all-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 9px 20px rgba(83, 32, 207, 0.25);
+}
+
+
+/* =========================================
+   LARGE SCREEN
+========================================= */
+
+@media (min-width: 1400px) {
+  .enroll-section-container {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .pricing-grid,
+  .enroll-bottom-bar {
+    max-width: 1250px;
+  }
+
+  .price-card {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+
+  .enroll-section-container {
+    padding: 45px 22px 35px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 760px;
+  }
+
+  .enroll-bottom-bar {
+    max-width: 760px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 16px;
+
+    padding: 18px;
+  }
+
+  .stat-separator {
+    display: none;
+  }
+
+  .browse-all-btn {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .enroll-section-container {
+    padding: 38px 14px 28px;
+  }
+
+  .enroll-header {
+    margin-bottom: 28px;
+  }
+
+  .smart-prep-badge {
+    font-size: 11px;
+    padding: 6px 11px;
+  }
+
+  .smart-badge-icon {
+    width: 16px;
+    height: 16px;
+    font-size: 9px;
+  }
+
+  .smart-sparkle {
+    font-size: 13px;
+  }
+
+  .enroll-title {
+    font-size: 34px;
+    letter-spacing: -1px;
+  }
+
+  .enroll-subtitle {
+    font-size: 12px;
+    padding: 0 10px;
+  }
+
+  .header-divider {
+    margin-top: 13px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+
+    max-width: 430px;
+
+    gap: 18px;
+
+    margin-bottom: 20px;
+  }
+
+  .price-card {
+    padding: 22px 20px 20px;
+  }
+
+  .bestseller-card {
+    padding-top: 25px;
+  }
+
+  .plan-title {
+    font-size: 19px;
+  }
+
+  .plan-desc {
+    font-size: 12px;
+  }
+
+  .current-price {
+    font-size: 30px;
+  }
+
+  .features-list li {
+    font-size: 12px;
+  }
+
+  .enroll-bottom-bar {
+    max-width: 430px;
+
+    grid-template-columns: 1fr;
+
+    gap: 17px;
+
+    padding: 18px;
+  }
+
+  .stat-item-erl {
+    padding: 0;
+  }
+
+  .browse-all-btn {
+    min-height: 46px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .enroll-section-container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .enroll-title {
+    font-size: 30px;
+  }
+
+  .enroll-subtitle {
+    font-size: 11px;
+  }
+
+  .price-card {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  .current-price {
+    font-size: 27px;
+  }
+
+  .stat-item-erl h4 {
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.enroll-btn:focus-visible,
+.browse-all-btn:focus-visible {
+  outline: 3px solid rgba(104, 52, 218, 0.25);
+  outline-offset: 3px;
+}

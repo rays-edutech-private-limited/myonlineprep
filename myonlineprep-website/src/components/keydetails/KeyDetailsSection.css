@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.key-details-container {
+  font-family: 'Poppins', sans-serif;
+  background: #f4f7fa;
+  padding: 60px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.key-details-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.key-details-header h2 {
+  font-size: 2.5rem;
+  color: #2e1065;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.key-details-header p {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+/* Tabs Styling */
+.key-details-tabs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  padding: 10px 24px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #4b5563;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active, .tab-btn:hover {
+  background: #813588;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+}
+
+/* Main Container Wrapper Card */
+.key-details-card-wrapper {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 30px;
+  max-width: 1260px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.tables-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-bottom: 35px;
+}
+
+@media (max-width: 768px) {
+  .tables-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animation on tab switch */
+.animate-fade {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Individual Table Card */
+.info-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.info-card.full-width {
+  grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+  .info-card.full-width {
+    grid-column: span 1;
+  }
+}
+
+.card-header.purple-header {
+  background: #813588;
+  color: #ffffff;
+  padding: 14px 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Custom Table Design */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.custom-table th {
+  background: #f9fafb;
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 12px 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.custom-table td {
+  padding: 14px 20px;
+  font-size: 0.9rem;
+  color: #374151;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: middle;
+}
+
+.custom-table tr:last-child td {
+  border-bottom: none;
+}
+
+.icon-cell {
+  color: #813588;
+  margin-right: 8px;
+}
+
+/* Badges */
+.badge {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.badge.normal {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.badge.extra {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge.higher {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.paper-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chevron {
+  color: #9ca3af;
+  font-size: 0.75rem;
+}
+
+/* Bottom Features Footer */
+.features-footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #f3f4f6;
+}
+
+@media (max-width: 900px) {
+  .features-footer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.feature-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.yellow-bg { background: #f59e0b; }
+.green-bg { background: #10b981; }
+.orange-bg { background: #f97316; }
+.blue-bg { background: #3b82f6; }
+
+.feature-item h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 2px 0;
+}
+
+.feature-item p {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.3;
+}

@@ -1,0 +1,112 @@
+/* Main Container with Top and Bottom Borders */
+.service-section-container {
+  background-color: #fff;
+  padding: 30px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Grid Layout matching the horizontal alignment */
+.service-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1280px;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+/* Individual Service Item */
+.service-item {
+  display: flex;
+  align-items: flex-start;
+  flex: 1;
+  position: relative;
+  padding: 0 10px;
+}
+
+.ser-btn{
+    padding: 7px 12px;
+    display: inline-block;
+}
+
+/* Add vertical divider line between items (except the last one) */
+.service-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 10%;
+  height: 70%;
+  width: 1px;
+  background-color: #e5e7eb;
+}
+
+/* Circular Icon Wrapper with Shadow and Gradients */
+.service-icon-wrapper {
+  width: 65px;
+  height: 65px;
+  min-width: 65px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  margin-right: 16px;
+}
+
+/* Gradient Variations */
+.purple-grad {
+  background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+}
+
+.pink-grad {
+  background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+}
+
+/* Icon Styling */
+.service-icon {
+  color: #ffffff;
+  font-size: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Text Content Styling */
+.service-content h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 6px 0;
+}
+
+.service-content p {
+  font-size: 13px;
+  color: #4b5563;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Responsive design for tablets and mobile screens */
+@media (max-width: 1024px) {
+  .service-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .service-item {
+    flex: 0 1 45%;
+  }
+
+  .service-item:not(:last-child)::after {
+    display: none; /* Remove vertical dividers on wrap */
+  }
+}
+
+@media (max-width: 640px) {
+  .service-item {
+    flex: 0 1 100%;
+  }
+}
