@@ -46,9 +46,7 @@ const FaqSection = () => {
     <section className="faq-section-wrapper">
       {/* Top Header Section */}
       <div className="faq-header-container">
-        <div className="faq-badge">
-          <span>?</span> All Your Doubts, Cleared
-        </div>
+        
         <h2 className="faq-main-title">Frequently Asked Questions</h2>
         <div className="faq-underline"></div>
         <p className="faq-subtitle">Find quick answers to the most common questions about JAIIB 2026.</p>

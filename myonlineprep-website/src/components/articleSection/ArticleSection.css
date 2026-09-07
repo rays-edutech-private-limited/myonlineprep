@@ -1,82 +1,163 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* =========================================================
+   GOOGLE FONT
+========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+.article-container,
+.article-container * {
+  box-sizing: border-box;
+}
 
 .article-container {
-  font-family: 'Poppins', sans-serif;
+  width: 100%;
   background-color: #f4f7fa;
-  padding: 60px 20px;
+  padding: clamp(35px, 5vw, 70px) 20px;
   margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
 }
 
-/* Header Styling */
+
+/* =========================================================
+   HEADER
+========================================================= */
+
 .article-header {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto clamp(28px, 4vw, 45px);
   text-align: center;
-  margin-bottom: 40px;
-}
-
-.badge-top {
-  color: #7b2cbf;
-  font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 0.5px;
-  background-color: #7a2cbf41;
-  padding: 7px 30px ;
-  border-radius: 50px;
 }
 
 .article-header h2 {
-  font-size: 45px;
+  margin: 0 0 10px;
+  padding: 0;
   color: #611574;
-  margin: 10px 0;
+  font-size: clamp(30px, 4vw, 45px);
+  line-height: 1.2;
   font-weight: 700;
 }
 
 .article-header p {
+  margin: 0;
+  padding: 0;
   color: #666;
-  font-size: 15px;
+  font-size: clamp(12px, 1.2vw, 15px);
+  line-height: 1.6;
+  font-weight: 400;
 }
 
-/* Cards Wrapper */
+
+/* =========================================================
+   CARDS WRAPPER
+========================================================= */
+
 .cards-wrapper {
-    max-width: 1260px;
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
-  gap: 30px;
-  margin: auto;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: clamp(18px, 2.5vw, 30px);
 }
 
-/* Common Card Styles */
+
+/* =========================================================
+   COMMON CARD
+========================================================= */
+
 .article-card {
+  width: 100%;
+  min-width: 0;
+
   background: #ffffff;
   border-radius: 20px;
-  padding: 30px;
+
+  padding: clamp(18px, 2.2vw, 30px);
+
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
   position: relative;
   overflow: hidden;
+
   border: 1px solid #eaeaea;
 }
 
+
+/* =========================================================
+   TOP CONTENT
+========================================================= */
+
 .card-top-content {
+  width: 100%;
+
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 25px;
+
+  gap: 20px;
+
+  margin-bottom: clamp(18px, 2vw, 25px);
 }
 
-.brand-logo {
-  font-size: 16px;
-  color: #333;
-  display: block;
-  margin-bottom: 12px;
+.left-content {
+  flex: 1;
+  min-width: 0;
 }
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand-logo {
+  display: block;
+
+  margin-bottom: 12px;
+
+  font-size: clamp(14px, 1.2vw, 16px);
+  line-height: 1.2;
+
+  color: #333;
+  font-weight: 500;
+}
+
+.brand-logo strong {
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   PAPER BADGE
+========================================================= */
 
 .paper-badge {
   display: inline-block;
+
+  max-width: 100%;
+
   padding: 5px 14px;
+
   border-radius: 20px;
-  font-size: 12px;
+
+  font-size: clamp(9px, 0.9vw, 12px);
+  line-height: 1.2;
+
   font-weight: 600;
-  margin-bottom: 15px;
+
+  margin-bottom: 14px;
+
   color: #fff;
+
+  white-space: nowrap;
 }
 
 .purple-theme .paper-badge {
@@ -87,17 +168,36 @@
   background: #0066cc;
 }
 
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
 .card-top-content h3 {
-  font-size: 24px;
+  margin: 0;
+  padding: 0;
+
   color: #111;
+
+  font-size: clamp(17px, 1.8vw, 24px);
   line-height: 1.3;
+
   font-weight: 700;
+
+  overflow-wrap: break-word;
 }
+
+
+/* =========================================================
+   UNDERLINE
+========================================================= */
 
 .underline {
   width: 35px;
   height: 4px;
+
   border-radius: 2px;
+
   margin-top: 15px;
 }
 
@@ -109,85 +209,149 @@
   background: #0066cc;
 }
 
-/* Clipboard Mock Illustration */
 
+/* =========================================================
+   IMAGE / CLIPBOARD
+========================================================= */
+
+.right-illustration {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
 
 .clipboard {
-  width: 150px;
-  height: 150px;
+  width: clamp(105px, 11vw, 150px);
+  height: clamp(105px, 11vw, 150px);
+
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
   position: relative;
-  
-}
-.clipboard img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
+
+  overflow: hidden;
+
+  flex-shrink: 0;
 }
 
-/* 
-.purple-board { border-top: 6px solid #6a0dad; }
-.blue-board { border-top: 6px solid #0066cc; } */
-
-.board-title {
-  font-size: 9px;
-  font-weight: 700;
-  color: #444;
+.clipboard img {
   display: block;
-  margin-bottom: 8px;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 5px;
 }
 
-.board-line {
-  height: 6px;
-  background: #f0f0f0;
-  border-radius: 3px;
-  margin-bottom: 6px;
-}
 
-/* Features Row */
+/* =========================================================
+   FEATURES ROW
+========================================================= */
+
 .features-row {
-  display: flex;
-  justify-content: space-between;
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 8px;
+
   background: #fdfdfd;
-  padding: 15px;
+
+  padding: 13px;
+
   border-radius: 12px;
+
   border: 1px solid #f0f0f0;
-  margin-bottom: 25px;
+
+  margin-bottom: 22px;
 }
+
+
+/* =========================================================
+   FEATURE ITEM
+========================================================= */
 
 .feature-item {
+  min-width: 0;
+
   display: flex;
   align-items: center;
-  gap: 10px;
+
+  gap: 8px;
 }
 
 .f-icon {
-  font-size: 22px;
+  font-size: clamp(17px, 1.7vw, 22px);
+
+  flex-shrink: 0;
 }
 
-.purple-text { color: #6a0dad; }
-.blue-text { color: #0066cc; }
+.purple-text {
+  color: #6a0dad;
+}
+
+.blue-text {
+  color: #0066cc;
+}
+
+.feature-item > div {
+  min-width: 0;
+}
 
 .feature-item strong {
   display: block;
-  font-size: 11px;
+
+  margin: 0;
+
+  font-size: clamp(9px, 0.9vw, 11px);
+
+  line-height: 1.3;
+
   color: #222;
+
+  font-weight: 700;
+
+  overflow-wrap: break-word;
 }
 
 .feature-item span {
-  font-size: 9px;
+  display: block;
+
+  margin-top: 2px;
+
+  font-size: clamp(7.5px, 0.75vw, 9px);
+
+  line-height: 1.3;
+
   color: #777;
 }
 
-/* Bottom Banner */
+
+/* =========================================================
+   BOTTOM BANNER
+========================================================= */
+
 .card-bottom-banner {
+  width: 100%;
+
+  min-height: 92px;
+
   border-radius: 12px;
-  padding: 15px 20px;
+
+  padding: 13px 15px;
+
   display: flex;
   align-items: center;
-  gap: 15px;
+
+  gap: 12px;
+
   color: #fff;
 }
 
@@ -199,59 +363,932 @@
   background: #003366;
 }
 
+
+/* =========================================================
+   BANNER ICON
+========================================================= */
+
 .banner-icon-box {
-  font-size: 20px;
+  width: 42px;
+  height: 42px;
+
+  min-width: 42px;
+
+  font-size: 18px;
+
   background: rgba(255, 255, 255, 0.15);
-  padding: 12px;
+
+  padding: 10px;
+
   border-radius: 10px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+/* =========================================================
+   BANNER TEXT
+========================================================= */
+
+.banner-text {
+  flex: 1;
+
+  min-width: 0;
 }
 
 .banner-text h4 {
-  font-size: 13px;
+  margin: 0 0 4px;
+
+  padding: 0;
+
+  font-size: clamp(10px, 1vw, 13px);
+
+  line-height: 1.35;
+
   font-weight: 600;
-  margin-bottom: 4px;
+
+  color: #fff;
+
+  overflow-wrap: break-word;
 }
 
 .banner-text p {
-  font-size: 11px;
+  margin: 0;
+  padding: 0;
+
+  font-size: clamp(8px, 0.85vw, 11px);
+
+  line-height: 1.45;
+
+  color: #fff;
+
   opacity: 0.85;
+
   display: -webkit-box;
+
   -webkit-line-clamp: 2;
+
   -webkit-box-orient: vertical;
+
   overflow: hidden;
 }
 
+
+/* =========================================================
+   ARROW BUTTON
+========================================================= */
+
 .arrow-btn {
-  background: #ffffff;
-  border: none;
   width: 32px;
   height: 32px;
+
+  min-width: 32px;
+
+  background: #ffffff;
+
+  border: none;
+
   border-radius: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   cursor: pointer;
+
   flex-shrink: 0;
-  transition: transform 0.2s;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.purple-theme .arrow-btn { color: #3c096c; }
-.blue-theme .arrow-btn { color: #003366; }
+.purple-theme .arrow-btn {
+  color: #3c096c;
+}
+
+.blue-theme .arrow-btn {
+  color: #003366;
+}
 
 .arrow-btn:hover {
   transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+
+/* =========================================================
+   LARGE DESKTOP
+   1440px+
+========================================================= */
+
+@media (min-width: 1440px) {
+  .article-container {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .cards-wrapper {
+    max-width: 1320px;
+    gap: 35px;
+  }
+
+  .article-card {
+    padding: 32px;
+  }
+
+  .card-top-content h3 {
+    font-size: 25px;
+  }
+
+  .clipboard {
+    width: 155px;
+    height: 155px;
+  }
+
+  .features-row {
+    padding: 15px;
+  }
+
+  .card-bottom-banner {
+    min-height: 95px;
+    padding: 15px 18px;
+  }
+}
+
+
+/* =========================================================
+   DESKTOP
+   1201px - 1439px
+========================================================= */
+
+@media (max-width: 1439px) and (min-width: 1201px) {
+  .cards-wrapper {
+    max-width: 1260px;
+  }
+
+  .article-card {
+    padding: 28px;
+  }
+
+  .card-top-content h3 {
+    font-size: 22px;
+  }
+
+  .clipboard {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+
+/* =========================================================
+   LAPTOP
+   1025px - 1200px
+========================================================= */
+
+@media (max-width: 1200px) and (min-width: 1025px) {
+  .article-container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .cards-wrapper {
+    gap: 20px;
+  }
+
+  .article-card {
+    padding: 22px;
+    border-radius: 18px;
+  }
+
+  .card-top-content {
+    gap: 12px;
+  }
+
+  .card-top-content h3 {
+    font-size: 19px;
+  }
+
+  .clipboard {
+    width: 115px;
+    height: 115px;
+  }
+
+  .features-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .feature-item {
+    padding: 4px;
+  }
+
+  .card-bottom-banner {
+    min-height: 90px;
+    gap: 9px;
+  }
+
+  .banner-icon-box {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+  }
+}
+
+
+/* =========================================================
+   SMALL LAPTOP / TABLET
+   901px - 1024px
+========================================================= */
+
+@media (max-width: 1024px) and (min-width: 901px) {
+  .article-container {
+    padding: 45px 16px;
+  }
+
+  .cards-wrapper {
+    gap: 16px;
+  }
+
+  .article-card {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .card-top-content {
+    gap: 8px;
+  }
+
+  .brand-logo {
+    font-size: 13px;
+    margin-bottom: 9px;
+  }
+
+  .paper-badge {
+    font-size: 9px;
+    padding: 4px 10px;
+    margin-bottom: 10px;
+  }
+
+  .card-top-content h3 {
+    font-size: 16px;
+  }
+
+  .underline {
+    margin-top: 10px;
+  }
+
+  .clipboard {
+    width: 100px;
+    height: 100px;
+  }
+
+  .features-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .feature-item {
+    gap: 6px;
+  }
+
+  .f-icon {
+    font-size: 17px;
+  }
+
+  .feature-item strong {
+    font-size: 8.5px;
+  }
+
+  .feature-item span {
+    font-size: 7px;
+  }
+
+  .card-bottom-banner {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .banner-icon-box {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    font-size: 15px;
+    padding: 8px;
+  }
+
+  .banner-text h4 {
+    font-size: 9px;
+  }
+
+  .banner-text p {
+    font-size: 7.5px;
+  }
+
+  .arrow-btn {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   768px - 900px
+========================================================= */
+
+@media (max-width: 900px) and (min-width: 768px) {
+  .article-container {
+    padding: 45px 20px;
+  }
+
+  .article-header {
+    max-width: 700px;
+    margin-bottom: 32px;
+  }
+
+  .article-header h2 {
+    font-size: 38px;
+  }
+
+  .article-header p {
+    font-size: 13px;
+  }
+
   .cards-wrapper {
     grid-template-columns: 1fr;
+    max-width: 700px;
+    gap: 22px;
   }
+
+  .article-card {
+    padding: 24px;
+  }
+
+  .card-top-content h3 {
+    font-size: 22px;
+  }
+
+  .clipboard {
+    width: 135px;
+    height: 135px;
+  }
+
   .features-row {
-    flex-direction: column;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .feature-item {
+    gap: 7px;
+  }
+
+  .feature-item strong {
+    font-size: 9px;
+  }
+
+  .feature-item span {
+    font-size: 7.5px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   601px - 767px
+========================================================= */
+
+@media (max-width: 767px) and (min-width: 601px) {
+  .article-container {
+    padding: 40px 18px;
+  }
+
+  .article-header {
+    max-width: 620px;
+    margin-bottom: 28px;
+  }
+
+  .article-header h2 {
+    font-size: 36px;
+  }
+
+  .article-header p {
+    font-size: 12px;
+  }
+
+  .cards-wrapper {
+    grid-template-columns: 1fr;
+    max-width: 620px;
+    gap: 20px;
+  }
+
+  .article-card {
+    padding: 20px;
+    border-radius: 17px;
+  }
+
+  .card-top-content {
+    gap: 15px;
+  }
+
+  .card-top-content h3 {
+    font-size: 20px;
+  }
+
+  .clipboard {
+    width: 125px;
+    height: 125px;
+  }
+
+  .features-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .feature-item {
+    gap: 8px;
+  }
+
+  .feature-item strong {
+    font-size: 10px;
+  }
+
+  .feature-item span {
+    font-size: 8px;
+  }
+
+  .card-bottom-banner {
+    min-height: 88px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   481px - 600px
+========================================================= */
+
+@media (max-width: 600px) {
+  .article-container {
+    padding: 32px 12px;
+  }
+
+  .article-header {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .article-header h2 {
+    font-size: clamp(29px, 8vw, 35px);
+    margin-bottom: 8px;
+  }
+
+  .article-header p {
+    font-size: 11.5px;
+    line-height: 1.55;
+  }
+
+  .cards-wrapper {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .article-card {
+    width: 100%;
+    padding: 15px;
+    border-radius: 15px;
+  }
+
+  .card-top-content {
+    gap: 10px;
+    margin-bottom: 17px;
+  }
+
+  .brand-logo {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .paper-badge {
+    font-size: 8px;
+    padding: 4px 9px;
+    margin-bottom: 9px;
+  }
+
+  .card-top-content h3 {
+    font-size: 15px;
+    line-height: 1.3;
+  }
+
+  .underline {
+    width: 28px;
+    height: 3px;
+    margin-top: 9px;
+  }
+
+  .clipboard {
+    width: 90px;
+    height: 90px;
+  }
+
+  .features-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+
+    padding: 9px;
+
+    margin-bottom: 15px;
+  }
+
+  .feature-item {
+    gap: 6px;
+    align-items: flex-start;
+  }
+
+  .f-icon {
+    font-size: 17px;
+    margin-top: 1px;
+  }
+
+  .feature-item strong {
+    font-size: 8.5px;
+  }
+
+  .feature-item span {
+    font-size: 7px;
+  }
+
+  .card-bottom-banner {
+    min-height: 80px;
+    padding: 10px;
+    gap: 8px;
+    border-radius: 10px;
+  }
+
+  .banner-icon-box {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    font-size: 14px;
+    padding: 7px;
+    border-radius: 8px;
+  }
+
+  .banner-text h4 {
+    font-size: 8.5px;
+    line-height: 1.3;
+  }
+
+  .banner-text p {
+    font-size: 7px;
+    line-height: 1.35;
+  }
+
+  .arrow-btn {
+    width: 27px;
+    height: 27px;
+    min-width: 27px;
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   381px - 480px
+========================================================= */
+
+@media (max-width: 480px) {
+  .article-container {
+    padding: 28px 10px;
+  }
+
+  .article-header {
+    margin-bottom: 22px;
+  }
+
+  .article-header h2 {
+    font-size: 29px;
+  }
+
+  .article-header p {
+    font-size: 10.5px;
+  }
+
+  .cards-wrapper {
+    gap: 14px;
+  }
+
+  .article-card {
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .card-top-content {
+    gap: 7px;
+    margin-bottom: 14px;
+  }
+
+  .brand-logo {
+    font-size: 11px;
+  }
+
+  .paper-badge {
+    font-size: 7.5px;
+    padding: 4px 8px;
+  }
+
+  .card-top-content h3 {
+    font-size: 13px;
+  }
+
+  .clipboard {
+    width: 78px;
+    height: 78px;
+  }
+
+  .features-row {
+    gap: 6px;
+    padding: 8px;
+  }
+
+  .feature-item {
+    gap: 5px;
+  }
+
+  .f-icon {
+    font-size: 15px;
+  }
+
+  .feature-item strong {
+    font-size: 7.5px;
+  }
+
+  .feature-item span {
+    font-size: 6.5px;
+  }
+
+  .card-bottom-banner {
+    min-height: 72px;
+    padding: 8px;
+    gap: 6px;
+  }
+
+  .banner-icon-box {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .banner-text h4 {
+    font-size: 7.5px;
+  }
+
+  .banner-text p {
+    font-size: 6.3px;
+  }
+
+  .arrow-btn {
+    width: 25px;
+    height: 25px;
+    min-width: 25px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   <= 380px
+========================================================= */
+
+@media (max-width: 380px) {
+  .article-container {
+    padding: 25px 8px;
+  }
+
+  .article-header h2 {
+    font-size: 27px;
+  }
+
+  .article-header p {
+    font-size: 9.5px;
+  }
+
+  .article-card {
+    padding: 10px;
+  }
+
+  .card-top-content {
+    gap: 6px;
+  }
+
+  .brand-logo {
+    font-size: 10px;
+  }
+
+  .paper-badge {
+    font-size: 7px;
+    padding: 3px 7px;
+  }
+
+  .card-top-content h3 {
+    font-size: 12px;
+  }
+
+  .clipboard {
+    width: 70px;
+    height: 70px;
+  }
+
+  .features-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    padding: 7px;
+  }
+
+  .feature-item {
+    gap: 4px;
+  }
+
+  .f-icon {
+    font-size: 14px;
+  }
+
+  .feature-item strong {
+    font-size: 7px;
+  }
+
+  .feature-item span {
+    font-size: 6px;
+  }
+
+  .card-bottom-banner {
+    min-height: 68px;
+    padding: 7px;
+  }
+
+  .banner-icon-box {
+    width: 27px;
+    height: 27px;
+    min-width: 27px;
+    font-size: 11px;
+  }
+
+  .banner-text h4 {
+    font-size: 7px;
+  }
+
+  .banner-text p {
+    font-size: 5.8px;
+  }
+
+  .arrow-btn {
+    width: 23px;
+    height: 23px;
+    min-width: 23px;
+    font-size: 8px;
+  }
+}
+
+
+/* =========================================================
+   ULTRA SMALL
+   <= 320px
+========================================================= */
+
+@media (max-width: 320px) {
+  .article-container {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .article-header h2 {
+    font-size: 25px;
+  }
+
+  .article-header p {
+    font-size: 9px;
+  }
+
+  .article-card {
+    padding: 9px;
+  }
+
+  .card-top-content h3 {
+    font-size: 11px;
+  }
+
+  .clipboard {
+    width: 62px;
+    height: 62px;
+  }
+
+  .features-row {
+    padding: 6px;
+  }
+
+  .feature-item strong {
+    font-size: 6.5px;
+  }
+
+  .feature-item span {
+    font-size: 5.5px;
+  }
+
+  .card-bottom-banner {
+    min-height: 63px;
+  }
+
+  .banner-text h4 {
+    font-size: 6.5px;
+  }
+
+  .banner-text p {
+    font-size: 5.4px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE LANDSCAPE
+========================================================= */
+
+@media (max-height: 550px) and (orientation: landscape) {
+  .article-container {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .article-header {
+    margin-bottom: 20px;
+  }
+
+  .article-header h2 {
+    font-size: 28px;
+  }
+
+  .article-header p {
+    font-size: 10px;
+  }
+
+  .cards-wrapper {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
+  }
+
+  .article-card {
+    padding: 10px;
+  }
+
+  .card-top-content {
+    gap: 5px;
+  }
+
+  .card-top-content h3 {
+    font-size: 12px;
+  }
+
+  .clipboard {
+    width: 70px;
+    height: 70px;
+  }
+
+  .features-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feature-item strong {
+    font-size: 7px;
+  }
+
+  .feature-item span {
+    font-size: 6px;
+  }
+
+  .card-bottom-banner {
+    min-height: 65px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .article-container *,
+  .article-container *::before,
+  .article-container *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

@@ -81,12 +81,7 @@ const EnrollSection = () => {
       {/* Header */}
       <div className="enroll-header">
 
-        <div className="smart-prep-badge">
-          <span className="smart-badge-icon">✓</span>
-          Smart prep today, Top rank tomorrow!
-          <span className="smart-sparkle">✦</span>
-        </div>
-
+       
         <h2 className="enroll-title">
           Choose your CAIIB{" "}
           <span className="highlight-text">Package</span>

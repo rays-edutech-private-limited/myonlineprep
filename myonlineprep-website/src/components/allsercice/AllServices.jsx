@@ -25,13 +25,7 @@ const AllServices = () => {
         <span className="decor-dots decor-dots-left"></span>
         <span className="decor-dots decor-dots-right"></span>
 
-        {/* Top Badge */}
-        <div className="top-badge">
-          <span className="badge-icon">
-            <FaShieldAlt />
-          </span>
-          <span>Built by ex-bankers, for bankers</span>
-        </div>
+        
 
         {/* Heading */}
         <div className="heading-wrapper">
@@ -249,69 +243,7 @@ const AllServices = () => {
 
         </div>
 
-        {/* Bottom Stats Bar */}
-        <div className="footer-stats-bar">
-
-          {/* Brand */}
-          <div className="footer-brand">
-            <div className="footer-shield">
-              <div className="shield-circle">
-                <FaShieldAlt />
-              </div>
-
-              
-            </div>
-
-            <div className="footer-brand-text">
-              <strong>Designed for bankers.</strong>
-              <span>Built for results.</span>
-            </div>
-          </div>
-
-          <div className="stats-divider"></div>
-
-          {/* Happy Bankers */}
-          <div className="stat-item">
-            <div className="stat-icon users-stat">
-              <FaUsers />
-            </div>
-
-            <div>
-              <strong>1,00,000+</strong>
-              <p>Happy Bankers</p>
-            </div>
-          </div>
-
-          <div className="stats-divider"></div>
-
-          {/* Rating */}
-          <div className="stat-item">
-            <div className="stat-icon star-stat">
-              <FaStar />
-            </div>
-
-            <div>
-              <strong>4.8/5</strong>
-              <p>App Rating</p>
-            </div>
-          </div>
-
-          <div className="stats-divider"></div>
-
-          {/* Success */}
-          <div className="stat-item">
-            <div className="stat-icon trophy-stat">
-              <FaTrophy />
-            </div>
-
-            <div>
-              <strong>Highest Success</strong>
-              <p>Rate in CAIIB</p>
-            </div>
-          </div>
-
-        </div>
-
+      
       </div>
     </section>
   );

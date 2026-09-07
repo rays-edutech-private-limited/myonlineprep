@@ -9,7 +9,7 @@ const ArticleSection = () => {
     <div className="article-container">
       {/* Header */}
       <div className="article-header">
-        <span className="badge-top">★ Learn. Practice. Excel ★</span>
+      
         <h2>Articles</h2>
         <p>Get exam-ready with concepts, questions and study notes as per the latest pattern</p>
       </div>

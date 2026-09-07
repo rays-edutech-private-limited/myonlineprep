@@ -1,11 +1,16 @@
 /* =========================================================
-   MAIN SECTION
+   GLOBAL RESET
 ========================================================= */
+
+.study-app-section,
+.study-app-section * {
+  box-sizing: border-box;
+}
 
 .study-app-section {
   width: 100%;
-  padding: 45px 20px 35px;
-  background:#faeeee;
+  padding: clamp(35px, 5vw, 70px) 20px 45px;
+  background: #faeeee;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #11152f;
   overflow: hidden;
@@ -14,7 +19,7 @@
 
 .study-app-container {
   width: 100%;
-  max-width: 1250px;
+  max-width: 1320px;
   margin: 0 auto;
 }
 
@@ -24,10 +29,12 @@
 ========================================================= */
 
 .study-main-grid {
+  width: 100%;
   display: grid;
-  grid-template-columns: 51% 49%;
+  grid-template-columns: minmax(0, 1fr) minmax(380px, 0.85fr);
   align-items: center;
-  min-height: 600px;
+  min-height: 620px;
+  gap: clamp(20px, 3vw, 55px);
 }
 
 
@@ -38,6 +45,8 @@
 .study-left-content {
   position: relative;
   z-index: 5;
+  width: 100%;
+  max-width: 650px;
   padding-left: 5px;
 }
 
@@ -68,11 +77,12 @@
 .study-main-title {
   margin: 0;
   padding: 0;
-  font-size: clamp(43px, 4.3vw, 61px);
-  line-height: 1.02;
-  letter-spacing: -2px;
+  font-size: clamp(40px, 4.2vw, 62px);
+  line-height: 1.03;
+  letter-spacing: clamp(-1px, -0.15vw, -2.5px);
   font-weight: 800;
   color: #081334;
+  max-width: 650px;
 }
 
 .anywhere-text {
@@ -82,15 +92,16 @@
 .anytime-text {
   color: #ef3974;
   position: relative;
+  display: inline-block;
 }
 
 .anytime-text::after {
   content: "";
   position: absolute;
-  width: 145px;
-  height: 6px;
+  width: clamp(90px, 10vw, 145px);
+  height: clamp(4px, 0.4vw, 6px);
   left: -2px;
-  bottom: -10px;
+  bottom: clamp(-9px, -0.7vw, -10px);
   background: #ed4c89;
   border-radius: 50%;
   transform: rotate(-3deg);
@@ -102,11 +113,12 @@
 ========================================================= */
 
 .study-description {
-  max-width: 575px;
-  margin: 28px 0 25px;
+  width: 100%;
+  max-width: 590px;
+  margin: clamp(22px, 2.3vw, 30px) 0 25px;
   color: #4f5063;
-  font-size: 16px;
-  line-height: 1.55;
+  font-size: clamp(13px, 1.15vw, 16px);
+  line-height: 1.6;
   font-weight: 500;
 }
 
@@ -117,20 +129,21 @@
 
 .study-features-grid {
   width: 100%;
-  max-width: 610px;
+  max-width: 620px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 13px;
   margin-top: 5px;
 }
 
 .study-feature-card {
+  width: 100%;
   min-height: 112px;
   background: rgba(255, 255, 255, 0.96);
   border-radius: 13px;
-  padding: 17px 15px;
+  padding: 16px 14px;
   display: flex;
-  gap: 14px;
+  gap: 13px;
   align-items: flex-start;
   box-shadow:
     0 6px 20px rgba(39, 26, 79, 0.06),
@@ -139,15 +152,16 @@
 }
 
 .study-feature-icon {
-  width: 49px;
-  height: 49px;
-  min-width: 49px;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
   border-radius: 11px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 23px;
+  font-size: 22px;
   position: relative;
+  flex-shrink: 0;
 }
 
 .study-feature-icon.purple {
@@ -187,13 +201,14 @@
 
 .study-feature-content {
   flex: 1;
+  min-width: 0;
 }
 
 .study-feature-content h3 {
   padding: 0;
   margin: 1px 0 5px;
-  font-size: 14px;
-  line-height: 1.25;
+  font-size: clamp(12px, 1vw, 14px);
+  line-height: 1.3;
   font-weight: 800;
   color: #15172c;
 }
@@ -201,7 +216,7 @@
 .study-feature-content p {
   padding: 0;
   margin: 0;
-  font-size: 11.5px;
+  font-size: clamp(10px, 0.85vw, 11.5px);
   line-height: 1.45;
   color: #666779;
   font-weight: 500;
@@ -211,7 +226,7 @@
   height: 3px;
   width: 29px;
   border-radius: 5px;
-  margin-top: 10px;
+  margin-top: 9px;
 }
 
 .purple-line {
@@ -236,14 +251,16 @@
 ========================================================= */
 
 .study-store-rating {
+  width: 100%;
   display: flex;
   align-items: center;
   margin-top: 14px;
   gap: 18px;
+  flex-wrap: wrap;
 }
 
 .google-play-card {
-  height: 72px;
+  height: 70px;
   width: 180px;
   background: #fff;
   border-radius: 9px;
@@ -253,6 +270,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
+  flex-shrink: 0;
 }
 
 .google-play-icon {
@@ -285,33 +303,31 @@
 
 .rating-card {
   display: flex;
+  align-items: center;
   gap: 13px;
-   background: #fff;
-   padding: 10px;
-   box-shadow: 0px 0px 7px rgb(230, 227, 227);
-   border-radius: 10px;
+  background: #fff;
+  padding: 10px 13px;
+  box-shadow: 0 0 7px rgb(230, 227, 227);
+  border-radius: 10px;
+  min-height: 58px;
 }
 
-
-.rat-st{
-    font-size: 22px;
-color: #f4a719;
-margin-top: -5px;
+.rat-st {
+  font-size: 22px;
+  color: #f4a719;
+  margin-top: -5px;
+  line-height: 1;
 }
 
-.rat-rev{
-    font-size: 11px;
-    font-weight: 700;
+.rat-rev {
+  font-size: 11px;
+  font-weight: 700;
 }
-
 
 .rating-info strong {
   font-size: 15px;
   color: #222238;
-  
 }
-
-
 
 
 /* =========================================================
@@ -320,18 +336,20 @@ margin-top: -5px;
 
 .study-right-content {
   position: relative;
+  width: 100%;
   height: 620px;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 0;
 }
 
 .purple-glow-circle {
   position: absolute;
-  width: 540px;
-  height: 540px;
-  right: -70px;
-  top: 38px;
+  width: clamp(390px, 38vw, 560px);
+  height: clamp(390px, 38vw, 560px);
+  right: clamp(-80px, -4vw, -25px);
+  top: 40px;
   border-radius: 50%;
   background:
     radial-gradient(
@@ -350,9 +368,11 @@ margin-top: -5px;
 .study-phone-wrapper {
   position: absolute;
   z-index: 5;
-  height: 600px;
-  top: 30px;
-  top: 0px;
+  width: clamp(270px, 27vw, 390px);
+  height: min(600px, 90%);
+  max-height: 600px;
+  top: 5px;
+  right: clamp(10px, 4vw, 65px);
   transform: rotate(7deg);
   filter: drop-shadow(20px 20px 18px rgba(41, 28, 77, 0.25));
 }
@@ -361,7 +381,7 @@ margin-top: -5px;
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 
@@ -372,7 +392,7 @@ margin-top: -5px;
 .aim-card {
   position: absolute;
   z-index: 8;
-  right: -5px;
+  right: clamp(-15px, 0vw, 15px);
   top: 165px;
   min-width: 125px;
   background: rgba(255, 255, 255, 0.95);
@@ -388,6 +408,7 @@ margin-top: -5px;
 .aim-icon {
   width: 38px;
   height: 38px;
+  min-width: 38px;
   border-radius: 50%;
   background: #ece4ff;
   color: #6033d5;
@@ -421,7 +442,7 @@ margin-top: -5px;
 .achieve-card {
   position: absolute;
   z-index: 7;
-  right: -12px;
+  right: clamp(-20px, 0vw, 15px);
   top: 285px;
   width: 110px;
   height: 125px;
@@ -461,7 +482,7 @@ margin-top: -5px;
   z-index: 6;
   width: 220px;
   height: 170px;
-  right: -30px;
+  right: clamp(-45px, -1vw, 5px);
   bottom: 35px;
 }
 
@@ -567,6 +588,7 @@ margin-top: -5px;
   opacity: 0.6;
   background-image: radial-gradient(#8060d8 1.5px, transparent 1.5px);
   background-size: 14px 14px;
+  pointer-events: none;
 }
 
 .dots-one {
@@ -585,6 +607,7 @@ margin-top: -5px;
   color: #7655d9;
   font-size: 21px;
   z-index: 2;
+  pointer-events: none;
 }
 
 .star-one {
@@ -610,23 +633,26 @@ margin-top: -5px;
   font-size: 40px;
   transform: rotate(-25deg);
   z-index: 2;
+  pointer-events: none;
 }
 
 
 /* =========================================================
    BOTTOM FEATURE BAR
+   NOTE:
+   These classes are not currently rendered in your JSX.
+   Keeping them makes the CSS ready if you add them later.
 ========================================================= */
 
 .study-bottom-bar {
   width: calc(100% - 10px);
   min-height: 105px;
-  margin: 8px auto 0;
+  margin: 15px auto 0;
   padding: 15px 20px;
   background: rgba(255, 255, 255, 0.96);
   border: 1px solid #eeeaf5;
   border-radius: 15px;
   box-shadow: 0 5px 22px rgba(40, 30, 75, 0.05);
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -742,28 +768,18 @@ margin-top: -5px;
 ========================================================= */
 
 .study-bottom-banner {
-  width: 420px;
-  max-width: 90%;
+  width: min(420px, 90%);
   height: 35px;
   margin: -2px auto 0;
   position: relative;
   z-index: 15;
-
-  background: linear-gradient(
-    90deg,
-    #813588,
-    #813588,
-    #813588
-  );
-
+  background: #813588;
   border-radius: 20px;
   color: white;
-
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
-
   font-size: 14px;
   font-weight: 700;
   box-shadow: 0 4px 12px rgba(95, 40, 190, 0.2);
@@ -775,18 +791,63 @@ margin-top: -5px;
 
 
 /* =========================================================
-   1200px
+   LARGE DESKTOP
+   1440px+
 ========================================================= */
 
-@media (max-width: 1200px) {
+@media (min-width: 1440px) {
+  .study-app-section {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 
+  .study-main-grid {
+    grid-template-columns: 52% 48%;
+    gap: 20px;
+    min-height: 650px;
+  }
+
+  .study-left-content {
+    max-width: 690px;
+  }
+
+  .study-main-title {
+    font-size: 64px;
+  }
+
+  .study-description {
+    font-size: 16px;
+  }
+
+  .study-right-content {
+    height: 650px;
+  }
+
+  .study-phone-wrapper {
+    width: 400px;
+    height: 620px;
+    right: 50px;
+  }
+}
+
+
+/* =========================================================
+   1200px - 1439px
+========================================================= */
+
+@media (max-width: 1439px) and (min-width: 1201px) {
   .study-main-grid {
     grid-template-columns: 52% 48%;
   }
 
   .study-phone-wrapper {
-    width: 340px;
-    right: 25px;
+    width: 370px;
+    height: 590px;
+    right: 20px;
+  }
+
+  .purple-glow-circle {
+    right: -55px;
   }
 
   .aim-card {
@@ -794,44 +855,58 @@ margin-top: -5px;
   }
 
   .achieve-card {
-    right: -15px;
+    right: -10px;
   }
 
   .books-decoration {
     right: -25px;
   }
-
-  .bottom-feature {
-    min-width: 175px;
-  }
 }
 
 
 /* =========================================================
-   1000px
+   LAPTOP
+   1025px - 1200px
 ========================================================= */
 
-@media (max-width: 1000px) {
-
+@media (max-width: 1200px) and (min-width: 1025px) {
   .study-app-section {
-    padding: 40px 18px 30px;
+    padding: 45px 18px 35px;
   }
 
   .study-main-grid {
-    grid-template-columns: 1fr 0.85fr;
+    grid-template-columns: 53% 47%;
+    gap: 10px;
   }
 
   .study-main-title {
-    font-size: 48px;
+    font-size: clamp(43px, 4.5vw, 55px);
   }
 
   .study-description {
+    max-width: 550px;
     font-size: 14px;
   }
 
+  .study-features-grid {
+    max-width: 590px;
+  }
+
+  .study-right-content {
+    height: 600px;
+  }
+
   .study-phone-wrapper {
-    width: 315px;
-    right: 5px;
+    width: 330px;
+    height: 565px;
+    right: 0;
+  }
+
+  .purple-glow-circle {
+    width: 500px;
+    height: 500px;
+    right: -75px;
+    top: 50px;
   }
 
   .aim-card {
@@ -841,29 +916,19 @@ margin-top: -5px;
 
   .achieve-card {
     right: -20px;
+    top: 275px;
   }
 
   .books-decoration {
-    right: -40px;
+    right: -35px;
   }
 
   .study-bottom-bar {
     gap: 10px;
-    padding: 14px;
   }
 
   .bottom-feature {
-    min-width: auto;
-  }
-
-  .bottom-feature-icon {
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-  }
-
-  .bottom-divider {
-    height: 45px;
+    min-width: 170px;
   }
 
   .qr-text {
@@ -873,17 +938,111 @@ margin-top: -5px;
 
 
 /* =========================================================
-   TABLET
+   SMALL LAPTOP / LARGE TABLET
+   901px - 1024px
 ========================================================= */
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) and (min-width: 901px) {
+  .study-app-section {
+    padding: 40px 18px 35px;
+  }
+
+  .study-main-grid {
+    grid-template-columns: 55% 45%;
+    gap: 0;
+  }
+
+  .study-main-title {
+    font-size: 45px;
+  }
+
+  .study-description {
+    max-width: 500px;
+    font-size: 13px;
+  }
+
+  .study-features-grid {
+    max-width: 550px;
+    gap: 10px;
+  }
+
+  .study-feature-card {
+    min-height: 105px;
+    padding: 13px;
+  }
+
+  .study-feature-icon {
+    width: 43px;
+    min-width: 43px;
+    height: 43px;
+    font-size: 19px;
+  }
+
+  .study-feature-content h3 {
+    font-size: 12px;
+  }
+
+  .study-feature-content p {
+    font-size: 10px;
+  }
+
+  .study-right-content {
+    height: 570px;
+  }
+
+  .study-phone-wrapper {
+    width: 300px;
+    height: 535px;
+    right: -5px;
+  }
+
+  .purple-glow-circle {
+    width: 450px;
+    height: 450px;
+    right: -80px;
+    top: 55px;
+  }
+
+  .aim-card {
+    right: -18px;
+    top: 145px;
+    transform: scale(0.9) rotate(5deg);
+  }
+
+  .achieve-card {
+    right: -20px;
+    top: 260px;
+    transform: scale(0.9) rotate(7deg);
+  }
+
+  .books-decoration {
+    right: -45px;
+    transform: scale(0.85);
+    transform-origin: right bottom;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   768px - 900px
+========================================================= */
+
+@media (max-width: 900px) and (min-width: 768px) {
+  .study-app-section {
+    padding: 45px 20px 35px;
+  }
 
   .study-main-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .study-left-content {
+    max-width: 720px;
+    margin: 0 auto;
     text-align: center;
+    padding-left: 0;
   }
 
   .prep-badge {
@@ -892,15 +1051,20 @@ margin-top: -5px;
   }
 
   .study-main-title {
-    font-size: 52px;
-  }
-
-  .study-description {
+    font-size: clamp(46px, 7vw, 58px);
     margin-left: auto;
     margin-right: auto;
   }
 
+  .study-description {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+  }
+
   .study-features-grid {
+    max-width: 680px;
     margin-left: auto;
     margin-right: auto;
     text-align: left;
@@ -911,220 +1075,398 @@ margin-top: -5px;
   }
 
   .study-right-content {
-    height: 650px;
-    margin-top: 15px;
+    height: 630px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .purple-glow-circle {
+    width: 520px;
+    height: 520px;
+    right: 50%;
+    transform: translateX(50%);
+    top: 40px;
   }
 
   .study-phone-wrapper {
     width: 350px;
-    right: 50%;
-    transform: translateX(50%) rotate(7deg);
-  }
-
-  .aim-card {
-    right: 8%;
-    top: 160px;
-  }
-
-  .achieve-card {
-    right: 5%;
-    top: 285px;
-  }
-
-  .books-decoration {
-    right: 3%;
-  }
-
-  .study-bottom-bar {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  .bottom-divider {
-    display: none;
-  }
-
-  .bottom-feature {
-    min-width: 190px;
-  }
-
-  .qr-section {
-    margin-left: 10px;
-  }
-
-  .qr-text {
-    display: flex;
-  }
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-  .study-app-section {
-    padding: 30px 12px 25px;
-  }
-
-  .prep-badge {
-    font-size: 12px;
-    padding: 7px 13px;
-  }
-
-  .study-main-title {
-    font-size: 39px;
-    letter-spacing: -1px;
-  }
-
-  .anytime-text::after {
-    width: 105px;
-    height: 4px;
-    bottom: -7px;
-  }
-
-  .study-description {
-    font-size: 13px;
-    line-height: 1.55;
-    margin-top: 23px;
-    margin-bottom: 22px;
-  }
-
-  .study-features-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .study-feature-card {
-    min-height: 96px;
-    padding: 14px;
-  }
-
-  .study-feature-icon {
-    width: 45px;
-    min-width: 45px;
-    height: 45px;
-  }
-
-  .study-feature-content h3 {
-    font-size: 13px;
-  }
-
-  .study-feature-content p {
-    font-size: 11px;
-  }
-
-  .study-store-rating {
-    gap: 11px;
-  }
-
-  .google-play-card {
-    width: 150px;
-    height: 63px;
-  }
-
-  .google-play-card strong {
-    font-size: 14px;
-  }
-
-  .google-play-icon {
-    font-size: 28px;
-  }
-
-  .rating-stars {
-    font-size: 17px;
-  }
-
-  .rating-info strong {
-    font-size: 14px;
-  }
-
-  .rating-info span {
-    font-size: 9px;
-  }
-
-  .study-right-content {
-    height: 520px;
-    margin-top: 15px;
-  }
-
-  .purple-glow-circle {
-    width: 410px;
-    height: 410px;
-    right: 50%;
-    transform: translateX(50%);
-    top: 35px;
-  }
-
-  .study-phone-wrapper {
-    width: 285px;
+    height: 590px;
     right: 50%;
     top: 5px;
     transform: translateX(50%) rotate(7deg);
   }
 
   .aim-card {
-    right: 1%;
-    top: 135px;
-    min-width: 105px;
-    padding: 9px 11px;
-  }
-
-  .aim-icon {
-    width: 32px;
-    height: 32px;
-    font-size: 17px;
-  }
-
-  .aim-card strong,
-  .aim-card span {
-    font-size: 11px;
+    right: 5%;
+    top: 155px;
   }
 
   .achieve-card {
-    right: 0;
-    top: 245px;
-    width: 90px;
-    height: 100px;
-    border-radius: 18px;
-  }
-
-  .achieve-card svg {
-    font-size: 28px;
-  }
-
-  .achieve-card span {
-    font-size: 11px;
-  }
-
-  .achieve-card strong {
-    font-size: 14px;
+    right: 4%;
+    top: 285px;
   }
 
   .books-decoration {
-    right: -8px;
+    right: 4%;
+    bottom: 25px;
+  }
+
+  .paper-plane {
+    left: 5%;
+  }
+
+  .star-two {
+    left: 8%;
+  }
+}
+
+
+/* =========================================================
+   MOBILE LANDSCAPE / SMALL TABLET
+   601px - 767px
+========================================================= */
+
+@media (max-width: 767px) and (min-width: 601px) {
+  .study-app-section {
+    padding: 40px 18px 30px;
+  }
+
+  .study-main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .study-left-content {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .study-main-title {
+    font-size: 45px;
+  }
+
+  .study-description {
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .study-features-grid {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  .study-store-rating {
+    justify-content: center;
+  }
+
+  .study-right-content {
+    height: 570px;
+    margin-top: 10px;
+  }
+
+  .purple-glow-circle {
+    width: 440px;
+    height: 440px;
+    right: 50%;
+    transform: translateX(50%);
+    top: 35px;
+  }
+
+  .study-phone-wrapper {
+    width: 300px;
+    height: 530px;
+    right: 50%;
+    top: 5px;
+    transform: translateX(50%) rotate(7deg);
+  }
+
+  .aim-card {
+    right: 3%;
+    top: 135px;
+    transform: scale(0.9) rotate(5deg);
+  }
+
+  .achieve-card {
+    right: 2%;
+    top: 250px;
+    transform: scale(0.85) rotate(7deg);
+  }
+
+  .books-decoration {
+    right: 1%;
     bottom: 10px;
     transform: scale(0.8);
     transform-origin: right bottom;
   }
 
   .paper-plane {
-    left: 5px;
+    left: 3%;
     top: 60px;
+    font-size: 32px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   481px - 600px
+========================================================= */
+
+@media (max-width: 600px) {
+  .study-app-section {
+    padding: 32px 13px 28px;
+  }
+
+  .study-app-container {
+    max-width: 100%;
+  }
+
+  .study-main-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .study-left-content {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .prep-badge {
+    font-size: 11px;
+    padding: 7px 13px;
+    margin-bottom: 14px;
+  }
+
+  .prep-badge svg {
+    font-size: 14px;
+  }
+
+  .study-main-title {
+    width: 100%;
+    font-size: clamp(34px, 10vw, 42px);
+    line-height: 1.04;
+    letter-spacing: -1.2px;
+  }
+
+  .anytime-text::after {
+    width: 100px;
+    height: 4px;
+    bottom: -7px;
+  }
+
+  .study-description {
+    max-width: 100%;
+    margin: 23px auto 22px;
+    font-size: 12.5px;
+    line-height: 1.6;
+  }
+
+  .study-features-grid {
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    text-align: left;
+  }
+
+  .study-feature-card {
+    min-height: 92px;
+    padding: 13px;
+    gap: 12px;
+    border-radius: 12px;
+  }
+
+  .study-feature-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    font-size: 19px;
+    border-radius: 10px;
+  }
+
+  .study-feature-content h3 {
+    font-size: 12.5px;
+    margin-top: 1px;
+  }
+
+  .study-feature-content p {
+    font-size: 10.5px;
+    line-height: 1.45;
+  }
+
+  .small-line {
+    margin-top: 8px;
+  }
+
+  .study-store-rating {
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .google-play-card {
+    width: 145px;
+    height: 60px;
+    gap: 8px;
+  }
+
+  .google-play-icon {
+    font-size: 27px;
+  }
+
+  .google-play-card span {
+    font-size: 8px;
+  }
+
+  .google-play-card strong {
+    font-size: 13px;
+  }
+
+  .rating-divider {
+    height: 42px;
+  }
+
+  .rating-card {
+    gap: 8px;
+    padding: 8px 10px;
+  }
+
+  .rat-st {
+    font-size: 18px;
+  }
+
+  .rat-rev {
+    font-size: 9px;
+  }
+
+  .rating-info strong {
+    font-size: 13px;
+  }
+
+  .study-right-content {
+    width: 100%;
+    height: 510px;
+    margin-top: 10px;
+  }
+
+  .purple-glow-circle {
+    width: min(420px, 110vw);
+    height: min(420px, 110vw);
+    right: 50%;
+    transform: translateX(50%);
+    top: 35px;
+  }
+
+  .study-phone-wrapper {
+    width: min(285px, 70vw);
+    height: min(485px, 100vw);
+    max-height: 500px;
+    right: 50%;
+    top: 5px;
+    transform: translateX(50%) rotate(7deg);
+  }
+
+  .aim-card {
+    right: 0;
+    top: 130px;
+    min-width: 100px;
+    padding: 8px 10px;
+    gap: 7px;
+    transform: scale(0.85) rotate(5deg);
+    transform-origin: right center;
+  }
+
+  .aim-icon {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    font-size: 15px;
+  }
+
+  .aim-card strong,
+  .aim-card span {
+    font-size: 10px;
+  }
+
+  .achieve-card {
+    right: -2px;
+    top: 240px;
+    width: 82px;
+    height: 94px;
+    border-radius: 17px;
+    transform: rotate(7deg);
+  }
+
+  .achieve-card svg {
+    font-size: 25px;
+    margin-bottom: 5px;
+  }
+
+  .achieve-card span {
+    font-size: 10px;
+  }
+
+  .achieve-card strong {
+    font-size: 13px;
+  }
+
+  .books-decoration {
+    width: 200px;
+    height: 150px;
+    right: -5px;
+    bottom: 5px;
+    transform: scale(0.72);
+    transform-origin: right bottom;
+  }
+
+  .paper-plane {
+    left: 0;
+    top: 55px;
+    font-size: 30px;
   }
 
   .dots-one {
     right: 0;
+    top: 5px;
+    transform: scale(0.75);
+  }
+
+  .dots-two {
+    left: 0;
+    bottom: 45px;
+    transform: scale(0.7);
+  }
+
+  .star-one {
+    right: 45px;
+    top: 10px;
+    font-size: 17px;
+  }
+
+  .star-two {
+    left: 25px;
+    top: 100px;
+    font-size: 17px;
+  }
+
+  .star-three {
+    left: 15px;
+    bottom: 125px;
+    font-size: 17px;
   }
 
   .study-bottom-bar {
     width: 100%;
-    padding: 18px 15px;
+    padding: 16px 13px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px 10px;
+    gap: 18px 10px;
   }
 
   .bottom-feature {
@@ -1132,18 +1474,22 @@ margin-top: -5px;
   }
 
   .bottom-feature-icon {
-    width: 38px;
-    height: 38px;
-    min-width: 38px;
-    font-size: 17px;
+    width: 37px;
+    height: 37px;
+    min-width: 37px;
+    font-size: 16px;
   }
 
   .bottom-feature h4 {
-    font-size: 11px;
+    font-size: 10px;
   }
 
   .bottom-feature p {
-    font-size: 9px;
+    font-size: 8.5px;
+  }
+
+  .bottom-divider {
+    display: none;
   }
 
   .qr-section {
@@ -1153,67 +1499,420 @@ margin-top: -5px;
   }
 
   .qr-code {
-    width: 55px;
-    height: 55px;
+    width: 53px;
+    height: 53px;
   }
 
   .qr-code svg {
-    font-size: 44px;
+    font-size: 42px;
   }
 
   .study-bottom-banner {
     width: 95%;
-    height: 32px;
-    font-size: 11px;
+    height: 31px;
+    font-size: 10.5px;
   }
 }
 
 
 /* =========================================================
    SMALL MOBILE
+   381px - 480px
 ========================================================= */
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
+  .study-app-section {
+    padding: 28px 11px 25px;
+  }
 
   .study-main-title {
-    font-size: 34px;
+    font-size: clamp(32px, 9.8vw, 39px);
+  }
+
+  .study-description {
+    font-size: 12px;
+  }
+
+  .study-feature-card {
+    min-height: 90px;
+    padding: 12px;
+  }
+
+  .study-feature-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    font-size: 18px;
+  }
+
+  .study-feature-content h3 {
+    font-size: 12px;
+  }
+
+  .study-feature-content p {
+    font-size: 10px;
+  }
+
+  .google-play-card {
+    width: 140px;
+  }
+
+  .rating-card {
+    padding: 8px;
+  }
+
+  .rat-st {
+    font-size: 17px;
+  }
+
+  .rat-rev {
+    font-size: 8.5px;
+  }
+
+  .rating-info strong {
+    font-size: 12px;
+  }
+
+  .study-right-content {
+    height: 475px;
+  }
+
+  .purple-glow-circle {
+    width: 380px;
+    height: 380px;
+    top: 35px;
+  }
+
+  .study-phone-wrapper {
+    width: 260px;
+    height: 450px;
+  }
+
+  .aim-card {
+    top: 120px;
+    right: -3px;
+    transform: scale(0.78) rotate(5deg);
+  }
+
+  .achieve-card {
+    top: 220px;
+    right: -3px;
+    width: 76px;
+    height: 88px;
+    transform: scale(0.9) rotate(7deg);
+  }
+
+  .books-decoration {
+    transform: scale(0.65);
+    bottom: 0;
+  }
+
+  .paper-plane {
+    left: -2px;
+    top: 48px;
+    font-size: 26px;
+  }
+
+  .star-one {
+    right: 30px;
+  }
+
+  .star-two {
+    left: 15px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   <= 380px
+========================================================= */
+
+@media (max-width: 380px) {
+  .study-app-section {
+    padding: 25px 9px 22px;
+  }
+
+  .study-main-title {
+    font-size: 31px;
+    letter-spacing: -0.8px;
+  }
+
+  .anytime-text::after {
+    width: 82px;
+    height: 3px;
+    bottom: -6px;
+  }
+
+  .study-description {
+    font-size: 11.5px;
+    line-height: 1.55;
+    margin-top: 20px;
+  }
+
+  .study-feature-card {
+    min-height: 86px;
+    padding: 11px;
+    gap: 10px;
+  }
+
+  .study-feature-icon {
+    width: 39px;
+    height: 39px;
+    min-width: 39px;
+    font-size: 17px;
+  }
+
+  .study-feature-content h3 {
+    font-size: 11.5px;
+  }
+
+  .study-feature-content p {
+    font-size: 9.5px;
   }
 
   .study-store-rating {
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .google-play-card {
+    width: 165px;
+    height: 56px;
   }
 
   .rating-divider {
     display: none;
   }
 
+  .rating-card {
+    width: auto;
+  }
+
   .study-right-content {
-    height: 470px;
+    height: 440px;
+  }
+
+  .purple-glow-circle {
+    width: 340px;
+    height: 340px;
   }
 
   .study-phone-wrapper {
-    width: 255px;
+    width: 235px;
+    height: 415px;
   }
 
   .aim-card {
-    right: -2px;
-    top: 120px;
+    top: 108px;
+    right: -5px;
+    transform: scale(0.7) rotate(5deg);
   }
 
   .achieve-card {
-    right: -2px;
-    top: 220px;
+    top: 200px;
+    right: -5px;
+    width: 70px;
+    height: 82px;
+  }
+
+  .achieve-card svg {
+    font-size: 22px;
+  }
+
+  .achieve-card span {
+    font-size: 9px;
+  }
+
+  .achieve-card strong {
+    font-size: 11px;
   }
 
   .books-decoration {
-    transform: scale(0.68);
+    transform: scale(0.58);
+    right: -10px;
   }
 
-  .study-bottom-bar {
-    grid-template-columns: 1fr;
+  .paper-plane {
+    font-size: 22px;
   }
 
-  .qr-section {
-    grid-column: span 1;
+  .dots-decoration {
+    transform: scale(0.6);
+  }
+}
+
+
+/* =========================================================
+   ULTRA SMALL
+   <= 320px
+========================================================= */
+
+@media (max-width: 320px) {
+  .study-main-title {
+    font-size: 28px;
+  }
+
+  .study-description {
+    font-size: 10.5px;
+  }
+
+  .study-feature-card {
+    padding: 9px;
+  }
+
+  .study-feature-icon {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    font-size: 15px;
+  }
+
+  .study-feature-content h3 {
+    font-size: 10.5px;
+  }
+
+  .study-feature-content p {
+    font-size: 8.7px;
+  }
+
+  .study-right-content {
+    height: 400px;
+  }
+
+  .purple-glow-circle {
+    width: 300px;
+    height: 300px;
+  }
+
+  .study-phone-wrapper {
+    width: 210px;
+    height: 375px;
+  }
+
+  .aim-card {
+    transform: scale(0.62) rotate(5deg);
+    top: 95px;
+  }
+
+  .achieve-card {
+    transform: scale(0.78) rotate(7deg);
+    top: 185px;
+  }
+
+  .books-decoration {
+    transform: scale(0.5);
+  }
+}
+
+
+/* =========================================================
+   MOBILE LANDSCAPE
+========================================================= */
+
+@media (max-height: 550px) and (orientation: landscape) {
+  .study-app-section {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .study-main-grid {
+    grid-template-columns: 1fr 0.8fr;
+    gap: 10px;
+  }
+
+  .study-left-content {
+    text-align: left;
+  }
+
+  .study-main-title {
+    font-size: 32px;
+  }
+
+  .study-description {
+    font-size: 11px;
+    margin: 15px 0;
+  }
+
+  .study-features-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 7px;
+  }
+
+  .study-feature-card {
+    min-height: 72px;
+    padding: 8px;
+  }
+
+  .study-feature-icon {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    font-size: 14px;
+  }
+
+  .study-feature-content h3 {
+    font-size: 9px;
+  }
+
+  .study-feature-content p {
+    font-size: 7.5px;
+  }
+
+  .study-store-rating {
+    justify-content: flex-start;
+    margin-top: 8px;
+  }
+
+  .google-play-card {
+    width: 120px;
+    height: 45px;
+  }
+
+  .rating-card {
+    min-height: 45px;
+  }
+
+  .study-right-content {
+    height: 420px;
+  }
+
+  .study-phone-wrapper {
+    width: 220px;
+    height: 390px;
+  }
+
+  .purple-glow-circle {
+    width: 330px;
+    height: 330px;
+  }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+  .study-feature-card,
+  .google-play-card,
+  .rating-card {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .study-app-section *,
+  .study-app-section *::before,
+  .study-app-section *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./HeroSection.css";
 
 import {
@@ -17,7 +17,6 @@ import {
   FaQuestionCircle,
 } from "react-icons/fa";
 
-
 /* =====================================================
    COURSE CARD
 ===================================================== */
@@ -25,569 +24,263 @@ import {
 const CourseCard = ({ card }) => {
   return (
     <div className="main-course-card">
-
       {/* Ribbon */}
       <div className="green-cleared-ribbon">
         <span>CLEARED</span>
       </div>
 
-
       {/* Header */}
       <div className="card-header">
-
         <h2>
           {card.title}
-
-          <span className="verified-tick">
-            ✓
-          </span>
+          <span className="verified-tick">✓</span>
         </h2>
-
-        <p>
-          {card.subtitle}
-        </p>
-
+        <p>{card.subtitle}</p>
       </div>
-
 
       {/* Features */}
       <div className="card-features-list">
-
         {card.features.map((feature, index) => (
-
-          <div
-            className="feature-row"
-            key={index}
-          >
-
+          <div className="feature-row" key={index}>
             <div className="feature-left">
-
-              <span className="feat-icon">
-                {feature.icon}
-              </span>
-
-              <span className="feature-text">
-                {feature.text}
-              </span>
-
+              <span className="feat-icon">{feature.icon}</span>
+              <span className="feature-text">{feature.text}</span>
             </div>
-
 
             <span
               className={
-                feature.green
-                  ? "feat-status green-text"
-                  : "feat-status"
+                feature.green ? "feat-status green-text" : "feat-status"
               }
             >
               {feature.status}
             </span>
-
           </div>
-
         ))}
-
       </div>
-
 
       {/* Price */}
       <div className="card-pricing-footer">
-
         <div className="price-box">
-
-          <span className="current-price">
-            {card.price}
-          </span>
-
-          <span className="original-price">
-            {card.originalPrice}
-          </span>
-
+          <span className="current-price">{card.price}</span>
+          <span className="original-price">{card.originalPrice}</span>
         </div>
-
 
         <div className="secure-badge">
-
           <FaShieldAlt />
-
-          <span>
-            {card.discount}
-          </span>
-
+          <span>{card.discount}</span>
         </div>
-
       </div>
-
     </div>
   );
 };
-
-
 
 /* =====================================================
    HERO SECTION
 ===================================================== */
 
 const HeroSection = () => {
-
   const [activeSlide, setActiveSlide] = useState(0);
-
-
-  /* ===================================================
-     EXACTLY 4 CARDS
-  =================================================== */
+  const [isPaused, setIsPaused] = useState(false);
 
   const slides = [
-
     {
       title: "CAIIB 2026 Combo Pro",
-
-      subtitle:
-        "All Compulsory Papers + HRM Elective",
-
+      subtitle: "All Compulsory Papers + HRM Elective",
       features: [
-
-        {
-          icon: <FaPlayCircle />,
-          text: "300+ Hrs HD Video",
-          status: "Included",
-        },
-
-        {
-          icon: <FaBook />,
-          text: "7,000+ Practice MCQs",
-          status: "Included",
-        },
-
-        {
-          icon: <FaRegFileAlt />,
-          text: "200+ Full Mock Tests",
-          status: "Included",
-        },
-
+        { icon: <FaPlayCircle />, text: "300+ Hrs HD Video", status: "Included" },
+        { icon: <FaBook />, text: "7,000+ Practice MCQs", status: "Included" },
+        { icon: <FaRegFileAlt />, text: "200+ Full Mock Tests", status: "Included" },
         {
           icon: <FaCalendarAlt />,
           text: "Validity",
           status: "8 Months",
           green: true,
         },
-
       ],
-
       price: "₹2,999",
-
       originalPrice: "₹11,999",
-
-      discount:
-        "76% OFF • Secure Checkout",
+      discount: "76% OFF • Secure Checkout",
     },
-
-
     {
       title: "CAIIB 2026 Advanced Pack",
-
-      subtitle:
-        "All Compulsory Papers + BFM Focus",
-
+      subtitle: "All Compulsory Papers + BFM Focus",
       features: [
-
-        {
-          icon: <FaPlayCircle />,
-          text: "250+ Hrs HD Video",
-          status: "Included",
-        },
-
-        {
-          icon: <FaBook />,
-          text: "5,000+ Practice MCQs",
-          status: "Included",
-        },
-
-        {
-          icon: <FaRegFileAlt />,
-          text: "150+ Full Mock Tests",
-          status: "Included",
-        },
-
+        { icon: <FaPlayCircle />, text: "250+ Hrs HD Video", status: "Included" },
+        { icon: <FaBook />, text: "5,000+ Practice MCQs", status: "Included" },
+        { icon: <FaRegFileAlt />, text: "150+ Full Mock Tests", status: "Included" },
         {
           icon: <FaCalendarAlt />,
           text: "Validity",
           status: "6 Months",
           green: true,
         },
-
       ],
-
       price: "₹2,499",
-
       originalPrice: "₹9,999",
-
-      discount:
-        "75% OFF • Secure Checkout",
+      discount: "75% OFF • Secure Checkout",
     },
-
-
     {
       title: "CAIIB 2026 Premium Pack",
-
-      subtitle:
-        "Complete CAIIB Preparation Program",
-
+      subtitle: "Complete CAIIB Preparation Program",
       features: [
-
-        {
-          icon: <FaPlayCircle />,
-          text: "320+ Hrs HD Video",
-          status: "Included",
-        },
-
-        {
-          icon: <FaBook />,
-          text: "8,000+ Practice MCQs",
-          status: "Included",
-        },
-
-        {
-          icon: <FaRegFileAlt />,
-          text: "250+ Full Mock Tests",
-          status: "Included",
-        },
-
+        { icon: <FaPlayCircle />, text: "320+ Hrs HD Video", status: "Included" },
+        { icon: <FaBook />, text: "8,000+ Practice MCQs", status: "Included" },
+        { icon: <FaRegFileAlt />, text: "250+ Full Mock Tests", status: "Included" },
         {
           icon: <FaCalendarAlt />,
           text: "Validity",
           status: "10 Months",
           green: true,
         },
-
       ],
-
       price: "₹3,499",
-
       originalPrice: "₹13,999",
-
-      discount:
-        "75% OFF • Secure Checkout",
+      discount: "75% OFF • Secure Checkout",
     },
-
-
     {
       title: "CAIIB 2026 BFM Special",
-
-      subtitle:
-        "Focused BFM Preparation + Mock Tests",
-
+      subtitle: "Focused BFM Preparation + Mock Tests",
       features: [
-
-        {
-          icon: <FaPlayCircle />,
-          text: "180+ Hrs HD Video",
-          status: "Included",
-        },
-
-        {
-          icon: <FaBook />,
-          text: "4,000+ Practice MCQs",
-          status: "Included",
-        },
-
-        {
-          icon: <FaRegFileAlt />,
-          text: "120+ Full Mock Tests",
-          status: "Included",
-        },
-
+        { icon: <FaPlayCircle />, text: "180+ Hrs HD Video", status: "Included" },
+        { icon: <FaBook />, text: "4,000+ Practice MCQs", status: "Included" },
+        { icon: <FaRegFileAlt />, text: "120+ Full Mock Tests", status: "Included" },
         {
           icon: <FaCalendarAlt />,
           text: "Validity",
           status: "6 Months",
           green: true,
         },
-
       ],
-
       price: "₹1,999",
-
       originalPrice: "₹7,999",
-
-      discount:
-        "75% OFF • Secure Checkout",
+      discount: "75% OFF • Secure Checkout",
     },
-
   ];
 
+  useEffect(() => {
+    if (isPaused) return;
 
-  /* ===================================================
-     NEXT
-     
-     0 -> 1
-     1 -> 2
-     2 -> 3
-     3 -> 0
-     
-     Circular deck
-  =================================================== */
+    const autoSlide = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % slides.length);
+    }, 3800);
+
+    return () => clearInterval(autoSlide);
+  }, [isPaused, slides.length]);
 
   const handleNext = () => {
-
-    setActiveSlide(
-      (prev) =>
-        (prev + 1) % slides.length
-    );
-
+    setActiveSlide((prev) => (prev + 1) % slides.length);
   };
-
-
-  /* ===================================================
-     PREVIOUS
-  =================================================== */
 
   const handlePrev = () => {
-
-    setActiveSlide(
-      (prev) =>
-        (prev - 1 + slides.length) %
-        slides.length
-    );
-
+    setActiveSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
+ const getCardStyleClass = (index) => {
+  const total = slides.length;
+  const diff = (index - activeSlide + total) % total;
 
-  /* ===================================================
-     GET CARD POSITION
-     
-     0 = FRONT
-     1 = FIRST BACK
-     2 = SECOND BACK
-     3 = LAST / BOTTOM
-  =================================================== */
+  if (diff === 0) return "card-front";
+  if (diff === 1) return "card-behind-1";
+  if (diff === 2) return "card-behind-2";
+  if (diff === 3) return "card-behind-3";
 
-  const getPosition = (index) => {
-
-    return (
-      (index - activeSlide + slides.length) %
-      slides.length
-    );
-
-  };
-
+  return "card-hidden";
+};
 
   return (
-
     <section className="hero-section">
-
-      {/* Background */}
       <div className="hero-glow hero-glow-left"></div>
-
       <div className="hero-glow hero-glow-right"></div>
 
-
       <div className="hero-container">
-
-
-        {/* =================================================
-            LEFT SIDE
-        ================================================= */}
-
+        {/* LEFT SIDE */}
         <div className="hero-left">
-
-          {/* Badge */}
-
           <div className="trusted-badge">
-
             <span className="shield-border">
               <FaShieldAlt />
             </span>
-
-            <span>
-              Trusted by 1.5L+ Bankers
-            </span>
-
+            <span>Trusted by 1.5L+ Bankers</span>
           </div>
 
-
-          {/* Heading */}
-
           <h1 className="hero-title">
-
-            Crack{" "}
-
-            <span className="highlight-yellow">
-              CAIIB
-            </span>
-
+            Crack <span className="highlight-yellow">CAIIB</span>
             <br />
-
             in Your First
-
             <br />
-
-            Attempt{" "}
-
-            <span className="italic-yellow">
-              Confidently.
-            </span>
-
+            Attempt <span className="italic-yellow">Confidently.</span>
           </h1>
-
 
           <div className="title-line"></div>
 
-
-          {/* Description */}
-
           <p className="hero-desc">
-
-            Join <strong>1.5 lakh+</strong> bankers who cleared ABM,
-            BFM, ABFM and
-
+            Join <strong>1.5 lakh+</strong> bankers who cleared ABM, BFM, ABFM
+            and their elective — while working full-time.
             <br />
-
-            their elective — while working full-time.
-
-            <br />
-
             Built by ex-bankers, for bankers.
-
           </p>
 
-
-          {/* Buttons */}
-
           <div className="hero-cta-buttons">
-
             <button className="btn-explore">
-
-              <span>
-                Explore Courses
-              </span>
-
+              <span>Explore Courses</span>
               <span className="circle-arrow">
                 <FaArrowRight />
               </span>
-
             </button>
-
 
             <button className="btn-mock">
-
               <FaRegFileAlt />
-
-              <span>
-                Take Free Mock Test
-              </span>
-
+              <span>Take Free Mock Test</span>
             </button>
-
           </div>
-
-
-          {/* Stats */}
 
           <div className="hero-stats-bar">
-
-            <div className="stat-item">
-
-              <FaUsers className="stat-icon" />
-
-              <div className="stat-content">
-
-                <h2>
-                  1.5L+
-                </h2>
-
-                <p>
-                  Bankers Trained
-                </p>
-
+            <div className="stat-item-h">
+              <FaUsers className="stat-icon-h" />
+              <div className="stat-content-h">
+                <h2>1.5L+</h2>
+                <p>Bankers Trained</p>
               </div>
-
             </div>
-
 
             <span className="stat-divider"></span>
 
-
-            <div className="stat-item">
-
-              <FaAward className="stat-icon" />
-
-              <div className="stat-content">
-
-                <h2>
-                  88K+
-                </h2>
-
-                <p>
-                  Selections
-                </p>
-
+            <div className="stat-item-h">
+              <FaAward className="stat-icon-h" />
+              <div className="stat-content-h">
+                <h2>88K+</h2>
+                <p>Selections</p>
               </div>
-
             </div>
-
 
             <span className="stat-divider"></span>
 
-
-            <div className="stat-item">
-
-              <FaStar className="stat-icon" />
-
-              <div className="stat-content">
-
-                <h2>
-                  4.8
-                </h2>
-
-                <p>
-                  App Rating
-                </p>
-
+            <div className="stat-item-h">
+              <FaStar className="stat-icon-h" />
+              <div className="stat-content-h">
+                <h2>4.8</h2>
+                <p>App Rating</p>
               </div>
-
             </div>
-
 
             <span className="stat-divider"></span>
 
-
-            <div className="stat-item">
-
-              <FaTrophy className="stat-icon" />
-
-              <div className="stat-content">
-
-                <h2>
-                  2014
-                </h2>
-
-                <p>
-                  Established
-                </p>
-
+            <div className="stat-item-h">
+              <FaTrophy className="stat-icon-h" />
+              <div className="stat-content-h">
+                <h2>2014</h2>
+                <p>Established</p>
               </div>
-
             </div>
-
           </div>
-
         </div>
 
-
-
-        {/* =================================================
-            RIGHT SIDE
-        ================================================= */}
-
-        <div className="hero-right-area">
-
-
+        {/* RIGHT SIDE - TILTED STACK CARDS */}
+        <div
+          className="hero-right-area"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
           <div className="hero-right">
-
-
-            {/* LEFT ARROW */}
-
             <button
               className="slider-arrow slider-arrow-left"
               onClick={handlePrev}
@@ -596,52 +289,16 @@ const HeroSection = () => {
               <FaChevronLeft />
             </button>
 
-
-            {/* =================================================
-                4 CARD STACK
-            ================================================= */}
-
-            <div className="card-stack-wrapper">
-
-
-              {/* Decorative back layers */}
-
-              <div className="card-bg-layer card-layer-two"></div>
-
-              <div className="card-bg-layer card-layer-one"></div>
-
-
-              {/* =================================================
-                  ALL 4 REAL CARDS
-              ================================================= */}
-
+            <div className="tilted-stack-wrapper">
               {slides.map((card, index) => {
-
-                const position =
-                  getPosition(index);
-
-
+                const styleClass = getCardStyleClass(index);
                 return (
-
-                  <div
-                    key={index}
-                    className={`stack-card stack-position-${position}`}
-                  >
-
-                    <CourseCard
-                      card={card}
-                    />
-
+                  <div key={index} className={`tilted-card ${styleClass}`}>
+                    <CourseCard card={card} />
                   </div>
-
                 );
-
               })}
-
             </div>
-
-
-            {/* RIGHT ARROW */}
 
             <button
               className="slider-arrow slider-arrow-right"
@@ -650,84 +307,41 @@ const HeroSection = () => {
             >
               <FaChevronRight />
             </button>
-
-
           </div>
-
-
-          {/* DOTS */}
 
           <div className="slider-pagination-dots">
-
             {slides.map((_, index) => (
-
-              <span
+              <button
                 key={index}
-                className={
-                  activeSlide === index
-                    ? "dot active"
-                    : "dot"
-                }
-                onClick={() =>
-                  setActiveSlide(index)
-                }
+                type="button"
+                className={activeSlide === index ? "dot active" : "dot"}
+                onClick={() => setActiveSlide(index)}
+                aria-label={`Go to slide ${index + 1}`}
               />
-
             ))}
-
           </div>
-
         </div>
-
       </div>
 
-
-      {/* =================================================
-          BOTTOM PILLS
-      ================================================= */}
-
+      {/* BOTTOM PILLS */}
       <div className="bottom-pills-container">
-
         <div className="pill-item">
-
           <FaShieldAlt />
-
-          <span>
-            Score 60+ Guaranteed
-          </span>
-
+          <span>Score 60+ Guaranteed</span>
         </div>
 
-
         <div className="pill-item">
-
           <FaPlayCircle />
-
-          <span>
-            300+ Expert Videos
-          </span>
-
+          <span>300+ Expert Videos</span>
         </div>
-
 
         <div className="pill-item">
-
           <FaQuestionCircle />
-
-          <span>
-            7,000+ Practice MCQs
-          </span>
-
+          <span>7,000+ Practice MCQs</span>
         </div>
-
       </div>
-
-
     </section>
-
   );
-
 };
-
 
 export default HeroSection;

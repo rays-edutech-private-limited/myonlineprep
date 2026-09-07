@@ -28,11 +28,7 @@ const StudyappSection = () => {
           <div className="study-left-content">
 
             {/* Badge */}
-            <div className="prep-badge">
-              <FaTrophy />
-              <span>#1 CAIIB Prep Companion</span>
-            </div>
-
+           
             {/* Heading */}
             <h1 className="study-main-title">
               Study Smarter
@@ -185,69 +181,7 @@ const StudyappSection = () => {
         </div>
 
 
-        {/* ================= BOTTOM BAR ================= */}
-        <div className="study-bottom-bar">
-
-          {/* Feature 1 */}
-          <div className="bottom-feature">
-            <div className="bottom-feature-icon purple-bottom">
-              <FaClock />
-            </div>
-
-            <div>
-              <h4>Save Time</h4>
-              <p>Learn on the go<br />whenever you want.</p>
-            </div>
-          </div>
-
-          <div className="bottom-divider"></div>
-
-          {/* Feature 2 */}
-          <div className="bottom-feature">
-            <div className="bottom-feature-icon pink-bottom">
-              <FaBullseye />
-            </div>
-
-            <div>
-              <h4>Stay Consistent</h4>
-              <p>Daily practice leads<br />to big results.</p>
-            </div>
-          </div>
-
-          <div className="bottom-divider"></div>
-
-          {/* Feature 3 */}
-          <div className="bottom-feature">
-            <div className="bottom-feature-icon blue-bottom">
-              <FaChartLine />
-            </div>
-
-            <div>
-              <h4>Track & Improve</h4>
-              <p>Smart analytics to<br />boost your score.</p>
-            </div>
-          </div>
-
-          {/* QR */}
-          <div className="qr-section">
-            <div className="qr-code">
-              <FaQrcode />
-            </div>
-
-            <div className="qr-text">
-              <span>Scan to</span>
-              <strong>Download<br />Now!</strong>
-            </div>
-          </div>
-
-        </div>
-
-
-        {/* ================= BOTTOM BANNER ================= */}
-        <div className="study-bottom-banner">
-          <span>Prepare Smart. Practice Better. Achieve More.</span>
-          <FaRocket />
-        </div>
+      
 
       </div>
     </section>

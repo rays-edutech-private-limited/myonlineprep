@@ -1,112 +1,1140 @@
-/* Main Container with Top and Bottom Borders */
+
+/* =========================================================
+   SERVICE SECTION
+========================================================= */
+
 .service-section-container {
-  background-color: #fff;
-  padding: 30px 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 60px 20px 65px;
+  background: #f4f7fa;
+  box-sizing: border-box;
+}
+
+.service-inner {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.service-heading {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto 45px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.service-heading h2 {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+
+  margin: 0;
+
+  color: #101c5b;
+
+  font-size: clamp(32px, 3.5vw, 50px);
+  font-weight: 800;
+
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+
+  word-wrap: break-word;
+}
+
+.service-heading h2 span {
+  background: linear-gradient(
+    90deg,
+    #813588,
+    #813588
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.service-heading p {
+  width: 100%;
+  max-width: 850px;
+
+  margin: 14px auto 0;
+
+  color: #52658b;
+
+  font-size: 17px;
+  line-height: 1.6;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   CARD GRID
+========================================================= */
+
+.service-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 20px;
+
   width: 100%;
   box-sizing: border-box;
 }
 
-/* Grid Layout matching the horizontal alignment */
-.service-grid {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: 1280px;
-  margin: 0 auto;
-  gap: 10px;
-}
 
-/* Individual Service Item */
+/* =========================================================
+   CARD
+========================================================= */
+
 .service-item {
-  display: flex;
-  align-items: flex-start;
-  flex: 1;
   position: relative;
-  padding: 0 10px;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 350px;
+
+  padding: 25px 25px 28px;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(255, 255, 255, 0.86)
+    );
+
+  border: 1px solid rgba(236, 237, 247, 0.95);
+
+  border-radius: 27px;
+
+  box-shadow:
+    0 15px 40px rgba(58, 54, 110, 0.08);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
-.ser-btn{
-    padding: 7px 12px;
-    display: inline-block;
+.service-item:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 25px 55px rgba(67, 47, 130, 0.14);
 }
 
-/* Add vertical divider line between items (except the last one) */
-.service-item:not(:last-child)::after {
-  content: '';
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.service-number {
   position: absolute;
-  right: -10px;
-  top: 10%;
-  height: 70%;
-  width: 1px;
-  background-color: #e5e7eb;
+
+  top: 15px;
+  right: 15px;
+
+  width: 40px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background: #f4f0ff;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  color: #6335dc;
+
+  box-sizing: border-box;
 }
 
-/* Circular Icon Wrapper with Shadow and Gradients */
+.pink-grad .service-number {
+  color: #df187d;
+  background: #fff0f7;
+}
+
+
+/* =========================================================
+   ICON AREA
+========================================================= */
+
+.service-icon-area {
+  position: relative;
+
+  width: 105px;
+  height: 115px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   SOFT ICON BLOB
+========================================================= */
+
+.icon-blob {
+  position: absolute;
+
+  width: 95px;
+  height: 95px;
+
+  background: #f1edff;
+
+  border-radius:
+    45% 55% 55% 45% /
+    55% 45% 55% 45%;
+
+  transform: rotate(-8deg);
+}
+
+.pink-grad .icon-blob {
+  background: #fff0f7;
+}
+
+
+/* =========================================================
+   ICON CIRCLE
+========================================================= */
+
 .service-icon-wrapper {
-  width: 65px;
-  height: 65px;
-  min-width: 65px;
+  position: relative;
+  z-index: 2;
+
+  width: 85px;
+  height: 85px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-  margin-right: 16px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 13px 28px rgba(92, 49, 210, 0.25);
 }
 
-/* Gradient Variations */
-.purple-grad {
-  background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+.purple-grad .service-icon-wrapper {
+  background: linear-gradient(
+    145deg,
+    #7548e9,
+    #5223d3
+  );
 }
 
-.pink-grad {
-  background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+.pink-grad .service-icon-wrapper {
+  background: linear-gradient(
+    145deg,
+    #ef3a91,
+    #cf0870
+  );
+
+  box-shadow:
+    0 13px 28px rgba(220, 24, 120, 0.24);
 }
 
-/* Icon Styling */
+
+/* =========================================================
+   ICON
+========================================================= */
+
 .service-icon {
-  color: #ffffff;
-  font-size: 35px;
   display: flex;
+
   align-items: center;
   justify-content: center;
+
+  color: #fff;
+
+  font-size: 38px;
+
+  line-height: 1;
 }
 
-/* Text Content Styling */
+
+/* =========================================================
+   ICON SPARK
+========================================================= */
+
+.icon-spark {
+  position: absolute;
+
+  right: 0;
+  top: 40px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.icon-spark i {
+  display: block;
+
+  width: 22px;
+  height: 4px;
+
+  border-radius: 10px;
+
+  background: #6935df;
+
+  transform: rotate(-10deg);
+}
+
+.icon-spark i:nth-child(2) {
+  width: 13px;
+}
+
+.icon-spark i:nth-child(3) {
+  width: 19px;
+}
+
+.pink-grad .icon-spark i {
+  background: #df197c;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.service-content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+}
+
 .service-content h3 {
-  font-size: 16px;
-  font-weight: 700;
-  color: #111827;
-  margin: 0 0 6px 0;
+  margin: 0 0 10px;
+
+  color: #101e5e;
+
+  font-size: clamp(18px, 1.5vw, 21px);
+  font-weight: 800;
+
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+
+  overflow-wrap: break-word;
 }
 
 .service-content p {
-  font-size: 13px;
-  color: #4b5563;
-  line-height: 1.4;
   margin: 0;
+
+  color: #53678f;
+
+  font-size: clamp(14px, 1.2vw, 16px);
+
+  line-height: 1.55;
+
+  font-weight: 500;
+
+  min-height: 78px;
+
+  overflow-wrap: break-word;
 }
 
-/* Responsive design for tablets and mobile screens */
-@media (max-width: 1024px) {
+
+/* =========================================================
+   STAT PILL
+========================================================= */
+
+.service-stat {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 18px;
+
+  padding: 10px 18px;
+
+  max-width: 100%;
+
+  border-radius: 50px;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  white-space: nowrap;
+
+  box-sizing: border-box;
+}
+
+.service-stat.purple-grad {
+  color: #5930d7;
+
+  background:
+    linear-gradient(
+      90deg,
+      #f1ecff,
+      #ebe5ff
+    );
+}
+
+.service-stat.pink-grad {
+  color: #df197b;
+
+  background:
+    linear-gradient(
+      90deg,
+      #fff0f7,
+      #ffe7f2
+    );
+}
+
+.stat-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   BOTTOM DOTS
+========================================================= */
+
+.service-dots {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  display: flex;
+
+  gap: 8px;
+
+  padding: 0 0 8px 5px;
+
+  z-index: 2;
+}
+
+.service-dots span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #8860e9;
+}
+
+.service-dots span:nth-child(even) {
+  opacity: 0.5;
+}
+
+
+/* =========================================================
+   EXTRA LARGE DESKTOP
+   1440px+
+========================================================= */
+
+@media (min-width: 1441px) {
+
+  .service-section-container {
+    padding: 70px 30px 75px;
+  }
+
   .service-grid {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
+    gap: 24px;
   }
 
   .service-item {
-    flex: 0 1 45%;
+    min-height: 365px;
+    padding: 28px 28px 30px;
   }
 
-  .service-item:not(:last-child)::after {
-    display: none; /* Remove vertical dividers on wrap */
+  .service-icon-area {
+    width: 110px;
+    height: 120px;
   }
+
+  .service-icon-wrapper {
+    width: 90px;
+    height: 90px;
+  }
+
+  .service-icon {
+    font-size: 40px;
+  }
+
 }
 
-@media (max-width: 640px) {
+
+/* =========================================================
+   LAPTOP
+   1201px - 1440px
+========================================================= */
+
+@media (max-width: 1440px) {
+
+  .service-inner {
+    max-width: 1200px;
+  }
+
+  .service-grid {
+    gap: 18px;
+  }
+
   .service-item {
-    flex: 0 1 100%;
+    padding: 23px 22px 26px;
+    min-height: 345px;
   }
+
 }
+
+
+/* =========================================================
+   SMALL LAPTOP
+   1101px - 1200px
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .service-section-container {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .service-inner {
+    max-width: 1100px;
+  }
+
+  .service-grid {
+    gap: 16px;
+  }
+
+  .service-item {
+    padding: 22px 19px 24px;
+    min-height: 340px;
+  }
+
+  .service-heading {
+    margin-bottom: 38px;
+  }
+
+  .service-heading h2 {
+    font-size: 43px;
+  }
+
+  .service-heading p {
+    font-size: 16px;
+  }
+
+  .service-icon-area {
+    width: 100px;
+    height: 110px;
+  }
+
+  .service-icon-wrapper {
+    width: 82px;
+    height: 82px;
+  }
+
+  .icon-blob {
+    width: 92px;
+    height: 92px;
+  }
+
+  .service-icon {
+    font-size: 36px;
+  }
+
+  .service-content h3 {
+    font-size: 19px;
+  }
+
+  .service-content p {
+    font-size: 15px;
+  }
+
+  .service-stat {
+    font-size: 14px;
+    padding: 9px 15px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET LANDSCAPE
+   901px - 1100px
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .service-section-container {
+    padding: 50px 24px 55px;
+  }
+
+  .service-inner {
+    max-width: 950px;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .service-item {
+    min-height: 355px;
+    padding: 25px 25px 28px;
+  }
+
+  .service-heading {
+    margin-bottom: 40px;
+  }
+
+  .service-heading h2 {
+    font-size: 42px;
+  }
+
+  .service-heading p {
+    max-width: 720px;
+    font-size: 16px;
+  }
+
+  .service-icon-area {
+    width: 105px;
+    height: 115px;
+  }
+
+  .service-icon-wrapper {
+    width: 88px;
+    height: 88px;
+  }
+
+  .icon-blob {
+    width: 96px;
+    height: 96px;
+  }
+
+  .service-icon {
+    font-size: 39px;
+  }
+
+  .service-content h3 {
+    font-size: 21px;
+  }
+
+  .service-content p {
+    font-size: 16px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET PORTRAIT
+   651px - 900px
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .service-section-container {
+    padding: 45px 20px 50px;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .service-item {
+    min-height: 350px;
+    padding: 23px 22px 25px;
+    border-radius: 24px;
+  }
+
+  .service-number {
+    top: 13px;
+    right: 13px;
+
+    width: 38px;
+    height: 33px;
+
+    font-size: 14px;
+  }
+
+  .service-heading {
+    margin-bottom: 34px;
+  }
+
+  .service-heading h2 {
+    font-size: clamp(34px, 5vw, 40px);
+  }
+
+  .service-heading p {
+    margin-top: 12px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .service-icon-area {
+    width: 100px;
+    height: 108px;
+
+    margin-bottom: 16px;
+  }
+
+  .service-icon-wrapper {
+    width: 82px;
+    height: 82px;
+  }
+
+  .icon-blob {
+    width: 92px;
+    height: 92px;
+  }
+
+  .service-icon {
+    font-size: 36px;
+  }
+
+  .icon-spark {
+    right: -2px;
+    top: 38px;
+  }
+
+  .service-content h3 {
+    font-size: 19px;
+  }
+
+  .service-content p {
+    min-height: 76px;
+    font-size: 15px;
+  }
+
+  .service-stat {
+    margin-top: 16px;
+    padding: 9px 15px;
+    font-size: 14px;
+  }
+
+}
+
+
+/* =========================================================
+   LARGE MOBILE
+   481px - 650px
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .service-section-container {
+    padding: 40px 15px 45px;
+  }
+
+  .service-inner {
+    width: 100%;
+  }
+
+  .service-heading {
+    margin-bottom: 30px;
+    padding: 0 5px;
+  }
+
+  .service-heading h2 {
+    display: block;
+
+    font-size: clamp(29px, 8vw, 36px);
+
+    line-height: 1.18;
+
+    letter-spacing: -1px;
+  }
+
+  .service-heading p {
+    max-width: 500px;
+
+    margin-top: 12px;
+
+    padding: 0 5px;
+
+    font-size: 15px;
+
+    line-height: 1.55;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .service-item {
+    min-height: auto;
+
+    padding: 24px 23px 26px;
+
+    border-radius: 23px;
+  }
+
+  .service-number {
+    top: 17px;
+    right: 17px;
+
+    width: 44px;
+    height: 36px;
+
+    border-radius: 14px;
+
+    font-size: 14px;
+  }
+
+  .service-icon-area {
+    width: 130px;
+    height: 125px;
+
+    margin-bottom: 17px;
+  }
+
+  .service-icon-wrapper {
+    width: 92px;
+    height: 92px;
+  }
+
+  .icon-blob {
+    width: 102px;
+    height: 102px;
+  }
+
+  .service-icon {
+    font-size: 41px;
+  }
+
+  .icon-spark {
+    right: 0;
+    top: 43px;
+
+    gap: 6px;
+  }
+
+  .icon-spark i {
+    width: 20px;
+    height: 4px;
+  }
+
+  .icon-spark i:nth-child(2) {
+    width: 12px;
+  }
+
+  .icon-spark i:nth-child(3) {
+    width: 17px;
+  }
+
+  .service-content h3 {
+    font-size: 22px;
+
+    line-height: 1.3;
+
+    margin-bottom: 9px;
+  }
+
+  .service-content p {
+    min-height: auto;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+  }
+
+  .service-stat {
+    margin-top: 16px;
+
+    padding: 10px 17px;
+
+    font-size: 14px;
+  }
+
+}
+
+
+/* =========================================================
+   NORMAL MOBILE
+   381px - 480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .service-section-container {
+    padding: 36px 13px 42px;
+  }
+
+  .service-heading {
+    margin-bottom: 27px;
+  }
+
+  .service-heading h2 {
+    font-size: 31px;
+    letter-spacing: -0.8px;
+  }
+
+  .service-heading p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .service-grid {
+    gap: 16px;
+  }
+
+  .service-item {
+    padding: 22px 20px 24px;
+
+    border-radius: 21px;
+  }
+
+  .service-number {
+    top: 15px;
+    right: 15px;
+
+    width: 42px;
+    height: 34px;
+
+    font-size: 13px;
+  }
+
+  .service-icon-area {
+    width: 120px;
+    height: 115px;
+  }
+
+  .service-icon-wrapper {
+    width: 86px;
+    height: 86px;
+  }
+
+  .icon-blob {
+    width: 96px;
+    height: 96px;
+  }
+
+  .service-icon {
+    font-size: 38px;
+  }
+
+  .service-content h3 {
+    font-size: 20px;
+  }
+
+  .service-content p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .service-stat {
+    padding: 9px 15px;
+    font-size: 13px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   321px - 380px
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .service-section-container {
+    padding: 32px 11px 38px;
+  }
+
+  .service-heading {
+    margin-bottom: 24px;
+  }
+
+  .service-heading h2 {
+    font-size: 28px;
+    letter-spacing: -0.6px;
+  }
+
+  .service-heading p {
+    font-size: 13.5px;
+  }
+
+  .service-item {
+    padding: 20px 18px 22px;
+
+    border-radius: 20px;
+  }
+
+  .service-number {
+    top: 13px;
+    right: 13px;
+
+    width: 39px;
+    height: 32px;
+
+    font-size: 12px;
+  }
+
+  .service-icon-area {
+    width: 110px;
+    height: 108px;
+  }
+
+  .service-icon-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+
+  .icon-blob {
+    width: 89px;
+    height: 89px;
+  }
+
+  .service-icon {
+    font-size: 35px;
+  }
+
+  .icon-spark {
+    top: 39px;
+    right: -1px;
+  }
+
+  .service-content h3 {
+    font-size: 19px;
+  }
+
+  .service-content p {
+    font-size: 13.5px;
+  }
+
+  .service-stat {
+    margin-top: 14px;
+
+    padding: 8px 13px;
+
+    font-size: 12.5px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   320px OR BELOW
+========================================================= */
+
+@media (max-width: 320px) {
+
+  .service-section-container {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+
+  .service-heading h2 {
+    font-size: 26px;
+  }
+
+  .service-heading p {
+    font-size: 13px;
+  }
+
+  .service-item {
+    padding: 18px 16px 20px;
+  }
+
+  .service-number {
+    width: 37px;
+    height: 30px;
+
+    font-size: 11px;
+  }
+
+  .service-icon-area {
+    width: 100px;
+    height: 100px;
+  }
+
+  .service-icon-wrapper {
+    width: 74px;
+    height: 74px;
+  }
+
+  .icon-blob {
+    width: 83px;
+    height: 83px;
+  }
+
+  .service-icon {
+    font-size: 32px;
+  }
+
+  .service-content h3 {
+    font-size: 18px;
+  }
+
+  .service-content p {
+    font-size: 13px;
+  }
+
+  .service-stat {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+   Hover ko mobile par disable rakhta hai
+========================================================= */
+
+@media (hover: none) {
+
+  .service-item:hover {
+    transform: none;
+
+    box-shadow:
+      0 15px 40px rgba(58, 54, 110, 0.08);
+  }
+
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .service-item {
+    transition: none;
+  }
+
+}
+

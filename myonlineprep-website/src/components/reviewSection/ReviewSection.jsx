@@ -153,13 +153,10 @@ const ReviewSection = () => {
   return (
     <section className="review-section">
 
-      {/* HEADER */}
-      <div className="review-badge">
-        <span>👥 REAL STORIES. REAL SUCCESS.</span>
-      </div>
+     
 
       <h2 className="review-title">
-        Hear from our Bankers who <br />
+       Choose Hear from our Bankers who <br />
         <span className="highlight-text">
           Cleared CAIIB
         </span>
