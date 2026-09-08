@@ -21,31 +21,20 @@ const AllServices = () => {
     <section className="caiib-container">
       <div className="caiib-inner">
 
-        {/* Decorative Elements */}
-        <span className="decor-dots decor-dots-left"></span>
-        <span className="decor-dots decor-dots-right"></span>
-
-        
+      
 
         {/* Heading */}
         <div className="heading-wrapper">
-          <span className="orange-spark spark-one">✦</span>
-          <span className="orange-spark spark-two">✦</span>
+         
 
           <h1 className="main-heading">
             Everything you need
-            <br />
+            
             to clear CAIIB{" "}
             <span className="heading-highlight">
               in one go
             </span>
           </h1>
-
-          <div className="heading-line">
-            <span></span>
-            <b>✦</b>
-            <span></span>
-          </div>
         </div>
 
         <p className="sub-heading">
@@ -60,9 +49,7 @@ const AllServices = () => {
           <div className="purple-card">
 
             <div className="purple-decoration purple-circle-one"></div>
-            <div className="purple-decoration purple-circle-two"></div>
-            <div className="purple-star star-one">✦</div>
-            <div className="purple-star star-two">✦</div>
+          
 
             <div className="target-area">
               <img src={allservice} alt="" />
@@ -114,9 +101,7 @@ const AllServices = () => {
                 </p>
               </div>
 
-              <span className="arrow-btn">
-                <FaChevronRight />
-              </span>
+              
             </div>
 
             {/* Analytics Card */}
@@ -140,9 +125,7 @@ const AllServices = () => {
                 </p>
               </div>
 
-              <span className="arrow-btn">
-                <FaChevronRight />
-              </span>
+             
             </div>
 
           </div>

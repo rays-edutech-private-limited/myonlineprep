@@ -42,7 +42,7 @@ const Navbar = () => {
           {/* EXAMS DROPDOWN */}
           <li className={`nav-item dropdown ${examOpen ? "open" : ""}`}>
             <button className="nav-dropdown" onClick={toggleExam}>
-              Exams
+               EXAMS
               <svg className="arrow-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -114,21 +114,21 @@ const Navbar = () => {
           {/* FREE MOCK TESTS */}
           <li className="nav-item">
             <Link to="/mock-tests" onClick={closeMenu}>
-              Free Mock Tests
+               FREE MOCK TESTS
             </Link>
           </li>
 
           {/* COURSES */}
           <li className="nav-item">
             <Link to="/courses" onClick={closeMenu}>
-              Courses
+               COURSES
             </Link>
           </li>
 
           {/* MODE DROPDOWN */}
           <li className={`nav-item dropdown ${modeOpen ? "open" : ""}`}>
             <button className="nav-dropdown" onClick={toggleMode}>
-              More
+             MORE
               <svg className="arrow-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
