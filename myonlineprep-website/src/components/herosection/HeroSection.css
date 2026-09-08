@@ -256,6 +256,13 @@ font-weight: 800;
 .btn-mock:hover {
   transform: translateY(-2px);
 }
+.main-course-card {
+  cursor: pointer;
+}
+
+.main-course-card:focus {
+  outline: none;
+}
 
 .btn-explore {
   width: 220px;
@@ -996,7 +1003,9 @@ font-weight: 800;
  .hero-stats-bar {
     margin-top: 60px;
   }
-
+.pill-item svg{
+  font-size: 25px;
+}
 }
 
 

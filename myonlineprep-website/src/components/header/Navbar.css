@@ -275,6 +275,9 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
+ .phon-lik{
+    display: none;
+  }
 
 /* =========================================================
    LAPTOP
@@ -425,6 +428,10 @@
     visibility: visible;
 
     overflow-y: auto;
+  }
+
+  .phon-lik{
+    display: block;
   }
 
 

@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import "./HeroSection.css";
 
@@ -15,7 +16,9 @@ import {
   FaStar,
   FaTrophy,
   FaQuestionCircle,
+  FaRegQuestionCircle,
 } from "react-icons/fa";
+
 import FreeMockTestModal from "../FreeMockTestModal/FreeMockTestModal";
 
 /* =====================================================
@@ -23,31 +26,88 @@ import FreeMockTestModal from "../FreeMockTestModal/FreeMockTestModal";
 ===================================================== */
 
 const CourseCard = ({ card }) => {
-  
-  return (
-    <div className="main-course-card">
 
-      {/* Ribbon */}
+  /* =====================================================
+     CARD CLICK
+  ===================================================== */
+
+  const handleCardClick = () => {
+    if (card?.url) {
+      window.open(
+        card.url,
+        "_blank",
+        "noopener,noreferrer"
+      );
+    }
+  };
+
+  /* =====================================================
+     KEYBOARD CLICK
+  ===================================================== */
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      handleCardClick();
+    }
+  };
+
+  return (
+    <div
+      className="main-course-card"
+      onClick={handleCardClick}
+      onKeyDown={handleKeyDown}
+      role="button"
+      tabIndex={0}
+      title={`View ${card.title}`}
+    >
+
+      {/* =================================================
+          RIBBON
+      ================================================= */}
+
       <div className="green-cleared-ribbon">
         <span>CLEARED</span>
       </div>
 
-      {/* Header */}
+
+      {/* =================================================
+          HEADER
+      ================================================= */}
+
       <div className="card-header">
+
         <h2>
           {card.title}
-          <span className="verified-tick">✓</span>
+
+          <span className="verified-tick">
+            ✓
+          </span>
         </h2>
 
-        <p>{card.subtitle}</p>
+        <p>
+          {card.subtitle}
+        </p>
+
       </div>
 
-      {/* Features */}
-      <div className="card-features-list">
-        {card.features.map((feature, index) => (
-          <div className="feature-row" key={index}>
 
+      {/* =================================================
+          FEATURES
+      ================================================= */}
+
+      <div className="card-features-list">
+
+        {card.features.map((feature, index) => (
+
+          <div
+            className="feature-row"
+            key={index}
+          >
+
+            {/* LEFT */}
             <div className="feature-left">
+
               <span className="feat-icon">
                 {feature.icon}
               </span>
@@ -55,8 +115,11 @@ const CourseCard = ({ card }) => {
               <span className="feature-text">
                 {feature.text}
               </span>
+
             </div>
 
+
+            {/* RIGHT */}
             <span
               className={
                 feature.green
@@ -68,13 +131,20 @@ const CourseCard = ({ card }) => {
             </span>
 
           </div>
+
         ))}
+
       </div>
 
-      {/* Price */}
+
+      {/* =================================================
+          PRICE
+      ================================================= */}
+
       <div className="card-pricing-footer">
 
         <div className="price-box">
+
           <span className="current-price">
             {card.price}
           </span>
@@ -82,14 +152,23 @@ const CourseCard = ({ card }) => {
           <span className="original-price">
             {card.originalPrice}
           </span>
+
         </div>
 
+
+        {/* SECURE BADGE */}
         <div className="secure-badge">
+
           <FaShieldAlt />
-          <span>{card.discount}</span>
+
+          <span>
+            {card.discount}
+          </span>
+
         </div>
 
       </div>
+
     </div>
   );
 };
@@ -101,19 +180,41 @@ const CourseCard = ({ card }) => {
 
 const HeroSection = () => {
 
+  /* =====================================================
+     STATES
+  ===================================================== */
+
   const [activeSlide, setActiveSlide] = useState(0);
+
   const [isPaused, setIsPaused] = useState(false);
-   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const [selectedExam, setSelectedExam] = useState("CAIIB");
-   const openMockTest = (examName) => {
+
+
+  /* =====================================================
+     OPEN MOCK TEST
+  ===================================================== */
+
+  const openMockTest = (examName) => {
+
     setSelectedExam(examName);
+
     setIsModalOpen(true);
+
   };
+
+
+  /* =====================================================
+     CLOSE MOCK TEST
+  ===================================================== */
 
   const closeMockTest = () => {
-    setIsModalOpen(false);
-  };
 
+    setIsModalOpen(false);
+
+  };
 
 
   /* =====================================================
@@ -121,137 +222,159 @@ const HeroSection = () => {
   ===================================================== */
 
   const slides = [
+
+    /* =================================================
+       CARD 1
+    ================================================= */
+
     {
       title: "CAIIB 2026 Combo Pro",
-      subtitle: "All Compulsory Papers + HRM Elective",
+
+      subtitle:
+        "All Compulsory Papers + HRM Elective",
+
+      url:
+        "https://www.myonlineprep.com/course-details/caiib-combo-abm-bfm-abfm-brbl-video-lesson-mock-test-ebooks",
 
       features: [
+
         {
           icon: <FaPlayCircle />,
           text: "300+ Hrs HD Video",
           status: "Included",
         },
+
         {
           icon: <FaBook />,
           text: "7,000+ Practice MCQs",
           status: "Included",
         },
+
         {
           icon: <FaRegFileAlt />,
           text: "200+ Full Mock Tests",
           status: "Included",
         },
+
         {
           icon: <FaCalendarAlt />,
           text: "Validity",
           status: "8 Months",
           green: true,
         },
+
       ],
 
       price: "₹2,999",
+
       originalPrice: "₹11,999",
-      discount: "76% OFF • Secure Checkout",
+
+      discount:
+        "76% OFF • Secure Checkout",
     },
 
+
+    /* =================================================
+       CARD 2
+    ================================================= */
+
     {
-      title: "CAIIB 2026 Advanced Pack",
-      subtitle: "All Compulsory Papers + BFM Focus",
+      title: "CAIIB Mocks Pro 2026",
+
+      subtitle:
+        "All compulsory papers",
+
+      url:
+        "https://www.myonlineprep.com/course-details/caiib-mock-tests-abm-bfm-abfm-brbl",
 
       features: [
+
         {
-          icon: <FaPlayCircle />,
-          text: "250+ Hrs HD Video",
+          icon: <FaRegQuestionCircle />,
+          text: "7,000+ MCQs with solutions",
           status: "Included",
         },
+
         {
           icon: <FaBook />,
-          text: "5,000+ Practice MCQs",
+          text: "250+ practice sets",
           status: "Included",
         },
+
         {
           icon: <FaRegFileAlt />,
-          text: "150+ Full Mock Tests",
+          text: "150+ e-books",
           status: "Included",
         },
+
         {
           icon: <FaCalendarAlt />,
           text: "Validity",
           status: "6 Months",
           green: true,
         },
+
       ],
 
       price: "₹2,499",
+
       originalPrice: "₹9,999",
-      discount: "75% OFF • Secure Checkout",
+
+      discount:
+        "75% OFF • Secure Checkout",
     },
 
+
+    /* =================================================
+       CARD 3
+    ================================================= */
+
     {
-      title: "CAIIB 2026 Premium Pack",
-      subtitle: "Complete CAIIB Preparation Program",
+      title: "CAIIB HRM Elective 2026",
+
+      subtitle:
+        "Mock tests + e-books",
+
+      url:
+        "https://www.myonlineprep.com/course-details/caiib-hrm-elective-paper-mock-tests-ebooks",
 
       features: [
+
         {
-          icon: <FaPlayCircle />,
-          text: "320+ Hrs HD Video",
+          icon: <FaRegQuestionCircle />,
+          text: "2,000+ MCQs with solutions",
           status: "Included",
         },
+
         {
           icon: <FaBook />,
-          text: "8,000+ Practice MCQs",
+          text: "50+ practice sets",
           status: "Included",
         },
+
         {
           icon: <FaRegFileAlt />,
-          text: "250+ Full Mock Tests",
+          text: "50+ e-books",
           status: "Included",
         },
+
         {
           icon: <FaCalendarAlt />,
           text: "Validity",
-          status: "10 Months",
+          status: "6 months",
           green: true,
         },
+
       ],
 
-      price: "₹3,499",
-      originalPrice: "₹13,999",
-      discount: "75% OFF • Secure Checkout",
+      price: "₹599",
+
+      originalPrice: "₹4,499",
+
+      discount:
+        "87% OFF • Secure Checkout",
     },
 
-    {
-      title: "CAIIB 2026 BFM Special",
-      subtitle: "Focused BFM Preparation + Mock Tests",
-
-      features: [
-        {
-          icon: <FaPlayCircle />,
-          text: "180+ Hrs HD Video",
-          status: "Included",
-        },
-        {
-          icon: <FaBook />,
-          text: "4,000+ Practice MCQs",
-          status: "Included",
-        },
-        {
-          icon: <FaRegFileAlt />,
-          text: "120+ Full Mock Tests",
-          status: "Included",
-        },
-        {
-          icon: <FaCalendarAlt />,
-          text: "Validity",
-          status: "6 Months",
-          green: true,
-        },
-      ],
-
-      price: "₹1,999",
-      originalPrice: "₹7,999",
-      discount: "75% OFF • Secure Checkout",
-    },
   ];
 
 
@@ -260,42 +383,72 @@ const HeroSection = () => {
   ===================================================== */
 
   useEffect(() => {
-    if (isPaused) return;
+
+    if (isPaused) {
+      return;
+    }
 
     const autoSlide = setInterval(() => {
+
       setActiveSlide((prev) => {
-        return (prev + 1) % slides.length;
+
+        return (
+          (prev + 1) %
+          slides.length
+        );
+
       });
+
     }, 3800);
 
-    return () => clearInterval(autoSlide);
+
+    return () => {
+
+      clearInterval(autoSlide);
+
+    };
+
   }, [isPaused, slides.length]);
 
 
   /* =====================================================
-     NEXT
+     NEXT SLIDE
   ===================================================== */
 
   const handleNext = () => {
+
     setActiveSlide((prev) => {
-      return (prev + 1) % slides.length;
+
+      return (
+        (prev + 1) %
+        slides.length
+      );
+
     });
+
   };
 
 
   /* =====================================================
-     PREVIOUS
+     PREVIOUS SLIDE
   ===================================================== */
 
   const handlePrev = () => {
+
     setActiveSlide((prev) => {
-      return (prev - 1 + slides.length) % slides.length;
+
+      return (
+        (prev - 1 + slides.length) %
+        slides.length
+      );
+
     });
+
   };
 
 
   /* =====================================================
-     SINGLE CARD SLIDE POSITION
+     CARD POSITION
   ===================================================== */
 
   const getCardStyleClass = (index) => {
@@ -303,25 +456,37 @@ const HeroSection = () => {
     const total = slides.length;
 
     const diff =
-      (index - activeSlide + total) % total;
+      (index - activeSlide + total) %
+      total;
 
-    /* Current visible card */
+
+    /* CURRENT CARD */
     if (diff === 0) {
+
       return "card-front";
+
     }
 
-    /* Next card - right side */
+
+    /* NEXT CARD */
     if (diff === 1) {
+
       return "card-next";
+
     }
 
-    /* Previous card - left side */
+
+    /* PREVIOUS CARD */
     if (diff === total - 1) {
+
       return "card-prev";
+
     }
 
-    /* All other cards hidden */
+
+    /* HIDDEN */
     return "card-hidden";
+
   };
 
 
@@ -330,14 +495,21 @@ const HeroSection = () => {
   ===================================================== */
 
   return (
+
     <section className="hero-section">
 
-      {/* Background Glow */}
+
+      {/* =================================================
+          BACKGROUND GLOW
+      ================================================= */}
+
       <div className="hero-glow hero-glow-left"></div>
+
       <div className="hero-glow hero-glow-right"></div>
 
 
       <div className="hero-container">
+
 
         {/* =================================================
             LEFT CONTENT
@@ -345,11 +517,17 @@ const HeroSection = () => {
 
         <div className="hero-left">
 
-          {/* Trusted Badge */}
+
+          {/* =================================================
+              TRUSTED BADGE
+          ================================================= */}
+
           <div className="trusted-badge">
 
             <span className="shield-border">
+
               <FaShieldAlt />
+
             </span>
 
             <span>
@@ -359,10 +537,14 @@ const HeroSection = () => {
           </div>
 
 
-          {/* Title */}
+          {/* =================================================
+              TITLE
+          ================================================= */}
+
           <h1 className="hero-title">
 
             Crack{" "}
+
             <span className="highlight-yellow">
               CAIIB
             </span>
@@ -374,6 +556,7 @@ const HeroSection = () => {
             <br />
 
             Attempt{" "}
+
             <span className="italic-yellow">
               Confidently.
             </span>
@@ -381,11 +564,15 @@ const HeroSection = () => {
           </h1>
 
 
-          {/* Title Line */}
+          {/* TITLE LINE */}
+
           <div className="title-line"></div>
 
 
-          {/* Description */}
+          {/* =================================================
+              DESCRIPTION
+          ================================================= */}
+
           <p className="hero-desc">
 
             Join <strong>1.5 lakh+</strong> bankers who
@@ -399,23 +586,44 @@ const HeroSection = () => {
           </p>
 
 
-          {/* CTA Buttons */}
+          {/* =================================================
+              CTA BUTTONS
+          ================================================= */}
+
           <div className="hero-cta-buttons">
 
-    <a
-  className="btn-explore"
-  href="https://www.myonlineprep.com/exam/course/caiib"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <span>Explore Courses</span>
 
-  <span className="circle-arrow">
-    <FaArrowRight />
-  </span>
-</a>
+            {/* EXPLORE COURSES */}
 
-            <button   onClick={() => openMockTest("CAIIB")} className="btn-mock">
+            <a
+              className="btn-explore"
+              href="https://www.myonlineprep.com/exam/course/caiib"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              <span>
+                Explore Courses
+              </span>
+
+              <span className="circle-arrow">
+
+                <FaArrowRight />
+
+              </span>
+
+            </a>
+
+
+            {/* FREE MOCK TEST */}
+
+            <button
+              onClick={() =>
+                openMockTest("CAIIB")
+              }
+              className="btn-mock"
+              type="button"
+            >
 
               <FaRegFileAlt />
 
@@ -424,6 +632,7 @@ const HeroSection = () => {
               </span>
 
             </button>
+
 
           </div>
 
@@ -434,14 +643,18 @@ const HeroSection = () => {
 
           <div className="hero-stats-bar">
 
-            {/* Stat 1 */}
+
+            {/* STAT 1 */}
+
             <div className="stat-item-h">
 
               <FaUsers className="stat-icon-h" />
 
               <div className="stat-content-h">
 
-                <h2>1.5L+</h2>
+                <h2>
+                  1.5L+
+                </h2>
 
                 <p>
                   Bankers Trained
@@ -455,14 +668,17 @@ const HeroSection = () => {
             <span className="stat-divider"></span>
 
 
-            {/* Stat 2 */}
+            {/* STAT 2 */}
+
             <div className="stat-item-h">
 
               <FaAward className="stat-icon-h" />
 
               <div className="stat-content-h">
 
-                <h2>88K+</h2>
+                <h2>
+                  88K+
+                </h2>
 
                 <p>
                   Selections
@@ -476,14 +692,17 @@ const HeroSection = () => {
             <span className="stat-divider"></span>
 
 
-            {/* Stat 3 */}
+            {/* STAT 3 */}
+
             <div className="stat-item-h">
 
               <FaStar className="stat-icon-h" />
 
               <div className="stat-content-h">
 
-                <h2>4.8</h2>
+                <h2>
+                  4.8
+                </h2>
 
                 <p>
                   App Rating
@@ -497,14 +716,17 @@ const HeroSection = () => {
             <span className="stat-divider"></span>
 
 
-            {/* Stat 4 */}
+            {/* STAT 4 */}
+
             <div className="stat-item-h">
 
               <FaTrophy className="stat-icon-h" />
 
               <div className="stat-content-h">
 
-                <h2>2014</h2>
+                <h2>
+                  2014
+                </h2>
 
                 <p>
                   Established
@@ -513,6 +735,7 @@ const HeroSection = () => {
               </div>
 
             </div>
+
 
           </div>
 
@@ -535,17 +758,23 @@ const HeroSection = () => {
           }
         >
 
+
           <div className="hero-right">
 
 
-            {/* LEFT ARROW */}
+            {/* =================================================
+                LEFT ARROW
+            ================================================= */}
+
             <button
               className="slider-arrow slider-arrow-left"
               onClick={handlePrev}
               aria-label="Previous"
               type="button"
             >
+
               <FaChevronLeft />
+
             </button>
 
 
@@ -560,7 +789,9 @@ const HeroSection = () => {
                 const styleClass =
                   getCardStyleClass(index);
 
+
                 return (
+
                   <div
                     key={index}
                     className={`tilted-card ${styleClass}`}
@@ -571,6 +802,7 @@ const HeroSection = () => {
                     />
 
                   </div>
+
                 );
 
               })}
@@ -578,15 +810,21 @@ const HeroSection = () => {
             </div>
 
 
-            {/* RIGHT ARROW */}
+            {/* =================================================
+                RIGHT ARROW
+            ================================================= */}
+
             <button
               className="slider-arrow slider-arrow-right"
               onClick={handleNext}
               aria-label="Next"
               type="button"
             >
+
               <FaChevronRight />
+
             </button>
+
 
           </div>
 
@@ -621,41 +859,56 @@ const HeroSection = () => {
             ))}
 
           </div>
+
+
+          {/* =================================================
+              BOTTOM PILLS
+          ================================================= */}
+
           <div className="bottom-pills-container">
 
-        <div className="pill-item">
 
-          <FaShieldAlt />
+            {/* PILL 1 */}
 
-          <span>
-            Score 60+ Guaranteed
-          </span>
+            <div className="pill-item">
 
-        </div>
+              <FaShieldAlt />
 
+              <span>
+                Score 60+ Guaranteed
+              </span>
 
-        <div className="pill-item">
-
-          <FaPlayCircle />
-
-          <span>
-            300+ Expert Videos
-          </span>
-
-        </div>
+            </div>
 
 
-        <div className="pill-item">
+            {/* PILL 2 */}
 
-          <FaQuestionCircle />
+            <div className="pill-item">
 
-          <span>
-            7,000+ Practice MCQs
-          </span>
+              <FaPlayCircle />
 
-        </div>
+              <span>
+                300+ Expert Videos
+              </span>
 
-      </div>
+            </div>
+
+
+            {/* PILL 3 */}
+
+            <div className="pill-item">
+
+              <FaQuestionCircle />
+
+              <span>
+                7,000+ Practice MCQs
+              </span>
+
+            </div>
+
+
+          </div>
+
 
         </div>
 
@@ -663,7 +916,7 @@ const HeroSection = () => {
 
 
       {/* =================================================
-          BOTTOM PILLS
+          FREE MOCK TEST MODAL
       ================================================= */}
 
       <FreeMockTestModal
@@ -673,7 +926,10 @@ const HeroSection = () => {
       />
 
     </section>
+
   );
+
 };
+
 
 export default HeroSection;

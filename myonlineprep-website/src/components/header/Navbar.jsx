@@ -39,14 +39,14 @@ const Navbar = () => {
 
           {/* EXAM INFO */}
           <li className="nav-item">
-            <a href="#exam-info" onClick={closeMenu}>
+            <a href="#exam-infos" onClick={closeMenu}>
               Exam Info
             </a>
           </li>
 
           {/* FREE MOCK TEST */}
           <li className="nav-item">
-            <Link to="/mock-tests" onClick={closeMenu}>
+            <Link  onClick={() => openMockTest("CAIIB")}>
               Free Mock Test
             </Link>
           </li>
@@ -70,6 +70,15 @@ const Navbar = () => {
             <a href="#faq-section" onClick={closeMenu}>
               FAQs
             </a>
+          </li>
+          <li className="nav-item phon-lik">
+            <a
+          href="tel:+919264149917"
+          className="phone-btn"
+        >
+          <FaPhoneAlt />
+          <span>+91 92641 49917</span>
+        </a>
           </li>
 
         </ul>
