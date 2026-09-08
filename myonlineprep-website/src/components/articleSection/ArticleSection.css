@@ -224,7 +224,7 @@
       #f5eaff
     );
 
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 
@@ -239,7 +239,8 @@
 
   height: 185px;
 
-  object-fit: cover;
+  object-fit: 100% 100%;
+  object-position: center;
 
   border-radius: 11px;
 
