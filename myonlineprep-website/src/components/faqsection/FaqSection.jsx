@@ -43,7 +43,7 @@ const FaqSection = () => {
   };
 
   return (
-    <section className="faq-section-wrapper">
+    <section className="faq-section-wrapper" id='faq-section'>
       {/* Top Header Section */}
       <div className="faq-header-container">
         
@@ -82,19 +82,7 @@ const FaqSection = () => {
           );
         })}
 
-        {/* Bottom Support Banner */}
-        <div className="faq-support-card">
-          <div className="faq-support-left">
-            <div className="faq-clipboard-icon"><i style={{color:"#7b1fa2"}} class="fa-solid fa-clipboard-list"></i></div>
-            <div>
-              <h4 className="support-heading">Can't find your answer?</h4>
-              <p className="support-subtext">Our support team is here to help you with any queries.</p>
-            </div>
-          </div>
-          <button className="contact-support-btn">
-            🎧 Contact Support <span>&rarr;</span>
-          </button>
-        </div>
+       
       </div>
     </section>
   );

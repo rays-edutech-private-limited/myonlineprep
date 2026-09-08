@@ -9,7 +9,7 @@
 .faq-section-wrapper {
   width: 100%;
   min-height: 100vh;
-  background-color: #faeeee;
+  background-color: #f4f7fa;
   font-family: 'Poppins', sans-serif;
 
   padding: clamp(35px, 5vw, 70px) clamp(12px, 3vw, 40px);
@@ -139,8 +139,7 @@
 
   border-radius: clamp(10px, 1vw, 14px);
 
-  border-left: clamp(4px, 0.5vw, 6px) solid #ccc;
-
+ 
   overflow: hidden;
 
   box-shadow:
@@ -162,25 +161,6 @@
    BORDER COLORS
 ========================================================= */
 
-.faq-card.badge-purple {
-  border-left-color: #7b1fa2;
-}
-
-.faq-card.badge-orange {
-  border-left-color: #f57c00;
-}
-
-.faq-card.badge-green {
-  border-left-color: #388e3c;
-}
-
-.faq-card.badge-blue {
-  border-left-color: #1976d2;
-}
-
-.faq-card.badge-pink {
-  border-left-color: #c2185b;
-}
 
 
 /* =========================================================
@@ -249,23 +229,23 @@
 ========================================================= */
 
 .icon-purple {
-  background-color: #7b1fa2;
+  background-color: #ec4899;
 }
 
 .icon-orange {
-  background-color: #f57c00;
+  background-color: #ec4899;
 }
 
 .icon-green {
-  background-color: #388e3c;
+  background-color: #ec4899;
 }
 
 .icon-blue {
-  background-color: #1976d2;
+  background-color: #ec4899;
 }
 
 .icon-pink {
-  background-color: #c2185b;
+  background-color: #ec4899;
 }
 
 
@@ -328,7 +308,7 @@
 }
 
 .faq-card.active .faq-toggle-btn {
-  background-color: #7b1fa2;
+  background-color: #ec4899;
   color: #fff;
 }
 
@@ -401,7 +381,7 @@
 
   border-radius: clamp(10px, 1vw, 14px);
 
-  border-left: clamp(4px, 0.5vw, 6px) solid #7b1fa2;
+  border-left: clamp(4px, 0.5vw, 6px) solid #ec4899;
 
   box-shadow:
     0 4px 20px rgba(0, 0, 0, 0.04);
@@ -494,7 +474,7 @@
     11px
     clamp(16px, 2vw, 22px);
 
-  background-color: #6a1b9a;
+  background-color: #ec4899;
 
   color: #fff;
 
@@ -523,7 +503,7 @@
 }
 
 .contact-support-btn:hover {
-  background-color: #4a148c;
+  background-color: #ec4899;
 
   transform: translateY(-1px);
 

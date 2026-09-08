@@ -7,10 +7,10 @@ const KeyDetailsSection = () => {
   const [activeTab, setActiveTab] = useState('dates');
 
   return (
-    <div className="key-details-container">
+    <div className="key-details-container" id="exam-info">
       {/* Header Section */}
       <div className="key-details-header">
-        <h2>CAIIB - All Key Details</h2>
+        <h2>CAIIB - <span>All Key Details</span></h2>
         <p>Exam dates, subject syllabus, fee structure — everything in one place.</p>
       </div>
 

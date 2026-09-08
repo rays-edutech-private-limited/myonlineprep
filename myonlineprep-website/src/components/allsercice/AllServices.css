@@ -15,7 +15,7 @@
   min-height: 100%;
   padding: clamp(35px, 4vw, 65px) clamp(15px, 2vw, 30px);
 
-  background: #faeeee;
+  background: #f4f7fa;
   color: #11152a;
 
   overflow: hidden;
@@ -108,7 +108,7 @@
 }
 
 .heading-highlight {
-  color: #813588;
+  color: #ec4899;
  font-family: "Playfair Display", serif;
   font-style: italic;
 
@@ -129,7 +129,7 @@
 
   height: 4px;
 
-  background: #813588;
+  background: #ec4899;
 
   border-radius: 100%;
 
@@ -279,23 +279,7 @@
 
   box-sizing: border-box;
 
-  background:
-    radial-gradient(
-      circle at 13% 32%,
-      rgb(106 61 218),
-      transparent 24%
-    ),
-    radial-gradient(
-      circle at 82% 10%,
-      rgb(138, 99, 234),
-      transparent 20%
-    ),
-    linear-gradient(
-      135deg,
-      rgb(106 61 218) 0%,
-      rgb(121, 84, 215) 48%,
-      rgb(121, 80, 225) 100%
-    );
+  background: linear-gradient(160deg, #6d28d9,#3b0f8a);
 
   box-shadow:
     0 14px 30px rgba(75, 35, 161, 0.18);
@@ -422,7 +406,12 @@
 
   top: -70px;
 
-  background-color: rgb(106 61 218);
+background: linear-gradient(
+  115deg,
+  #5B2FCE 0%,
+  #6E3DDD 45%,
+  #875AF3 100%
+);
 
   padding: 10px;
 

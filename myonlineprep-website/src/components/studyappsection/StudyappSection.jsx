@@ -1,6 +1,7 @@
 import React from "react";
 import "./StudyappSection.css";
-import studimg from "../../assets/img/call-img.png";
+import studimg from "../../assets/img/phone-imge.png";
+import play from "../../assets/img/playstore.png"
 
 import {
   FaTrophy,
@@ -113,14 +114,24 @@ const StudyappSection = () => {
             {/* Google Play + Rating */}
             <div className="study-store-rating">
 
-              <div className="google-play-card">
-                <FaGooglePlay className="google-play-icon" />
+              <div
+  className="google-play-card"
+  onClick={() =>
+    window.open(
+      "https://play.google.com/store/apps/details?id=com.mkn.elfemo.myonlineprep&hl=en_IN&gl=US&pli=1",
+      "_blank",
+      "noopener,noreferrer"
+    )
+  }
+  style={{ cursor: "pointer" }}
+>
+  <img className="google-play-icon" src={play} alt="" />
 
-                <div>
-                  <span>GET IT ON</span>
-                  <strong>Google Play</strong>
-                </div>
-              </div>
+  <div>
+    <span>GET IT ON</span>
+    <strong>Google Play</strong>
+  </div>
+</div>
 
               <div className="rating-divider"></div>
 

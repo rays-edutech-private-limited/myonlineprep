@@ -1,173 +1,120 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
-import logo from "../../assets/img/logo.png";
+import { FaPhoneAlt } from "react-icons/fa";
+
+import logo from "../../assets/img/Myonlineprep logo.png";
+import FreeMockTestModal from "../FreeMockTestModal/FreeMockTestModal";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [examOpen, setExamOpen] = useState(false);
-  const [modeOpen, setModeOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedExam, setSelectedExam] = useState("CAIIB");
+    const openMockTest = (examName) => {
+    setSelectedExam(examName);
+    setIsModalOpen(true);
+  };
+
+  const closeMockTest = () => {
+    setIsModalOpen(false);
+  };
 
   const closeMenu = () => {
     setIsOpen(false);
-    setExamOpen(false);
-    setModeOpen(false);
-  };
-
-  const toggleExam = (e) => {
-    e.preventDefault();
-    setExamOpen(!examOpen);
-    setModeOpen(false);
-  };
-
-  const toggleMode = (e) => {
-    e.preventDefault();
-    setModeOpen(!modeOpen);
-    setExamOpen(false);
   };
 
   return (
     <nav className="navbar">
-      {/* ================= LEFT : LOGO ================= */}
+
+      {/* ================= LOGO ================= */}
       <div className="navbar-left">
         <Link to="/" onClick={closeMenu}>
           <img src={logo} alt="MyOnlinePrep" />
         </Link>
       </div>
 
-      {/* ================= CENTER : NAVIGATION ================= */}
+      {/* ================= CENTER MENU ================= */}
       <div className={`navbar-center ${isOpen ? "mobile-open" : ""}`}>
         <ul className="nav-list">
-          
-          {/* EXAMS DROPDOWN */}
-          <li className={`nav-item dropdown ${examOpen ? "open" : ""}`}>
-            <button className="nav-dropdown" onClick={toggleExam}>
-               EXAMS
-              <svg className="arrow-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
 
-            {/* <div className="dropdown-box">
-              <div className="dropdown-title">
-                <div className="dropdown-title-icon">🎯</div>
-                <div>
-                  <h4>Popular Exams</h4>
-                  <p>Prepare for top competitive exams</p>
-                </div>
-              </div>
-
-              <Link to="/exams/upsc" onClick={closeMenu}>
-                <span>🏛️</span>
-                <div>
-                  <strong>UPSC</strong>
-                  <small>Civil Services Examination</small>
-                </div>
-              </Link>
-
-              <Link to="/exams/ssc" onClick={closeMenu}>
-                <span>📋</span>
-                <div>
-                  <strong>SSC</strong>
-                  <small>CGL, CHSL & other exams</small>
-                </div>
-              </Link>
-
-              <Link to="/exams/banking" onClick={closeMenu}>
-                <span>🏦</span>
-                <div>
-                  <strong>Banking</strong>
-                  <small>SBI, IBPS & Banking exams</small>
-                </div>
-              </Link>
-
-              <Link to="/exams/railway" onClick={closeMenu}>
-                <span>🚆</span>
-                <div>
-                  <strong>Railway</strong>
-                  <small>RRB NTPC, Group D & more</small>
-                </div>
-              </Link>
-
-              <Link to="/exams/teaching" onClick={closeMenu}>
-                <span>👨‍🏫</span>
-                <div>
-                  <strong>Teaching</strong>
-                  <small>CTET, TET & other exams</small>
-                </div>
-              </Link>
-
-              <Link to="/exams/defence" onClick={closeMenu}>
-                <span>🪖</span>
-                <div>
-                  <strong>Defence</strong>
-                  <small>NDA, CDS & Defence exams</small>
-                </div>
-              </Link>
-
-              <Link className="dropdown-view" to="/exams" onClick={closeMenu}>
-                View All Exams →
-              </Link>
-            </div> */}
+          {/* EXAM INFO */}
+          <li className="nav-item">
+            <a href="#exam-info" onClick={closeMenu}>
+              Exam Info
+            </a>
           </li>
 
-          {/* FREE MOCK TESTS */}
+          {/* FREE MOCK TEST */}
           <li className="nav-item">
             <Link to="/mock-tests" onClick={closeMenu}>
-               FREE MOCK TESTS
+              Free Mock Test
             </Link>
           </li>
 
           {/* COURSES */}
           <li className="nav-item">
-            <Link to="/courses" onClick={closeMenu}>
-               COURSES
-            </Link>
+            <a href="#enroll-section" onClick={closeMenu}>
+              Courses
+            </a>
           </li>
 
-          {/* MODE DROPDOWN */}
-          <li className={`nav-item dropdown ${modeOpen ? "open" : ""}`}>
-            <button className="nav-dropdown" onClick={toggleMode}>
-             MORE
-              <svg className="arrow-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-
-            
+          {/* ARTICLES */}
+          <li className="nav-item">
+            <a href="#articles-section" onClick={closeMenu}>
+              Articles
+            </a>
           </li>
 
-        
-          
+          {/* FAQS */}
+          <li className="nav-item">
+            <a href="#faq-section" onClick={closeMenu}>
+              FAQs
+            </a>
+          </li>
 
         </ul>
       </div>
 
-      {/* ================= RIGHT : SEARCH + LOGIN ================= */}
+      {/* ================= RIGHT ================= */}
       <div className="navbar-right">
-        <div className="search-box">
-          <span className="search-icon"><i class="fa-solid fa-magnifying-glass" ></i></span>
-          <input type="text" placeholder="Search courses..." />
-        </div>
 
-        <Link to="/login" className="login-btn" onClick={closeMenu}>
-          Login
+        {/* PHONE */}
+        <a
+          href="tel:+919264149917"
+          className="phone-btn"
+        >
+          <FaPhoneAlt />
+          <span>+91 92641 49917</span>
+        </a>
+
+        {/* SIGN UP */}
+        <Link
+          
+          className="signup-btn"
+          onClick={() => openMockTest("CAIIB")}
+        >
+          Sign Up
         </Link>
 
-        {/* MOBILE HAMBURGER */}
+        {/* HAMBURGER */}
         <button
           className={`hamburger ${isOpen ? "active" : ""}`}
-          onClick={() => {
-            setIsOpen(!isOpen);
-            setExamOpen(false);
-            setModeOpen(false);
-          }}
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
         >
           <span></span>
           <span></span>
           <span></span>
         </button>
+
       </div>
+
+      <FreeMockTestModal
+        isOpen={isModalOpen}
+        onClose={closeMockTest}
+        exam={selectedExam}
+      />
+
     </nav>
   );
 };

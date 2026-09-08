@@ -1,4 +1,3 @@
-
 /* =========================================================
    SERVICE SECTION
 ========================================================= */
@@ -7,16 +6,22 @@
   position: relative;
   width: 100%;
   overflow: hidden;
+
   padding: 60px 20px 65px;
-  background: #f4f7fa;
+
+  background: #fbfafe;
+
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 .service-inner {
   position: relative;
   z-index: 5;
+
   width: 100%;
   max-width: 1300px;
+
   margin: 0 auto;
 }
 
@@ -27,16 +32,23 @@
 
 .service-heading {
   position: relative;
+
   width: 100%;
+
   text-align: center;
+
   margin: 0 auto 45px;
+
   padding: 0 10px;
+
   box-sizing: border-box;
 }
 
 .service-heading h2 {
   position: relative;
+
   display: inline-block;
+
   max-width: 100%;
 
   margin: 0;
@@ -46,28 +58,30 @@
   font-size: clamp(32px, 3.5vw, 50px);
 
   line-height: 1.15;
+
   letter-spacing: -1.5px;
- font-family:  sans-serif;
-   z-index: 700 ;
+
+  font-family: sans-serif;
+
+  z-index: 10;
+
   word-wrap: break-word;
 }
 
 .service-heading h2 span {
-  background: linear-gradient(
-    90deg,
-    #813588,
-    #813588
-  );
+  background: #ec4899;
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
   font-family: "Playfair Display", serif;
+
   font-style: italic;
 }
 
 .service-heading p {
   width: 100%;
+
   max-width: 850px;
 
   margin: 14px auto 0;
@@ -75,6 +89,7 @@
   color: #52658b;
 
   font-size: 17px;
+
   line-height: 1.6;
 
   font-weight: 500;
@@ -93,6 +108,7 @@
   gap: 20px;
 
   width: 100%;
+
   box-sizing: border-box;
 }
 
@@ -105,7 +121,9 @@
   position: relative;
 
   width: 100%;
+
   min-width: 0;
+
   min-height: 350px;
 
   padding: 25px 25px 28px;
@@ -149,13 +167,17 @@
   position: absolute;
 
   top: 15px;
+
   right: 15px;
 
   width: 40px;
+
   height: 35px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   border-radius: 16px;
@@ -163,15 +185,19 @@
   background: #f4f0ff;
 
   font-size: 15px;
+
   font-weight: 800;
 
   color: #6335dc;
 
   box-sizing: border-box;
+
+  z-index: 20;
 }
 
 .pink-grad .service-number {
   color: #df187d;
+
   background: #fff0f7;
 }
 
@@ -184,13 +210,18 @@
   position: relative;
 
   width: 105px;
+
   height: 115px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   margin-bottom: 18px;
+
+  z-index: 3;
 }
 
 
@@ -202,6 +233,7 @@
   position: absolute;
 
   width: 95px;
+
   height: 95px;
 
   background: #f1edff;
@@ -211,6 +243,11 @@
     55% 45% 55% 45%;
 
   transform: rotate(-8deg);
+
+  transition:
+    transform 0.4s ease,
+    width 0.4s ease,
+    height 0.4s ease;
 }
 
 .pink-grad .icon-blob {
@@ -224,13 +261,17 @@
 
 .service-icon-wrapper {
   position: relative;
-  z-index: 2;
+
+  z-index: 5;
 
   width: 85px;
+
   height: 85px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   border-radius: 50%;
@@ -239,6 +280,10 @@
 
   box-shadow:
     0 13px 28px rgba(92, 49, 210, 0.25);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .purple-grad .service-icon-wrapper {
@@ -269,6 +314,7 @@
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   color: #fff;
@@ -276,6 +322,9 @@
   font-size: 38px;
 
   line-height: 1;
+
+  transition:
+    transform 0.3s ease;
 }
 
 
@@ -287,18 +336,23 @@
   position: absolute;
 
   right: 0;
+
   top: 40px;
 
   display: flex;
+
   flex-direction: column;
 
   gap: 7px;
+
+  z-index: 7;
 }
 
 .icon-spark i {
   display: block;
 
   width: 22px;
+
   height: 4px;
 
   border-radius: 10px;
@@ -327,7 +381,8 @@
 
 .service-content {
   position: relative;
-  z-index: 2;
+
+  z-index: 10;
 
   width: 100%;
 }
@@ -337,10 +392,12 @@
 
   color: #101e5e;
 
-  font-size: clamp(18px, 1.5vw, 21px);
-  font-weight: 800;
+  font-size: clamp(18px, 1.5vw, 18px);
+
+  font-weight: 7  00;
 
   line-height: 1.3;
+
   letter-spacing: -0.4px;
 
   overflow-wrap: break-word;
@@ -351,7 +408,7 @@
 
   color: #53678f;
 
-  font-size: clamp(14px, 1.2vw, 16px);
+  font-size: clamp(14px, 1.2vw, 14px);
 
   line-height: 1.55;
 
@@ -371,6 +428,7 @@
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 
   gap: 10px;
@@ -384,6 +442,7 @@
   border-radius: 50px;
 
   font-size: 15px;
+
   font-weight: 800;
 
   white-space: nowrap;
@@ -413,52 +472,657 @@
     );
 }
 
-.stat-icon {
-  display: flex;
 
-  align-items: center;
-  justify-content: center;
+/* =========================================================
+   =========================================================
+   02 CARD - CREATIVE LIGHTBULB
+   =========================================================
+========================================================= */
 
-  font-size: 18px;
+.creative-lightbulb {
+  isolation: isolate;
+}
+
+.creative-lightbulb .service-icon-area {
+  overflow: visible;
+}
+
+
+/* Rotating orbit */
+
+.light-orbit {
+  position: absolute;
+
+  left: 50%;
+
+  top: 50%;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.light-orbit-one {
+  width: 115px;
+
+  height: 115px;
+
+  transform: translate(-50%, -50%);
+
+  border: 2px solid rgba(223, 25, 124, 0.16);
+
+  animation:
+    lightOrbitOne 4s ease-in-out infinite;
+}
+
+.light-orbit-two {
+  width: 135px;
+
+  height: 135px;
+
+  transform: translate(-50%, -50%);
+
+  border:
+    2px dashed rgba(223, 25, 124, 0.20);
+
+  animation:
+    lightOrbitTwo 8s linear infinite;
+}
+
+
+/* Light particles */
+
+.light-particle {
+  position: absolute;
+
+  width: 7px;
+
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #df197c;
+
+  box-shadow:
+    0 0 10px rgba(223, 25, 124, 0.45);
+
+  z-index: 4;
+}
+
+.particle-one {
+  top: 7px;
+
+  left: 46px;
+
+  animation:
+    particleFloatOne 2.5s ease-in-out infinite;
+}
+
+.particle-two {
+  top: 30px;
+
+  left: 6px;
+
+  width: 5px;
+
+  height: 5px;
+
+  animation:
+    particleFloatTwo 3s ease-in-out infinite;
+}
+
+.particle-three {
+  right: 8px;
+
+  bottom: 30px;
+
+  width: 6px;
+
+  height: 6px;
+
+  animation:
+    particleFloatThree 2.7s ease-in-out infinite;
+}
+
+.particle-four {
+  right: 27px;
+
+  top: 10px;
+
+  width: 4px;
+
+  height: 4px;
+
+  animation:
+    particleFloatFour 2.2s ease-in-out infinite;
+}
+
+
+/* Blob animation */
+
+.creative-lightbulb .icon-blob {
+  animation:
+    lightBlob 3s ease-in-out infinite;
+}
+
+
+/* Circle animation */
+
+.creative-lightbulb .service-icon-wrapper {
+  animation:
+    bulbFloat 2.8s ease-in-out infinite;
+}
+
+
+/* Icon animation */
+
+.creative-lightbulb .service-icon {
+  animation:
+    bulbGlow 2s ease-in-out infinite;
+}
+
+
+/* Spark animation */
+
+.creative-lightbulb .icon-spark {
+  animation:
+    sparkFloat 2s ease-in-out infinite;
 }
 
 
 /* =========================================================
-   BOTTOM DOTS
+   03 CARD - CREATIVE PROGRESS
 ========================================================= */
 
-.service-dots {
-  position: absolute;
-
-  left: 0;
-  bottom: 0;
-
-  display: flex;
-
-  gap: 8px;
-
-  padding: 0 0 8px 5px;
-
-  z-index: 2;
+.creative-progress {
+  isolation: isolate;
 }
 
-.service-dots span {
-  width: 6px;
-  height: 6px;
+.creative-progress .service-icon-area {
+  overflow: visible;
+}
+
+
+/* Main rotating ring */
+
+.progress-orbit {
+  position: absolute;
+
+  left: 50%;
+
+  top: 50%;
 
   border-radius: 50%;
 
-  background: #8860e9;
+  pointer-events: none;
 }
 
-.service-dots span:nth-child(even) {
-  opacity: 0.5;
+.progress-orbit-one {
+  width: 125px;
+
+  height: 125px;
+
+  transform: translate(-50%, -50%);
+
+  border:
+    2px dashed rgba(105, 53, 223, 0.25);
+
+  animation:
+    progressRotate 8s linear infinite;
+}
+
+.progress-orbit-two {
+  width: 108px;
+
+  height: 108px;
+
+  transform: translate(-50%, -50%);
+
+  border:
+    2px solid rgba(105, 53, 223, 0.12);
+
+  animation:
+    progressPulse 2.5s ease-in-out infinite;
+}
+
+
+/* Progress particles */
+
+.progress-particle {
+  position: absolute;
+
+  width: 7px;
+
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #6935df;
+
+  box-shadow:
+    0 0 10px rgba(105, 53, 223, 0.35);
+
+  z-index: 4;
+}
+
+.progress-one {
+  top: 8px;
+
+  left: 49px;
+
+  animation:
+    progressParticleOne 2.4s ease-in-out infinite;
+}
+
+.progress-two {
+  right: 4px;
+
+  top: 46px;
+
+  width: 5px;
+
+  height: 5px;
+
+  animation:
+    progressParticleTwo 3s ease-in-out infinite;
+}
+
+.progress-three {
+  bottom: 9px;
+
+  left: 28px;
+
+  width: 6px;
+
+  height: 6px;
+
+  animation:
+    progressParticleThree 2.8s ease-in-out infinite;
+}
+
+
+/* Blob */
+
+.creative-progress .icon-blob {
+  animation:
+    progressBlob 3.2s ease-in-out infinite;
+}
+
+
+/* Circle */
+
+.creative-progress .service-icon-wrapper {
+  animation:
+    progressBounce 2.5s ease-in-out infinite;
+}
+
+
+/* Thumb */
+
+.creative-progress .service-icon {
+  animation:
+    thumbPop 2.5s ease-in-out infinite;
+}
+
+
+/* Spark */
+
+.creative-progress .icon-spark {
+  animation:
+    progressSpark 2.2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   HOVER EFFECTS
+========================================================= */
+
+.creative-lightbulb:hover .service-icon-wrapper {
+  transform: scale(1.08);
+}
+
+.creative-lightbulb:hover .icon-blob {
+  transform:
+    rotate(8deg)
+    scale(1.08);
+}
+
+.creative-progress:hover .service-icon-wrapper {
+  transform: scale(1.08);
+}
+
+.creative-progress:hover .icon-blob {
+  transform:
+    rotate(8deg)
+    scale(1.08);
+}
+
+
+/* =========================================================
+   LIGHTBULB KEYFRAMES
+========================================================= */
+
+@keyframes lightOrbitOne {
+  0%,
+  100% {
+    transform:
+      translate(-50%, -50%)
+      scale(0.88);
+
+    opacity: 0.3;
+  }
+
+  50% {
+    transform:
+      translate(-50%, -50%)
+      scale(1.05);
+
+    opacity: 0.7;
+  }
+}
+
+@keyframes lightOrbitTwo {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(360deg);
+  }
+}
+
+@keyframes lightBlob {
+  0%,
+  100% {
+    transform:
+      rotate(-8deg)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      rotate(7deg)
+      translateY(-7px);
+  }
+}
+
+@keyframes bulbFloat {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translateY(-9px)
+      rotate(3deg);
+  }
+}
+
+@keyframes bulbGlow {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.13);
+  }
+}
+
+@keyframes sparkFloat {
+  0%,
+  100% {
+    transform:
+      translateX(0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translateX(8px)
+      scale(1.08);
+  }
+}
+
+
+/* =========================================================
+   LIGHT PARTICLES
+========================================================= */
+
+@keyframes particleFloatOne {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      scale(1);
+
+    opacity: 0.6;
+  }
+
+  50% {
+    transform:
+      translateY(-10px)
+      scale(1.35);
+
+    opacity: 1;
+  }
+}
+
+@keyframes particleFloatTwo {
+  0%,
+  100% {
+    transform:
+      translateX(0)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateX(-7px)
+      translateY(8px);
+  }
+}
+
+@keyframes particleFloatThree {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translateY(9px)
+      scale(1.4);
+  }
+}
+
+@keyframes particleFloatFour {
+  0%,
+  100% {
+    transform: scale(1);
+
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale(1.5);
+
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   PROGRESS KEYFRAMES
+========================================================= */
+
+@keyframes progressRotate {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(360deg);
+  }
+}
+
+@keyframes progressPulse {
+  0%,
+  100% {
+    transform:
+      translate(-50%, -50%)
+      scale(0.92);
+
+    opacity: 0.35;
+  }
+
+  50% {
+    transform:
+      translate(-50%, -50%)
+      scale(1.08);
+
+    opacity: 0.8;
+  }
+}
+
+@keyframes progressBlob {
+  0%,
+  100% {
+    transform:
+      rotate(-8deg)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      rotate(8deg)
+      translateY(-7px);
+  }
+}
+
+@keyframes progressBounce {
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  40% {
+    transform:
+      translateY(-10px);
+  }
+
+  60% {
+    transform:
+      translateY(-5px);
+  }
+}
+
+@keyframes thumbPop {
+  0%,
+  100% {
+    transform:
+      scale(1)
+      rotate(0deg);
+  }
+
+  40% {
+    transform:
+      scale(1.12)
+      rotate(-5deg);
+  }
+
+  60% {
+    transform:
+      scale(1.05)
+      rotate(3deg);
+  }
+}
+
+@keyframes progressSpark {
+  0%,
+  100% {
+    transform:
+      translateX(0);
+
+    opacity: 0.7;
+  }
+
+  50% {
+    transform:
+      translateX(8px);
+
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   PROGRESS PARTICLES
+========================================================= */
+
+@keyframes progressParticleOne {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      scale(1);
+
+    opacity: 0.6;
+  }
+
+  50% {
+    transform:
+      translateY(-10px)
+      scale(1.4);
+
+    opacity: 1;
+  }
+}
+
+@keyframes progressParticleTwo {
+  0%,
+  100% {
+    transform:
+      translateX(0);
+  }
+
+  50% {
+    transform:
+      translateX(8px);
+  }
+}
+
+@keyframes progressParticleThree {
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(8px);
+  }
 }
 
 
 /* =========================================================
    EXTRA LARGE DESKTOP
-   1440px+
+   1441px+
 ========================================================= */
 
 @media (min-width: 1441px) {
@@ -473,23 +1137,25 @@
 
   .service-item {
     min-height: 365px;
+
     padding: 28px 28px 30px;
   }
 
   .service-icon-area {
     width: 110px;
+
     height: 120px;
   }
 
   .service-icon-wrapper {
     width: 90px;
+
     height: 90px;
   }
 
   .service-icon {
     font-size: 40px;
   }
-
 }
 
 
@@ -510,9 +1176,9 @@
 
   .service-item {
     padding: 23px 22px 26px;
+
     min-height: 345px;
   }
-
 }
 
 
@@ -525,6 +1191,7 @@
 
   .service-section-container {
     padding-left: 22px;
+
     padding-right: 22px;
   }
 
@@ -538,6 +1205,7 @@
 
   .service-item {
     padding: 22px 19px 24px;
+
     min-height: 340px;
   }
 
@@ -555,16 +1223,19 @@
 
   .service-icon-area {
     width: 100px;
+
     height: 110px;
   }
 
   .service-icon-wrapper {
     width: 82px;
+
     height: 82px;
   }
 
   .icon-blob {
     width: 92px;
+
     height: 92px;
   }
 
@@ -582,9 +1253,9 @@
 
   .service-stat {
     font-size: 14px;
+
     padding: 9px 15px;
   }
-
 }
 
 
@@ -604,12 +1275,15 @@
   }
 
   .service-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
     gap: 20px;
   }
 
   .service-item {
     min-height: 355px;
+
     padding: 25px 25px 28px;
   }
 
@@ -623,21 +1297,25 @@
 
   .service-heading p {
     max-width: 720px;
+
     font-size: 16px;
   }
 
   .service-icon-area {
     width: 105px;
+
     height: 115px;
   }
 
   .service-icon-wrapper {
     width: 88px;
+
     height: 88px;
   }
 
   .icon-blob {
     width: 96px;
+
     height: 96px;
   }
 
@@ -652,7 +1330,6 @@
   .service-content p {
     font-size: 16px;
   }
-
 }
 
 
@@ -668,21 +1345,27 @@
   }
 
   .service-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
     gap: 18px;
   }
 
   .service-item {
     min-height: 350px;
+
     padding: 23px 22px 25px;
+
     border-radius: 24px;
   }
 
   .service-number {
     top: 13px;
+
     right: 13px;
 
     width: 38px;
+
     height: 33px;
 
     font-size: 14px;
@@ -693,17 +1376,21 @@
   }
 
   .service-heading h2 {
-    font-size: clamp(34px, 5vw, 40px);
+    font-size:
+      clamp(34px, 5vw, 40px);
   }
 
   .service-heading p {
     margin-top: 12px;
+
     font-size: 15px;
+
     line-height: 1.55;
   }
 
   .service-icon-area {
     width: 100px;
+
     height: 108px;
 
     margin-bottom: 16px;
@@ -711,11 +1398,13 @@
 
   .service-icon-wrapper {
     width: 82px;
+
     height: 82px;
   }
 
   .icon-blob {
     width: 92px;
+
     height: 92px;
   }
 
@@ -725,6 +1414,7 @@
 
   .icon-spark {
     right: -2px;
+
     top: 38px;
   }
 
@@ -734,15 +1424,17 @@
 
   .service-content p {
     min-height: 76px;
+
     font-size: 15px;
   }
 
   .service-stat {
     margin-top: 16px;
+
     padding: 9px 15px;
+
     font-size: 14px;
   }
-
 }
 
 
@@ -763,13 +1455,15 @@
 
   .service-heading {
     margin-bottom: 30px;
+
     padding: 0 5px;
   }
 
   .service-heading h2 {
     display: block;
 
-    font-size: clamp(29px, 8vw, 36px);
+    font-size:
+      clamp(29px, 8vw, 36px);
 
     line-height: 1.18;
 
@@ -790,6 +1484,7 @@
 
   .service-grid {
     grid-template-columns: 1fr;
+
     gap: 18px;
   }
 
@@ -803,9 +1498,11 @@
 
   .service-number {
     top: 17px;
+
     right: 17px;
 
     width: 44px;
+
     height: 36px;
 
     border-radius: 14px;
@@ -815,6 +1512,7 @@
 
   .service-icon-area {
     width: 130px;
+
     height: 125px;
 
     margin-bottom: 17px;
@@ -822,11 +1520,13 @@
 
   .service-icon-wrapper {
     width: 92px;
+
     height: 92px;
   }
 
   .icon-blob {
     width: 102px;
+
     height: 102px;
   }
 
@@ -836,6 +1536,7 @@
 
   .icon-spark {
     right: 0;
+
     top: 43px;
 
     gap: 6px;
@@ -843,6 +1544,7 @@
 
   .icon-spark i {
     width: 20px;
+
     height: 4px;
   }
 
@@ -878,6 +1580,32 @@
     font-size: 14px;
   }
 
+
+  /* Mobile animation sizing */
+
+  .light-orbit-one {
+    width: 120px;
+
+    height: 120px;
+  }
+
+  .light-orbit-two {
+    width: 140px;
+
+    height: 140px;
+  }
+
+  .progress-orbit-one {
+    width: 130px;
+
+    height: 130px;
+  }
+
+  .progress-orbit-two {
+    width: 112px;
+
+    height: 112px;
+  }
 }
 
 
@@ -898,11 +1626,13 @@
 
   .service-heading h2 {
     font-size: 31px;
+
     letter-spacing: -0.8px;
   }
 
   .service-heading p {
     font-size: 14px;
+
     line-height: 1.6;
   }
 
@@ -918,9 +1648,11 @@
 
   .service-number {
     top: 15px;
+
     right: 15px;
 
     width: 42px;
+
     height: 34px;
 
     font-size: 13px;
@@ -928,16 +1660,19 @@
 
   .service-icon-area {
     width: 120px;
+
     height: 115px;
   }
 
   .service-icon-wrapper {
     width: 86px;
+
     height: 86px;
   }
 
   .icon-blob {
     width: 96px;
+
     height: 96px;
   }
 
@@ -951,14 +1686,39 @@
 
   .service-content p {
     font-size: 14px;
+
     line-height: 1.6;
   }
 
   .service-stat {
     padding: 9px 15px;
+
     font-size: 13px;
   }
 
+  .light-orbit-one {
+    width: 112px;
+
+    height: 112px;
+  }
+
+  .light-orbit-two {
+    width: 130px;
+
+    height: 130px;
+  }
+
+  .progress-orbit-one {
+    width: 122px;
+
+    height: 122px;
+  }
+
+  .progress-orbit-two {
+    width: 104px;
+
+    height: 104px;
+  }
 }
 
 
@@ -979,6 +1739,7 @@
 
   .service-heading h2 {
     font-size: 28px;
+
     letter-spacing: -0.6px;
   }
 
@@ -994,9 +1755,11 @@
 
   .service-number {
     top: 13px;
+
     right: 13px;
 
     width: 39px;
+
     height: 32px;
 
     font-size: 12px;
@@ -1004,16 +1767,19 @@
 
   .service-icon-area {
     width: 110px;
+
     height: 108px;
   }
 
   .service-icon-wrapper {
     width: 80px;
+
     height: 80px;
   }
 
   .icon-blob {
     width: 89px;
+
     height: 89px;
   }
 
@@ -1023,6 +1789,7 @@
 
   .icon-spark {
     top: 39px;
+
     right: -1px;
   }
 
@@ -1042,6 +1809,29 @@
     font-size: 12.5px;
   }
 
+  .light-orbit-one {
+    width: 105px;
+
+    height: 105px;
+  }
+
+  .light-orbit-two {
+    width: 120px;
+
+    height: 120px;
+  }
+
+  .progress-orbit-one {
+    width: 115px;
+
+    height: 115px;
+  }
+
+  .progress-orbit-two {
+    width: 98px;
+
+    height: 98px;
+  }
 }
 
 
@@ -1054,6 +1844,7 @@
 
   .service-section-container {
     padding-left: 9px;
+
     padding-right: 9px;
   }
 
@@ -1071,6 +1862,7 @@
 
   .service-number {
     width: 37px;
+
     height: 30px;
 
     font-size: 11px;
@@ -1078,16 +1870,19 @@
 
   .service-icon-area {
     width: 100px;
+
     height: 100px;
   }
 
   .service-icon-wrapper {
     width: 74px;
+
     height: 74px;
   }
 
   .icon-blob {
     width: 83px;
+
     height: 83px;
   }
 
@@ -1105,15 +1900,44 @@
 
   .service-stat {
     font-size: 12px;
+
     padding: 8px 12px;
   }
 
+  .light-orbit-one {
+    width: 95px;
+
+    height: 95px;
+  }
+
+  .light-orbit-two {
+    width: 108px;
+
+    height: 108px;
+  }
+
+  .progress-orbit-one {
+    width: 105px;
+
+    height: 105px;
+  }
+
+  .progress-orbit-two {
+    width: 90px;
+
+    height: 90px;
+  }
+
+  .light-particle,
+  .progress-particle {
+    transform: scale(0.8);
+  }
 }
 
 
 /* =========================================================
    TOUCH DEVICES
-   Hover ko mobile par disable rakhta hai
+   Hover disabled on mobile
 ========================================================= */
 
 @media (hover: none) {
@@ -1134,9 +1958,15 @@
 
 @media (prefers-reduced-motion: reduce) {
 
-  .service-item {
-    transition: none;
+  .service-item,
+  .service-item *,
+  .light-orbit,
+  .progress-orbit,
+  .light-particle,
+  .progress-particle {
+    animation: none !important;
+
+    transition: none !important;
   }
 
 }
-

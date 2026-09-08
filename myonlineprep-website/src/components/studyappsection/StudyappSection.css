@@ -1,20 +1,28 @@
 /* =========================================================
-   MAIN SECTION
+   STUDY APP SECTION
+   FULLY RESPONSIVE
 ========================================================= */
 
 .study-app-section {
   width: 100%;
-  padding: 45px 20px 35px;
-  background:#faeeee;
+  padding: 55px 20px 45px;
+  background: #f4f7fa;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #11152f;
   overflow: hidden;
   position: relative;
+  box-sizing: border-box;
+}
+
+.study-app-section *,
+.study-app-section *::before,
+.study-app-section *::after {
+  box-sizing: border-box;
 }
 
 .study-app-container {
   width: 100%;
-  max-width: 1250px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -24,10 +32,12 @@
 ========================================================= */
 
 .study-main-grid {
+  width: 100%;
   display: grid;
-  grid-template-columns: 51% 49%;
+  grid-template-columns: minmax(0, 1.03fr) minmax(380px, 0.97fr);
   align-items: center;
-  min-height: 600px;
+  min-height: 620px;
+  gap: 15px;
 }
 
 
@@ -36,9 +46,11 @@
 ========================================================= */
 
 .study-left-content {
+  width: 100%;
+  min-width: 0;
   position: relative;
   z-index: 5;
-  padding-left: 5px;
+  padding: 0 5px;
 }
 
 .prep-badge {
@@ -68,30 +80,34 @@
 .study-main-title {
   margin: 0;
   padding: 0;
-  font-size: clamp(43px, 4.3vw, 61px);
+  max-width: 700px;
+  font-size: clamp(42px, 4.25vw, 62px);
   line-height: 1.02;
-  letter-spacing: -2px;
+  letter-spacing: -2.2px;
   font-weight: 800;
   color: #081334;
+  overflow-wrap: break-word;
 }
 
 .anywhere-text {
-  color: #813588;
+  color: #000;
 }
 
 .anytime-text {
-  color: #ef3974;
+  color: #ec4899;
   position: relative;
+  display: inline-block;
 }
 
 .anytime-text::after {
   content: "";
   position: absolute;
   width: 145px;
+  max-width: 90%;
   height: 6px;
   left: -2px;
   bottom: -10px;
-  background: #ed4c89;
+  background: #ec4899;
   border-radius: 50%;
   transform: rotate(-3deg);
 }
@@ -102,11 +118,12 @@
 ========================================================= */
 
 .study-description {
-  max-width: 575px;
-  margin: 28px 0 25px;
+  width: 100%;
+  max-width: 590px;
+  margin: 29px 0 25px;
   color: #4f5063;
   font-size: 16px;
-  line-height: 1.55;
+  line-height: 1.6;
   font-weight: 500;
 }
 
@@ -117,20 +134,22 @@
 
 .study-features-grid {
   width: 100%;
-  max-width: 610px;
+  max-width: 620px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 13px;
-  margin-top: 5px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 7px;
 }
 
 .study-feature-card {
-  min-height: 112px;
+  width: 100%;
+  min-width: 0;
+  min-height: 115px;
   background: rgba(255, 255, 255, 0.96);
-  border-radius: 13px;
+  border-radius: 14px;
   padding: 17px 15px;
   display: flex;
-  gap: 14px;
+  gap: 13px;
   align-items: flex-start;
   box-shadow:
     0 6px 20px rgba(39, 26, 79, 0.06),
@@ -148,6 +167,7 @@
   align-items: center;
   font-size: 23px;
   position: relative;
+  flex-shrink: 0;
 }
 
 .study-feature-icon.purple {
@@ -187,15 +207,17 @@
 
 .study-feature-content {
   flex: 1;
+  min-width: 0;
 }
 
 .study-feature-content h3 {
   padding: 0;
   margin: 1px 0 5px;
   font-size: 14px;
-  line-height: 1.25;
+  line-height: 1.3;
   font-weight: 800;
   color: #15172c;
+  overflow-wrap: break-word;
 }
 
 .study-feature-content p {
@@ -205,6 +227,7 @@
   line-height: 1.45;
   color: #666779;
   font-weight: 500;
+  overflow-wrap: break-word;
 }
 
 .small-line {
@@ -236,15 +259,18 @@
 ========================================================= */
 
 .study-store-rating {
+  width: 100%;
   display: flex;
   align-items: center;
-  margin-top: 14px;
-  gap: 18px;
+  margin-top: 16px;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .google-play-card {
-  height: 72px;
+  height: 68px;
   width: 180px;
+  flex-shrink: 0;
   background: #fff;
   border-radius: 9px;
   border: 1px solid #f0edf7;
@@ -253,11 +279,21 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.google-play-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 22px rgba(30, 20, 60, 0.1);
 }
 
 .google-play-icon {
-  font-size: 34px;
-  color: #2d9f5a;
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .google-play-card div {
@@ -284,34 +320,41 @@
 }
 
 .rating-card {
+  min-height: 58px;
   display: flex;
+  align-items: center;
   gap: 13px;
-   background: #fff;
-   padding: 10px;
-   box-shadow: 0px 0px 7px rgb(230, 227, 227);
-   border-radius: 10px;
+  background: #fff;
+  padding: 9px 12px;
+  box-shadow: 0 0 7px rgb(230, 227, 227);
+  border-radius: 10px;
 }
 
-
-.rat-st{
-    font-size: 22px;
-color: #f4a719;
-margin-top: -5px;
+.rating-stars {
+  display: flex;
+  flex-direction: column;
 }
 
-.rat-rev{
-    font-size: 11px;
-    font-weight: 700;
+.rat-st {
+  font-size: 21px;
+  line-height: 1;
+  color: #f4a719;
+  letter-spacing: 1px;
 }
 
+.rat-rev {
+  font-size: 11px;
+  font-weight: 700;
+  color: #555;
+  margin-top: 4px;
+  white-space: nowrap;
+}
 
 .rating-info strong {
   font-size: 15px;
   color: #222238;
-  
+  white-space: nowrap;
 }
-
-
 
 
 /* =========================================================
@@ -319,19 +362,27 @@ margin-top: -5px;
 ========================================================= */
 
 .study-right-content {
-  position: relative;
+  width: 100%;
+  min-width: 0;
   height: 620px;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: visible;
 }
+
+
+/* =========================================================
+   PURPLE CIRCLE
+========================================================= */
 
 .purple-glow-circle {
   position: absolute;
-  width: 540px;
-  height: 540px;
-  right: -70px;
-  top: 38px;
+  width: clamp(390px, 42vw, 570px);
+  height: clamp(390px, 42vw, 570px);
+  right: -20px;
+  top: 35px;
   border-radius: 50%;
   background:
     radial-gradient(
@@ -340,6 +391,7 @@ margin-top: -5px;
       rgba(225, 212, 255, 0.28) 55%,
       transparent 70%
     );
+  pointer-events: none;
 }
 
 
@@ -350,18 +402,29 @@ margin-top: -5px;
 .study-phone-wrapper {
   position: absolute;
   z-index: 5;
+
+  width: clamp(280px, 31vw, 390px);
   height: 600px;
-  top: 30px;
-  top: 0px;
+
+  top: 8px;
+  right: 7%;
+
   transform: rotate(7deg);
-  filter: drop-shadow(20px 20px 18px rgba(41, 28, 77, 0.25));
+
+  filter: drop-shadow(
+    20px 20px 18px rgba(41, 28, 77, 0.25)
+  );
+
+  display: flex;
+  justify-content: center;
 }
 
 .study-phone-image {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
 }
 
 
@@ -372,8 +435,8 @@ margin-top: -5px;
 .aim-card {
   position: absolute;
   z-index: 8;
-  right: -5px;
-  top: 165px;
+  right: -2px;
+  top: 160px;
   min-width: 125px;
   background: rgba(255, 255, 255, 0.95);
   padding: 12px 16px;
@@ -388,6 +451,7 @@ margin-top: -5px;
 .aim-icon {
   width: 38px;
   height: 38px;
+  min-width: 38px;
   border-radius: 50%;
   background: #ece4ff;
   color: #6033d5;
@@ -461,8 +525,8 @@ margin-top: -5px;
   z-index: 6;
   width: 220px;
   height: 170px;
-  right: -30px;
-  bottom: 35px;
+  right: -20px;
+  bottom: 20px;
 }
 
 .book {
@@ -565,8 +629,13 @@ margin-top: -5px;
   width: 85px;
   height: 70px;
   opacity: 0.6;
-  background-image: radial-gradient(#8060d8 1.5px, transparent 1.5px);
+  background-image:
+    radial-gradient(
+      #8060d8 1.5px,
+      transparent 1.5px
+    );
   background-size: 14px 14px;
+  pointer-events: none;
 }
 
 .dots-one {
@@ -585,6 +654,7 @@ margin-top: -5px;
   color: #7655d9;
   font-size: 21px;
   z-index: 2;
+  pointer-events: none;
 }
 
 .star-one {
@@ -610,6 +680,7 @@ margin-top: -5px;
   font-size: 40px;
   transform: rotate(-25deg);
   z-index: 2;
+  pointer-events: none;
 }
 
 
@@ -626,7 +697,6 @@ margin-top: -5px;
   border: 1px solid #eeeaf5;
   border-radius: 15px;
   box-shadow: 0 5px 22px rgba(40, 30, 75, 0.05);
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -639,7 +709,8 @@ margin-top: -5px;
   display: flex;
   align-items: center;
   gap: 11px;
-  min-width: 205px;
+  min-width: 190px;
+  flex: 1;
 }
 
 .bottom-feature-icon {
@@ -688,6 +759,7 @@ margin-top: -5px;
   width: 1px;
   height: 55px;
   background: #e7e3ee;
+  flex-shrink: 0;
 }
 
 
@@ -705,6 +777,7 @@ margin-top: -5px;
 .qr-code {
   width: 65px;
   height: 65px;
+  min-width: 65px;
   border-radius: 7px;
   border: 2px solid #222;
   display: flex;
@@ -742,28 +815,18 @@ margin-top: -5px;
 ========================================================= */
 
 .study-bottom-banner {
-  width: 420px;
-  max-width: 90%;
+  width: min(420px, 90%);
   height: 35px;
   margin: -2px auto 0;
   position: relative;
   z-index: 15;
-
-  background: linear-gradient(
-    90deg,
-    #813588,
-    #813588,
-    #813588
-  );
-
+  background: #813588;
   border-radius: 20px;
   color: white;
-
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
-
   font-size: 14px;
   font-weight: 700;
   box-shadow: 0 4px 12px rgba(95, 40, 190, 0.2);
@@ -775,50 +838,90 @@ margin-top: -5px;
 
 
 /* =========================================================
-   1200px
+   LARGE DESKTOP
+   1440px+
 ========================================================= */
 
-@media (max-width: 1200px) {
+@media (min-width: 1440px) {
+
+  .study-app-section {
+    padding-top: 65px;
+    padding-bottom: 50px;
+  }
+
+  .study-main-grid {
+    grid-template-columns: 52% 48%;
+    min-height: 650px;
+  }
+
+  .study-main-title {
+    font-size: 62px;
+  }
+
+  .study-phone-wrapper {
+    width: 400px;
+    height: 620px;
+    right: 7%;
+  }
+
+  .purple-glow-circle {
+    width: 590px;
+    height: 590px;
+    right: -20px;
+  }
+
+}
+
+
+/* =========================================================
+   DESKTOP
+   1200px - 1439px
+========================================================= */
+
+@media (max-width: 1439px) and (min-width: 1201px) {
 
   .study-main-grid {
     grid-template-columns: 52% 48%;
   }
 
   .study-phone-wrapper {
-    width: 340px;
-    right: 25px;
+    width: 370px;
+    height: 590px;
+    right: 4%;
   }
 
-  .aim-card {
-    right: -5px;
-  }
-
-  .achieve-card {
+  .purple-glow-circle {
+    width: 540px;
+    height: 540px;
     right: -15px;
   }
 
-  .books-decoration {
-    right: -25px;
+  .aim-card {
+    right: 0;
   }
 
-  .bottom-feature {
-    min-width: 175px;
+  .achieve-card {
+    right: -5px;
   }
+
 }
 
 
 /* =========================================================
-   1000px
+   LAPTOP
+   1001px - 1200px
 ========================================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) and (min-width: 1001px) {
 
   .study-app-section {
-    padding: 40px 18px 30px;
+    padding-left: 18px;
+    padding-right: 18px;
   }
 
   .study-main-grid {
-    grid-template-columns: 1fr 0.85fr;
+    grid-template-columns: 53% 47%;
+    gap: 5px;
   }
 
   .study-main-title {
@@ -826,64 +929,245 @@ margin-top: -5px;
   }
 
   .study-description {
+    max-width: 520px;
     font-size: 14px;
+  }
+
+  .study-features-grid {
+    max-width: 570px;
+    gap: 11px;
+  }
+
+  .study-feature-card {
+    min-height: 108px;
+    padding: 14px 12px;
+    gap: 10px;
+  }
+
+  .study-feature-icon {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    font-size: 20px;
+  }
+
+  .study-feature-content h3 {
+    font-size: 13px;
+  }
+
+  .study-feature-content p {
+    font-size: 10.5px;
+  }
+
+  .study-right-content {
+    height: 590px;
   }
 
   .study-phone-wrapper {
     width: 315px;
-    right: 5px;
+    height: 555px;
+    right: 3%;
+    top: 12px;
+  }
+
+  .purple-glow-circle {
+    width: 470px;
+    height: 470px;
+    right: -25px;
+    top: 50px;
   }
 
   .aim-card {
-    right: -15px;
-    top: 155px;
+    right: -5px;
+    top: 150px;
+    transform: rotate(4deg) scale(0.92);
   }
 
   .achieve-card {
-    right: -20px;
+    right: -8px;
+    top: 275px;
+    transform: rotate(6deg) scale(0.9);
   }
 
   .books-decoration {
-    right: -40px;
+    right: -20px;
+    bottom: 10px;
+    transform: scale(0.9);
+    transform-origin: right bottom;
   }
 
   .study-bottom-bar {
-    gap: 10px;
     padding: 14px;
+    gap: 10px;
   }
 
   .bottom-feature {
-    min-width: auto;
+    min-width: 150px;
   }
 
-  .bottom-feature-icon {
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-  }
-
-  .bottom-divider {
-    height: 45px;
-  }
-
-  .qr-text {
-    display: none;
-  }
 }
 
 
 /* =========================================================
-   TABLET
+   TABLET LANDSCAPE
+   801px - 1000px
 ========================================================= */
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) and (min-width: 801px) {
+
+  .study-app-section {
+    padding: 45px 18px 35px;
+  }
+
+  .study-main-grid {
+    grid-template-columns: 55% 45%;
+    gap: 0;
+    min-height: 570px;
+  }
+
+  .study-main-title {
+    font-size: 43px;
+    letter-spacing: -1.5px;
+  }
+
+  .study-description {
+    max-width: 490px;
+    font-size: 13.5px;
+  }
+
+  .study-features-grid {
+    max-width: 540px;
+    gap: 10px;
+  }
+
+  .study-feature-card {
+    min-height: 105px;
+    padding: 13px 11px;
+    gap: 9px;
+  }
+
+  .study-feature-icon {
+    width: 43px;
+    height: 43px;
+    min-width: 43px;
+    font-size: 19px;
+  }
+
+  .study-feature-content h3 {
+    font-size: 12.5px;
+  }
+
+  .study-feature-content p {
+    font-size: 10px;
+  }
+
+  .study-right-content {
+    height: 560px;
+  }
+
+  .study-phone-wrapper {
+    width: 275px;
+    height: 510px;
+    right: 1%;
+    top: 18px;
+  }
+
+  .purple-glow-circle {
+    width: 400px;
+    height: 400px;
+    right: -25px;
+    top: 65px;
+  }
+
+  .aim-card {
+    right: -8px;
+    top: 140px;
+    transform: rotate(4deg) scale(0.82);
+    transform-origin: right center;
+  }
+
+  .achieve-card {
+    right: -10px;
+    top: 255px;
+    transform: rotate(6deg) scale(0.78);
+    transform-origin: right center;
+  }
+
+  .books-decoration {
+    right: -30px;
+    bottom: 0;
+    transform: scale(0.72);
+    transform-origin: right bottom;
+  }
+
+  .paper-plane {
+    left: 0;
+    top: 70px;
+    font-size: 32px;
+  }
+
+  .study-store-rating {
+    gap: 10px;
+  }
+
+  .google-play-card {
+    width: 160px;
+    height: 62px;
+  }
+
+  .rating-card {
+    padding: 8px;
+  }
+
+  .rat-st {
+    font-size: 18px;
+  }
+
+  .rat-rev {
+    font-size: 9px;
+  }
+
+  .rating-info strong {
+    font-size: 13px;
+  }
+
+  .study-bottom-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .bottom-feature {
+    min-width: 180px;
+    flex: 0 1 220px;
+  }
+
+  .bottom-divider {
+    display: none;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET PORTRAIT
+   601px - 800px
+========================================================= */
+
+@media (max-width: 800px) and (min-width: 601px) {
+
+  .study-app-section {
+    padding: 45px 20px 35px;
+  }
 
   .study-main-grid {
     grid-template-columns: 1fr;
+    min-height: auto;
+    gap: 25px;
   }
 
   .study-left-content {
     text-align: center;
+    padding: 0;
   }
 
   .prep-badge {
@@ -892,18 +1176,28 @@ margin-top: -5px;
   }
 
   .study-main-title {
-    font-size: 52px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: clamp(45px, 7vw, 56px);
   }
 
   .study-description {
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 650px;
+    margin: 25px auto;
+    font-size: 15px;
   }
 
   .study-features-grid {
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
     text-align: left;
+    gap: 13px;
+  }
+
+  .study-feature-card {
+    min-height: 110px;
   }
 
   .study-store-rating {
@@ -911,34 +1205,64 @@ margin-top: -5px;
   }
 
   .study-right-content {
-    height: 650px;
-    margin-top: 15px;
+    width: 100%;
+    height: 600px;
+    margin-top: 0;
+  }
+
+  .purple-glow-circle {
+    width: 520px;
+    height: 520px;
+    right: 50%;
+    transform: translateX(50%);
+    top: 30px;
   }
 
   .study-phone-wrapper {
-    width: 350px;
+    width: 340px;
+    height: 570px;
     right: 50%;
+    top: 5px;
     transform: translateX(50%) rotate(7deg);
   }
 
   .aim-card {
     right: 8%;
-    top: 160px;
+    top: 145px;
+    transform: rotate(5deg) scale(0.95);
   }
 
   .achieve-card {
     right: 5%;
     top: 285px;
+    transform: rotate(7deg) scale(0.92);
   }
 
   .books-decoration {
-    right: 3%;
+    right: 4%;
+    bottom: 10px;
+    transform: scale(0.85);
+    transform-origin: right bottom;
+  }
+
+  .paper-plane {
+    left: 7%;
+    top: 80px;
+  }
+
+  .dots-one {
+    right: 5%;
+  }
+
+  .dots-two {
+    left: 5%;
   }
 
   .study-bottom-bar {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    padding: 18px;
   }
 
   .bottom-divider {
@@ -947,82 +1271,94 @@ margin-top: -5px;
 
   .bottom-feature {
     min-width: 190px;
+    flex: 0 1 210px;
   }
 
   .qr-section {
     margin-left: 10px;
   }
 
-  .qr-text {
-    display: flex;
-  }
 }
 
 
 /* =========================================================
-   MOBILE
+   LARGE MOBILE
+   481px - 600px
 ========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 600px) and (min-width: 481px) {
 
   .study-app-section {
-    padding: 30px 12px 25px;
+    padding: 38px 16px 30px;
   }
 
-  .prep-badge {
-    font-size: 12px;
-    padding: 7px 13px;
+  .study-main-grid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    gap: 18px;
+  }
+
+  .study-left-content {
+    padding: 0;
+    text-align: center;
   }
 
   .study-main-title {
-    font-size: 39px;
-    letter-spacing: -1px;
+    font-size: 42px;
+    letter-spacing: -1.5px;
   }
 
   .anytime-text::after {
-    width: 105px;
-    height: 4px;
-    bottom: -7px;
+    width: 115px;
+    height: 5px;
+    bottom: -8px;
   }
 
   .study-description {
-    font-size: 13px;
+    font-size: 13.5px;
     line-height: 1.55;
-    margin-top: 23px;
-    margin-bottom: 22px;
+    margin: 23px auto;
+    max-width: 520px;
   }
 
   .study-features-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
   }
 
   .study-feature-card {
-    min-height: 96px;
-    padding: 14px;
+    min-height: 105px;
+    padding: 13px 11px;
+    gap: 9px;
   }
 
   .study-feature-icon {
-    width: 45px;
-    min-width: 45px;
-    height: 45px;
+    width: 43px;
+    height: 43px;
+    min-width: 43px;
+    font-size: 19px;
   }
 
   .study-feature-content h3 {
-    font-size: 13px;
+    font-size: 12.5px;
   }
 
   .study-feature-content p {
-    font-size: 11px;
+    font-size: 10px;
   }
 
   .study-store-rating {
-    gap: 11px;
+    justify-content: center;
+    gap: 10px;
   }
 
   .google-play-card {
-    width: 150px;
-    height: 63px;
+    width: 155px;
+    height: 62px;
   }
 
   .google-play-card strong {
@@ -1030,111 +1366,106 @@ margin-top: -5px;
   }
 
   .google-play-icon {
-    font-size: 28px;
+    width: 29px;
+    height: 29px;
   }
 
-  .rating-stars {
-    font-size: 17px;
+  .rating-divider {
+    display: none;
   }
 
-  .rating-info strong {
-    font-size: 14px;
+  .rating-card {
+    padding: 8px 10px;
   }
 
-  .rating-info span {
+  .rat-st {
+    font-size: 18px;
+  }
+
+  .rat-rev {
     font-size: 9px;
   }
 
+  .rating-info strong {
+    font-size: 13px;
+  }
+
   .study-right-content {
-    height: 520px;
-    margin-top: 15px;
+    height: 540px;
+    margin-top: 5px;
   }
 
   .purple-glow-circle {
-    width: 410px;
-    height: 410px;
+    width: 420px;
+    height: 420px;
     right: 50%;
     transform: translateX(50%);
     top: 35px;
   }
 
   .study-phone-wrapper {
-    width: 285px;
+    width: 290px;
+    height: 500px;
     right: 50%;
-    top: 5px;
+    top: 8px;
     transform: translateX(50%) rotate(7deg);
   }
 
   .aim-card {
-    right: 1%;
-    top: 135px;
-    min-width: 105px;
-    padding: 9px 11px;
-  }
-
-  .aim-icon {
-    width: 32px;
-    height: 32px;
-    font-size: 17px;
-  }
-
-  .aim-card strong,
-  .aim-card span {
-    font-size: 11px;
+    right: 2%;
+    top: 130px;
+    transform: rotate(5deg) scale(0.88);
+    transform-origin: right center;
   }
 
   .achieve-card {
-    right: 0;
+    right: 1%;
     top: 245px;
-    width: 90px;
-    height: 100px;
-    border-radius: 18px;
-  }
-
-  .achieve-card svg {
-    font-size: 28px;
-  }
-
-  .achieve-card span {
-    font-size: 11px;
-  }
-
-  .achieve-card strong {
-    font-size: 14px;
+    transform: rotate(7deg) scale(0.82);
+    transform-origin: right center;
   }
 
   .books-decoration {
-    right: -8px;
-    bottom: 10px;
-    transform: scale(0.8);
+    right: -4px;
+    bottom: 3px;
+    transform: scale(0.72);
     transform-origin: right bottom;
   }
 
   .paper-plane {
-    left: 5px;
-    top: 60px;
+    left: 2%;
+    top: 65px;
+    font-size: 31px;
   }
 
   .dots-one {
     right: 0;
   }
 
+  .dots-two {
+    left: 0;
+  }
+
   .study-bottom-bar {
     width: 100%;
-    padding: 18px 15px;
+    padding: 17px 13px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px 10px;
+    gap: 18px 12px;
   }
 
   .bottom-feature {
     min-width: 0;
   }
 
+  .bottom-divider {
+    display: none;
+  }
+
   .bottom-feature-icon {
-    width: 38px;
-    height: 38px;
-    min-width: 38px;
+    width: 39px;
+    height: 39px;
+    min-width: 39px;
     font-size: 17px;
   }
 
@@ -1152,68 +1483,600 @@ margin-top: -5px;
     margin: 0;
   }
 
-  .qr-code {
-    width: 55px;
-    height: 55px;
-  }
-
-  .qr-code svg {
-    font-size: 44px;
-  }
-
   .study-bottom-banner {
     width: 95%;
     height: 32px;
     font-size: 11px;
   }
+
 }
 
 
 /* =========================================================
-   SMALL MOBILE
+   MOBILE
+   361px - 480px
 ========================================================= */
 
-@media (max-width: 400px) {
+@media (max-width: 480px) and (min-width: 361px) {
+
+  .study-app-section {
+    padding: 32px 13px 28px;
+  }
+
+  .study-main-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    min-height: auto;
+  }
+
+  .study-left-content {
+    padding: 0;
+    text-align: center;
+  }
+
+  .prep-badge {
+    font-size: 11px;
+    padding: 7px 12px;
+    margin-bottom: 14px;
+  }
+
+  .prep-badge svg {
+    font-size: 14px;
+  }
 
   .study-main-title {
-    font-size: 34px;
+    font-size: clamp(34px, 10vw, 40px);
+    line-height: 1.04;
+    letter-spacing: -1.3px;
+  }
+
+  .anytime-text::after {
+    width: 105px;
+    height: 4px;
+    bottom: -7px;
+  }
+
+  .study-description {
+    font-size: 12.5px;
+    line-height: 1.55;
+    margin: 22px auto 20px;
+  }
+
+  .study-features-grid {
+    grid-template-columns: 1fr;
+    gap: 9px;
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .study-feature-card {
+    min-height: 90px;
+    padding: 13px;
+    border-radius: 12px;
+    gap: 11px;
+  }
+
+  .study-feature-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: 10px;
+    font-size: 19px;
+  }
+
+  .study-feature-content h3 {
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  .study-feature-content p {
+    font-size: 10.5px;
+    line-height: 1.45;
+  }
+
+  .small-line {
+    margin-top: 7px;
   }
 
   .study-store-rating {
-    flex-wrap: wrap;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 14px;
+  }
+
+  .google-play-card {
+    width: 145px;
+    height: 60px;
+    gap: 7px;
+  }
+
+  .google-play-icon {
+    width: 27px;
+    height: 27px;
+  }
+
+  .google-play-card span {
+    font-size: 8px;
+  }
+
+  .google-play-card strong {
+    font-size: 13px;
   }
 
   .rating-divider {
     display: none;
   }
 
+  .rating-card {
+    min-height: 55px;
+    padding: 7px 9px;
+    gap: 8px;
+  }
+
+  .rat-st {
+    font-size: 17px;
+    letter-spacing: 0;
+  }
+
+  .rat-rev {
+    font-size: 8px;
+    margin-top: 3px;
+  }
+
+  .rating-info strong {
+    font-size: 12px;
+  }
+
   .study-right-content {
-    height: 470px;
+    width: 100%;
+    height: 490px;
+    margin-top: 5px;
+  }
+
+  .purple-glow-circle {
+    width: 370px;
+    height: 370px;
+    right: 50%;
+    transform: translateX(50%);
+    top: 35px;
   }
 
   .study-phone-wrapper {
-    width: 255px;
+    width: 260px;
+    height: 445px;
+    right: 50%;
+    top: 10px;
+    transform: translateX(50%) rotate(7deg);
   }
 
   .aim-card {
-    right: -2px;
+    right: -1%;
     top: 120px;
+    min-width: 100px;
+    padding: 8px 9px;
+    gap: 6px;
+    transform: rotate(5deg) scale(0.8);
+    transform-origin: right center;
+  }
+
+  .aim-icon {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    font-size: 15px;
+  }
+
+  .aim-card strong,
+  .aim-card span {
+    font-size: 10px;
   }
 
   .achieve-card {
-    right: -2px;
+    right: -1%;
     top: 220px;
+    width: 82px;
+    height: 93px;
+    border-radius: 17px;
+    transform: rotate(7deg) scale(0.8);
+    transform-origin: right center;
+  }
+
+  .achieve-card svg {
+    font-size: 25px;
+    margin-bottom: 5px;
+  }
+
+  .achieve-card span {
+    font-size: 10px;
+  }
+
+  .achieve-card strong {
+    font-size: 13px;
   }
 
   .books-decoration {
-    transform: scale(0.68);
+    right: -12px;
+    bottom: 0;
+    transform: scale(0.63);
+    transform-origin: right bottom;
+  }
+
+  .paper-plane {
+    left: -2px;
+    top: 55px;
+    font-size: 28px;
+  }
+
+  .dots-decoration {
+    width: 65px;
+    height: 55px;
+    background-size: 11px 11px;
+  }
+
+  .dots-one {
+    top: 0;
+    right: -3px;
+  }
+
+  .dots-two {
+    bottom: 35px;
+    left: -3px;
+  }
+
+  .decor-star {
+    font-size: 16px;
+  }
+
+  .star-one {
+    right: 35px;
+    top: 8px;
+  }
+
+  .star-two {
+    left: 20px;
+    top: 105px;
+  }
+
+  .star-three {
+    left: 10px;
+    bottom: 110px;
+  }
+
+  .study-bottom-bar {
+    width: 100%;
+    padding: 15px 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 9px;
+    border-radius: 13px;
+  }
+
+  .bottom-feature {
+    min-width: 0;
+    gap: 7px;
+  }
+
+  .bottom-feature-icon {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    font-size: 16px;
+  }
+
+  .bottom-feature h4 {
+    font-size: 10px;
+    margin-bottom: 3px;
+  }
+
+  .bottom-feature p {
+    font-size: 8.5px;
+  }
+
+  .qr-section {
+    grid-column: span 2;
+    justify-content: center;
+    padding-left: 0;
+  }
+
+  .qr-code {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+  }
+
+  .qr-code svg {
+    font-size: 42px;
+  }
+
+  .qr-text {
+    display: flex;
+  }
+
+  .qr-text span {
+    font-size: 9px;
+  }
+
+  .qr-text strong {
+    font-size: 10px;
+  }
+
+  .study-bottom-banner {
+    width: 96%;
+    height: 31px;
+    font-size: 10px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   320px - 360px
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .study-app-section {
+    padding: 28px 10px 24px;
+  }
+
+  .study-main-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .study-main-title {
+    font-size: 32px;
+    line-height: 1.05;
+    letter-spacing: -1px;
+  }
+
+  .anytime-text::after {
+    width: 92px;
+    height: 4px;
+    bottom: -6px;
+  }
+
+  .study-description {
+    font-size: 11.5px;
+    margin: 20px auto 18px;
+  }
+
+  .study-feature-card {
+    min-height: 86px;
+    padding: 11px;
+    gap: 9px;
+  }
+
+  .study-feature-icon {
+    width: 41px;
+    height: 41px;
+    min-width: 41px;
+    font-size: 17px;
+  }
+
+  .study-feature-content h3 {
+    font-size: 12px;
+  }
+
+  .study-feature-content p {
+    font-size: 9.5px;
+  }
+
+  .study-store-rating {
+    gap: 7px;
+  }
+
+  .google-play-card {
+    width: 136px;
+    height: 57px;
+  }
+
+  .google-play-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .google-play-card strong {
+    font-size: 12px;
+  }
+
+  .google-play-card span {
+    font-size: 7px;
+  }
+
+  .rating-card {
+    padding: 6px 7px;
+    gap: 5px;
+  }
+
+  .rat-st {
+    font-size: 15px;
+  }
+
+  .rat-rev {
+    font-size: 7.5px;
+  }
+
+  .rating-info strong {
+    font-size: 11px;
+  }
+
+  .study-right-content {
+    height: 450px;
+  }
+
+  .purple-glow-circle {
+    width: 330px;
+    height: 330px;
+    top: 35px;
+  }
+
+  .study-phone-wrapper {
+    width: 235px;
+    height: 405px;
+    top: 12px;
+  }
+
+  .aim-card {
+    right: -5px;
+    top: 110px;
+    transform: rotate(5deg) scale(0.72);
+    transform-origin: right center;
+  }
+
+  .achieve-card {
+    right: -5px;
+    top: 205px;
+    transform: rotate(7deg) scale(0.72);
+    transform-origin: right center;
+  }
+
+  .books-decoration {
+    right: -18px;
+    bottom: -3px;
+    transform: scale(0.55);
+    transform-origin: right bottom;
+  }
+
+  .paper-plane {
+    left: -4px;
+    top: 48px;
+    font-size: 25px;
+  }
+
+  .decor-star {
+    font-size: 14px;
+  }
+
+  .star-one {
+    right: 20px;
+  }
+
+  .star-two {
+    left: 10px;
+    top: 90px;
+  }
+
+  .star-three {
+    left: 5px;
+    bottom: 90px;
   }
 
   .study-bottom-bar {
     grid-template-columns: 1fr;
+    gap: 13px;
+    padding: 15px 12px;
+  }
+
+  .bottom-feature {
+    width: 100%;
   }
 
   .qr-section {
     grid-column: span 1;
   }
+
+  .study-bottom-banner {
+    width: 100%;
+    font-size: 9px;
+  }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL DEVICES
+   BELOW 320px
+========================================================= */
+
+@media (max-width: 319px) {
+
+  .study-app-section {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .study-main-title {
+    font-size: 29px;
+  }
+
+  .study-description {
+    font-size: 10.5px;
+  }
+
+  .study-phone-wrapper {
+    width: 215px;
+    height: 370px;
+  }
+
+  .study-right-content {
+    height: 415px;
+  }
+
+  .purple-glow-circle {
+    width: 300px;
+    height: 300px;
+  }
+
+  .aim-card {
+    transform: rotate(5deg) scale(0.65);
+  }
+
+  .achieve-card {
+    transform: rotate(7deg) scale(0.65);
+  }
+
+  .books-decoration {
+    transform: scale(0.48);
+  }
+
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) {
+
+  .google-play-card:hover {
+    transform: none;
+    box-shadow: 0 5px 18px rgba(30, 20, 60, 0.05);
+  }
+
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .google-play-card {
+    transition: none;
+  }
+
+}
+
+
+/* =========================================================
+   SAFETY - PREVENT HORIZONTAL OVERFLOW
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .study-app-section {
+    overflow-x: hidden;
+  }
+
+  .study-app-container {
+    overflow-x: clip;
+  }
+
+  .study-main-grid {
+    overflow: visible;
+  }
+
 }

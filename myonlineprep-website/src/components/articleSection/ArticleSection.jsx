@@ -1,152 +1,101 @@
-import React from 'react'
-import "./ArticleSection.css"
-import artimg1 from "../../assets/img/artical-img1.jpeg"
-import artimg2 from "../../assets/img/artical-gal2.jpeg"
-import { FaBookOpen, FaQuestionCircle, FaStickyNote, FaBullseye, FaChevronRight } from 'react-icons/fa'
+import React from "react";
+import "./ArticleSection.css";
+
+import artimg1 from "../../assets/img/artical-img1.jpeg";
+import artimg2 from "../../assets/img/artical-gal2.jpeg";
+// Agar third image hai to yahan apni image import karein
+// import artimg3 from "../../assets/img/artical-img3.jpeg";
+
+import { FaArrowRight } from "react-icons/fa";
+
+const articles = [
+  {
+    image: artimg1,
+    category: "JAIIB • STRATEGY",
+    title: "How to Prepare for JAIIB | Complete Paper-Wise Strategy",
+    description:
+      "A complete paper-wise strategy for ABM, BFM, ABFM, BRBL and the elective — what each paper demands, where candidates lose marks, and a month-wise plan for the Dec 2026 cycle.",
+    date: "29th Jun 2026",
+  },
+  {
+    image: artimg2,
+    category: "JAIIB • ELECTIVE",
+    title:
+      "Choosing Your JAIIB Elective: HRM, IT, Rural Banking, Risk or Central Banking?",
+    description:
+      "HRM, Rural Banking, IT, Risk Management, or Central Banking? A role-by-role guide to choosing the right JAIIB elective and clearing it in your first attempt.",
+    date: "15th May 2026",
+  },
+  {
+    image: artimg1,
+    category: "JAIIB • CAREER",
+    title: "How Much Salary Increases After Passing JAIIB and CAIIB?",
+    description:
+      "A real SBI PO example breaking down basic pay, DA, HRA and the total monthly hike you can expect after clearing JAIIB and CAIIB.",
+    date: "6th May 2026",
+  },
+];
 
 const ArticleSection = () => {
   return (
-    <div className="article-container">
-      {/* Header */}
-      <div className="article-header">
+    <section className="article-container" id="articles-section">
       
+      {/* ================= HEADER ================= */}
+      <div className="article-header">
         <h2>Articles</h2>
-        <p>Get exam-ready with concepts, questions and study notes as per the latest pattern</p>
+
+        <p>
+          Get exam-ready with concepts, questions and study notes as per the
+          latest CAIIB pattern.
+        </p>
       </div>
 
-      {/* Cards Wrapper */}
-      <div className="cards-wrapper">
-        
-        {/* Purple Card */}
-        <div className="article-card purple-theme">
-          <div className="card-top-content">
-            <div className="left-content">
-              <span className="brand-logo">My<strong>Online</strong>prep</span>
-              <span className="paper-badge">JAIIB • PAPER 1</span>
-              <h3>IE & IFS Most Important Topics <br />for the JAIIB Exam</h3>
-              <div className="underline"></div>
-            </div>
-            <div className="right-illustration">
-              <div className="clipboard purple-board">
-                <img src={artimg1} alt="" />
-              </div>
-              
-            </div>
-          </div>
+      {/* ================= CARDS ================= */}
+      <div className="articles-grid">
+       {articles.map((article, index) => (
+  <a
+    href="https://www.myonlineprep.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="article-card"
+    key={index}
+  >
+    {/* IMAGE */}
+    <div className="article-image-wrapper">
+      <img
+        src={article.image}
+        alt={article.title}
+        className="article-image"
+      />
 
-          {/* Features Row */}
-          <div className="features-row">
-            <div className="feature-item">
-              <FaBookOpen className="f-icon purple-text" />
-              <div>
-                <strong>Concepts</strong>
-                <span>Easy to Understand</span>
-              </div>
-            </div>
-            <div className="feature-item">
-              <FaQuestionCircle className="f-icon purple-text" />
-              <div>
-                <strong>Important Questions</strong>
-                <span>Exam Pattern Based</span>
-              </div>
-            </div>
-            <div className="feature-item">
-              <FaStickyNote className="f-icon purple-text" />
-              <div>
-                <strong>Study Notes</strong>
-                <span>Quick Revision</span>
-              </div>
-            </div>
-            <div className="feature-item">
-              <FaBullseye className="f-icon purple-text" />
-              <div>
-                <strong>Exam Focused</strong>
-                <span>Score Better</span>
-              </div>
-            </div>
-          </div>
+      <span className="article-category">
+        {article.category}
+      </span>
+    </div>
 
-          {/* Bottom Banner */}
-          <div className="card-bottom-banner">
-            <div className="banner-icon-box">
-              <FaBookOpen />
-            </div>
-            <div className="banner-text">
-              <h4>IE And IFS Most Important Topics For The JAIIB Exam</h4>
-              <p>IE & IFS Most Important Topics For The JAIIB Exam, Module-Wise Weightage, What To Study And What To Skip, Plus A Smart Strategy To Clear The Paper On Your First Attempt.</p>
-            </div>
-            <button className="arrow-btn">
-              <FaChevronRight />
-            </button>
-          </div>
-        </div>
+    {/* CONTENT */}
+    <div className="article-content">
+      <h3>{article.title}</h3>
 
-        {/* Blue Card */}
-        <div className="article-card blue-theme">
-          <div className="card-top-content">
-            <div className="left-content">
-              <span className="brand-logo">My<strong>Online</strong>prep</span>
-              <span className="paper-badge">JAIIB • PAPER 1</span>
-              <h3>IE & IFS Most Important Topics <br />for the JAIIB Exam</h3>
-              <div className="underline"></div>
-            </div>
-            <div className="right-illustration">
-              <div className="clipboard blue-board">
-               <img src={artimg2} alt="" />
-              </div>
-            </div>
-          </div>
+      <p className="article-description">
+        {article.description}
+      </p>
 
-          {/* Features Row */}
-          <div className="features-row">
-            <div className="feature-item">
-              <FaBookOpen className="f-icon blue-text" />
-              <div>
-                <strong>Concepts</strong>
-                <span>Easy to Understand</span>
-              </div>
-            </div>
-            <div className="feature-item">
-              <FaQuestionCircle className="f-icon blue-text" />
-              <div>
-                <strong>Important Questions</strong>
-                <span>Exam Pattern Based</span>
-              </div>
-            </div>
-            <div className="feature-item">
-              <FaStickyNote className="f-icon blue-text" />
-              <div>
-                <strong>Study Notes</strong>
-                <span>Quick Revision</span>
-              </div>
-            </div>
-            <div className="feature-item">
-              <FaBullseye className="f-icon blue-text" />
-              <div>
-                <strong>Exam Focused</strong>
-                <span>Score Better</span>
-              </div>
-            </div>
-          </div>
+      <div className="article-footer">
+        <span className="article-date">
+          {article.date}
+        </span>
 
-          {/* Bottom Banner */}
-          <div className="card-bottom-banner">
-            <div className="banner-icon-box">
-              <FaBookOpen />
-            </div>
-            <div className="banner-text">
-              <h4>IE And IFS Most Important Topics For The JAIIB Exam</h4>
-              <p>IE & IFS Most Important Topics For The JAIIB Exam, Module-Wise Weightage, What To Study And What To Skip, Plus A Smart Strategy To Clear The Paper On Your First Attempt.</p>
-            </div>
-            <button className="arrow-btn">
-              <FaChevronRight />
-            </button>
-          </div>
-        </div>
-
+        <span className="article-arrow">
+          <FaArrowRight />
+        </span>
       </div>
     </div>
-  )
-}
+  </a>
+))}
+      </div>
+    </section>
+  );
+};
 
-export default ArticleSection
+export default ArticleSection;

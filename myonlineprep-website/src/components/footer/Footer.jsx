@@ -81,7 +81,14 @@ const Footer = () => {
       <div className="footer-bottom">
         <div className="footer-divider"></div>
         <div className="footer-bottom-content">
-          <p>© 2026 Myonlineprep. Developed by <Link style={{color:"#050a29"}}>Rays Edutech Pvt. Ltd.</Link>.</p>
+          <p>© 2026 Myonlineprep. Developed by <a
+  href="https://raysonline.in/"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{ color: "#fff" }}
+>
+  Rays Edutech Pvt. Ltd.
+</a>.</p>
           <div className="footer-legal-links">
             <a href="#terms">Terms & Conditions</a>
             <span>|</span>

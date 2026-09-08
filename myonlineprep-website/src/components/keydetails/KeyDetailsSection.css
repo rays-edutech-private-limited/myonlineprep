@@ -10,7 +10,7 @@
   box-sizing: border-box;
 
   font-family: 'Poppins', sans-serif;
-  background: #f4f7fa;
+  background: #fbfafe;
 
   padding: 60px 20px;
 
@@ -50,6 +50,12 @@
   line-height: 1.25;
 
   font-weight: 700;
+}
+
+.key-details-header h2 span{
+  font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 700;
 }
 
 .key-details-header p {
@@ -134,11 +140,11 @@
 
 .tab-btn:hover {
   background: #f3e8f5;
-  color: #813588;
+  background: linear-gradient(105deg, #5E2FC9 0%, #7936B9 5%, #D14D87 75%, #F35673 100%);
 }
 
 .tab-btn.active {
-  background: #813588;
+  background: linear-gradient(105deg, #5E2FC9 0%, #7936B9 5%, #D14D87 75%, #F35673 100%);
   color: #ffffff;
 
   box-shadow: 0 4px 10px rgba(129, 53, 136, 0.3);
@@ -245,7 +251,7 @@
 
   padding: 14px 20px;
 
-  background: #813588;
+  background: #ec4899;
 
   color: #ffffff;
 
@@ -1173,7 +1179,7 @@
   }
 
   .tab-btn.active:hover {
-    background: #813588;
+    background: linear-gradient(105deg, #5E2FC9 0%, #7936B9 5%, #D14D87 75%, #F35673 100%);
     color: #ffffff;
   }
 }

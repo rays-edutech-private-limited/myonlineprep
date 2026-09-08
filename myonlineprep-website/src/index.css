@@ -3,3 +3,14 @@
   margin: 0;
   padding: 0;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+#exam-info,
+#enroll-section,
+#articles-section,
+#faq-section {
+  scroll-margin-top: 85px;
+}

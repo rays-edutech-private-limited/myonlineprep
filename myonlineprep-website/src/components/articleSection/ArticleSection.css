@@ -2,11 +2,13 @@
    GOOGLE FONT
 ========================================================= */
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+@import url(
+  "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+);
 
 
 /* =========================================================
-   GLOBAL
+   RESET
 ========================================================= */
 
 .article-container,
@@ -14,11 +16,15 @@
   box-sizing: border-box;
 }
 
+
+/* =========================================================
+   MAIN SECTION
+========================================================= */
+
 .article-container {
   width: 100%;
-  background-color: #f4f7fa;
-  padding: clamp(35px, 5vw, 70px) 20px;
-  margin: 0 auto;
+  padding: 70px 20px;
+  background: #ffffff;
   font-family: "Poppins", sans-serif;
   overflow: hidden;
 }
@@ -31,47 +37,51 @@
 .article-header {
   width: 100%;
   max-width: 850px;
-  margin: 0 auto clamp(28px, 4vw, 45px);
+  margin: 0 auto 42px;
   text-align: center;
 }
 
 .article-header h2 {
   margin: 0 0 10px;
-  padding: 0;
-  color: #611574;
-  font-size: clamp(30px, 4vw, 45px);
+  color: #241a3d;
+  font-size: 44px;
   line-height: 1.2;
   font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 .article-header p {
   margin: 0;
-  padding: 0;
-  color: #666;
-  font-size: clamp(12px, 1.2vw, 15px);
+  color: #777080;
+  font-size: 15px;
   line-height: 1.6;
   font-weight: 400;
 }
 
 
 /* =========================================================
-   CARDS WRAPPER
+   ARTICLES GRID
 ========================================================= */
 
-.cards-wrapper {
+.articles-grid {
   width: 100%;
-  max-width: 1260px;
+  max-width: 1350px;
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 
-  gap: clamp(18px, 2.5vw, 30px);
+  gap: 30px;
+ 
+}
+
+.articles-grid a{
+  text-decoration: none;
 }
 
 
 /* =========================================================
-   COMMON CARD
+   ARTICLE CARD
 ========================================================= */
 
 .article-card {
@@ -79,360 +89,184 @@
   min-width: 0;
 
   background: #ffffff;
-  border-radius: 20px;
 
-  padding: clamp(18px, 2.2vw, 30px);
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-
-  position: relative;
-  overflow: hidden;
-
-  border: 1px solid #eaeaea;
-}
-
-
-/* =========================================================
-   TOP CONTENT
-========================================================= */
-
-.card-top-content {
-  width: 100%;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-
-  gap: 20px;
-
-  margin-bottom: clamp(18px, 2vw, 25px);
-}
-
-.left-content {
-  flex: 1;
-  min-width: 0;
-}
-
-
-/* =========================================================
-   BRAND
-========================================================= */
-
-.brand-logo {
-  display: block;
-
-  margin-bottom: 12px;
-
-  font-size: clamp(14px, 1.2vw, 16px);
-  line-height: 1.2;
-
-  color: #333;
-  font-weight: 500;
-}
-
-.brand-logo strong {
-  font-weight: 700;
-}
-
-
-/* =========================================================
-   PAPER BADGE
-========================================================= */
-
-.paper-badge {
-  display: inline-block;
-
-  max-width: 100%;
-
-  padding: 5px 14px;
-
-  border-radius: 20px;
-
-  font-size: clamp(9px, 0.9vw, 12px);
-  line-height: 1.2;
-
-  font-weight: 600;
-
-  margin-bottom: 14px;
-
-  color: #fff;
-
-  white-space: nowrap;
-}
-
-.purple-theme .paper-badge {
-  background: #6a0dad;
-}
-
-.blue-theme .paper-badge {
-  background: #0066cc;
-}
-
-
-/* =========================================================
-   CARD TITLE
-========================================================= */
-
-.card-top-content h3 {
-  margin: 0;
-  padding: 0;
-
-  color: #111;
-
-  font-size: clamp(17px, 1.8vw, 24px);
-  line-height: 1.3;
-
-  font-weight: 700;
-
-  overflow-wrap: break-word;
-}
-
-
-/* =========================================================
-   UNDERLINE
-========================================================= */
-
-.underline {
-  width: 35px;
-  height: 4px;
-
-  border-radius: 2px;
-
-  margin-top: 15px;
-}
-
-.purple-theme .underline {
-  background: #6a0dad;
-}
-
-.blue-theme .underline {
-  background: #0066cc;
-}
-
-
-/* =========================================================
-   IMAGE / CLIPBOARD
-========================================================= */
-
-.right-illustration {
-  flex-shrink: 0;
-
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.clipboard {
-  width: clamp(105px, 11vw, 150px);
-  height: clamp(105px, 11vw, 150px);
-
-  border-radius: 8px;
-
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-
-  position: relative;
+  border: 1px solid #e8e0f0;
+  border-radius: 22px;
 
   overflow: hidden;
 
-  flex-shrink: 0;
+  box-shadow:
+    0 8px 25px rgba(52, 20, 88, 0.04);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
 }
 
-.clipboard img {
+.article-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 16px 35px rgba(52, 20, 88, 0.10);
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.article-image-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  padding: 13px 13px 11px;
+
+  background: #f8edfb;
+
+  overflow: hidden;
+}
+
+
+.article-image {
   display: block;
 
   width: 100%;
-  height: 100%;
+  height: 276px;
 
   object-fit: cover;
 
-  border-radius: 5px;
+  border-radius: 14px;
+
+  transition: transform 0.4s ease;
+}
+
+
+.article-card:hover .article-image {
+  transform: scale(1.025);
 }
 
 
 /* =========================================================
-   FEATURES ROW
+   CATEGORY BADGE
 ========================================================= */
 
-.features-row {
-  width: 100%;
+.article-category {
+  position: absolute;
 
-  display: grid;
+  top: 28px;
+  left: 27px;
 
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-
-  gap: 8px;
-
-  background: #fdfdfd;
-
-  padding: 13px;
-
-  border-radius: 12px;
-
-  border: 1px solid #f0f0f0;
-
-  margin-bottom: 22px;
-}
-
-
-/* =========================================================
-   FEATURE ITEM
-========================================================= */
-
-.feature-item {
-  min-width: 0;
-
-  display: flex;
+  display: inline-flex;
   align-items: center;
 
-  gap: 8px;
+  min-height: 30px;
+
+  padding: 5px 16px;
+
+  background: rgba(69, 56, 81, 0.95);
+
+  color: #ffffff;
+
+  border-radius: 18px;
+
+  font-size: 11px;
+  line-height: 1.2;
+  font-weight: 700;
+
+  letter-spacing: 0.2px;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
-.f-icon {
-  font-size: clamp(17px, 1.7vw, 22px);
 
-  flex-shrink: 0;
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.article-content {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 25px 27px 25px;
 }
 
-.purple-text {
-  color: #6a0dad;
-}
 
-.blue-text {
-  color: #0066cc;
-}
+/* =========================================================
+   TITLE
+========================================================= */
 
-.feature-item > div {
-  min-width: 0;
-}
+.article-content h3 {
+  margin: 0 0 12px;
 
-.feature-item strong {
-  display: block;
+  color: #211936;
 
-  margin: 0;
-
-  font-size: clamp(9px, 0.9vw, 11px);
-
-  line-height: 1.3;
-
-  color: #222;
+  font-size: 21px;
+  line-height: 1.35;
 
   font-weight: 700;
 
-  overflow-wrap: break-word;
-}
-
-.feature-item span {
-  display: block;
-
-  margin-top: 2px;
-
-  font-size: clamp(7.5px, 0.75vw, 9px);
-
-  line-height: 1.3;
-
-  color: #777;
+  letter-spacing: -0.2px;
 }
 
 
 /* =========================================================
-   BOTTOM BANNER
+   DESCRIPTION
 ========================================================= */
 
-.card-bottom-banner {
-  width: 100%;
-
-  min-height: 92px;
-
-  border-radius: 12px;
-
-  padding: 13px 15px;
-
-  display: flex;
-  align-items: center;
-
-  gap: 12px;
-
-  color: #fff;
-}
-
-.purple-theme .card-bottom-banner {
-  background: #3c096c;
-}
-
-.blue-theme .card-bottom-banner {
-  background: #003366;
-}
-
-
-/* =========================================================
-   BANNER ICON
-========================================================= */
-
-.banner-icon-box {
-  width: 42px;
-  height: 42px;
-
-  min-width: 42px;
-
-  font-size: 18px;
-
-  background: rgba(255, 255, 255, 0.15);
-
-  padding: 10px;
-
-  border-radius: 10px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-/* =========================================================
-   BANNER TEXT
-========================================================= */
-
-.banner-text {
-  flex: 1;
-
-  min-width: 0;
-}
-
-.banner-text h4 {
-  margin: 0 0 4px;
-
-  padding: 0;
-
-  font-size: clamp(10px, 1vw, 13px);
-
-  line-height: 1.35;
-
-  font-weight: 600;
-
-  color: #fff;
-
-  overflow-wrap: break-word;
-}
-
-.banner-text p {
+.article-description {
   margin: 0;
-  padding: 0;
 
-  font-size: clamp(8px, 0.85vw, 11px);
+  color: #756e7f;
 
-  line-height: 1.45;
+  font-size: 14px;
+  line-height: 1.75;
 
-  color: #fff;
-
-  opacity: 0.85;
+  font-weight: 400;
 
   display: -webkit-box;
-
-  -webkit-line-clamp: 2;
-
   -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 
   overflow: hidden;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.article-footer {
+  margin-top: auto;
+  padding-top: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+
+/* =========================================================
+   DATE
+========================================================= */
+
+.article-date {
+  color: #81798c;
+
+  font-size: 12px;
+  line-height: 1.3;
+
+  font-weight: 500;
 }
 
 
@@ -440,17 +274,18 @@
    ARROW BUTTON
 ========================================================= */
 
-.arrow-btn {
-  width: 32px;
-  height: 32px;
+.article-arrow {
+  width: 39px;
+  height: 39px;
 
-  min-width: 32px;
+  min-width: 39px;
 
-  background: #ffffff;
-
-  border: none;
-
+  border: 0;
   border-radius: 50%;
+
+  background: #f0e4ff;
+
+  color: #7135d4;
 
   display: flex;
   align-items: center;
@@ -458,24 +293,23 @@
 
   cursor: pointer;
 
-  flex-shrink: 0;
+  font-size: 12px;
 
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-.purple-theme .arrow-btn {
-  color: #3c096c;
-}
+.article-arrow:hover {
+  background: #7135d4;
+  color: #ffffff;
 
-.blue-theme .arrow-btn {
-  color: #003366;
-}
+  transform: translateX(3px);
 
-.arrow-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  box-shadow:
+    0 5px 15px rgba(113, 53, 212, 0.25);
 }
 
 
@@ -485,37 +319,28 @@
 ========================================================= */
 
 @media (min-width: 1440px) {
+
   .article-container {
-    padding-top: 75px;
-    padding-bottom: 75px;
+    padding: 80px 25px;
   }
 
-  .cards-wrapper {
-    max-width: 1320px;
-    gap: 35px;
+  .articles-grid {
+    max-width: 1350px;
+    gap: 30px;
   }
 
-  .article-card {
-    padding: 32px;
+  .article-image {
+    height: 278px;
   }
 
-  .card-top-content h3 {
-    font-size: 25px;
+  .article-content {
+    padding: 25px 28px 26px;
   }
 
-  .clipboard {
-    width: 155px;
-    height: 155px;
+  .article-content h3 {
+    font-size: 21px;
   }
 
-  .features-row {
-    padding: 15px;
-  }
-
-  .card-bottom-banner {
-    min-height: 95px;
-    padding: 15px 18px;
-  }
 }
 
 
@@ -525,22 +350,28 @@
 ========================================================= */
 
 @media (max-width: 1439px) and (min-width: 1201px) {
-  .cards-wrapper {
-    max-width: 1260px;
+
+  .article-container {
+    padding: 65px 20px;
   }
 
-  .article-card {
-    padding: 28px;
+  .articles-grid {
+    max-width: 1270px;
+    gap: 28px;
   }
 
-  .card-top-content h3 {
-    font-size: 22px;
+  .article-image {
+    height: 265px;
   }
 
-  .clipboard {
-    width: 140px;
-    height: 140px;
+  .article-content {
+    padding: 24px 26px;
   }
+
+  .article-content h3 {
+    font-size: 20px;
+  }
+
 }
 
 
@@ -550,166 +381,79 @@
 ========================================================= */
 
 @media (max-width: 1200px) and (min-width: 1025px) {
+
   .article-container {
-    padding-left: 18px;
-    padding-right: 18px;
+    padding: 60px 18px;
   }
 
-  .cards-wrapper {
+  .article-header {
+    margin-bottom: 35px;
+  }
+
+  .article-header h2 {
+    font-size: 40px;
+  }
+
+  .articles-grid {
+    max-width: 1100px;
     gap: 20px;
   }
 
   .article-card {
-    padding: 22px;
     border-radius: 18px;
   }
 
-  .card-top-content {
-    gap: 12px;
+  .article-image-wrapper {
+    padding: 10px;
   }
 
-  .card-top-content h3 {
-    font-size: 19px;
+  .article-image {
+    height: 225px;
+    border-radius: 12px;
   }
 
-  .clipboard {
-    width: 115px;
-    height: 115px;
+  .article-category {
+    top: 22px;
+    left: 22px;
+
+    font-size: 10px;
+    padding: 5px 12px;
   }
 
-  .features-row {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+  .article-content {
+    padding: 20px;
   }
 
-  .feature-item {
-    padding: 4px;
+  .article-content h3 {
+    font-size: 18px;
   }
 
-  .card-bottom-banner {
-    min-height: 90px;
-    gap: 9px;
-  }
-
-  .banner-icon-box {
-    width: 38px;
-    height: 38px;
-    min-width: 38px;
-  }
-}
-
-
-/* =========================================================
-   SMALL LAPTOP / TABLET
-   901px - 1024px
-========================================================= */
-
-@media (max-width: 1024px) and (min-width: 901px) {
-  .article-container {
-    padding: 45px 16px;
-  }
-
-  .cards-wrapper {
-    gap: 16px;
-  }
-
-  .article-card {
-    padding: 18px;
-    border-radius: 16px;
-  }
-
-  .card-top-content {
-    gap: 8px;
-  }
-
-  .brand-logo {
+  .article-description {
     font-size: 13px;
-    margin-bottom: 9px;
+    line-height: 1.65;
   }
 
-  .paper-badge {
-    font-size: 9px;
-    padding: 4px 10px;
-    margin-bottom: 10px;
+  .article-footer {
+    padding-top: 24px;
   }
 
-  .card-top-content h3 {
-    font-size: 16px;
-  }
-
-  .underline {
-    margin-top: 10px;
-  }
-
-  .clipboard {
-    width: 100px;
-    height: 100px;
-  }
-
-  .features-row {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-    padding: 10px;
-  }
-
-  .feature-item {
-    gap: 6px;
-  }
-
-  .f-icon {
-    font-size: 17px;
-  }
-
-  .feature-item strong {
-    font-size: 8.5px;
-  }
-
-  .feature-item span {
-    font-size: 7px;
-  }
-
-  .card-bottom-banner {
-    padding: 10px;
-    gap: 8px;
-  }
-
-  .banner-icon-box {
-    width: 34px;
-    height: 34px;
-    min-width: 34px;
-    font-size: 15px;
-    padding: 8px;
-  }
-
-  .banner-text h4 {
-    font-size: 9px;
-  }
-
-  .banner-text p {
-    font-size: 7.5px;
-  }
-
-  .arrow-btn {
-    width: 28px;
-    height: 28px;
-    min-width: 28px;
-  }
 }
 
 
 /* =========================================================
    TABLET
-   768px - 900px
+   768px - 1024px
 ========================================================= */
 
-@media (max-width: 900px) and (min-width: 768px) {
+@media (max-width: 1024px) and (min-width: 768px) {
+
   .article-container {
-    padding: 45px 20px;
+    padding: 55px 20px;
   }
 
   .article-header {
     max-width: 700px;
-    margin-bottom: 32px;
+    margin-bottom: 35px;
   }
 
   .article-header h2 {
@@ -717,43 +461,55 @@
   }
 
   .article-header p {
-    font-size: 13px;
+    font-size: 14px;
   }
 
-  .cards-wrapper {
-    grid-template-columns: 1fr;
-    max-width: 700px;
+  .articles-grid {
+    max-width: 850px;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
     gap: 22px;
   }
 
   .article-card {
-    padding: 24px;
+    border-radius: 18px;
   }
 
-  .card-top-content h3 {
-    font-size: 22px;
+  .article-image-wrapper {
+    padding: 10px;
   }
 
-  .clipboard {
-    width: 135px;
-    height: 135px;
+  .article-image {
+    height: 220px;
   }
 
-  .features-row {
-    grid-template-columns: repeat(4, 1fr);
-  }
+  .article-category {
+    top: 22px;
+    left: 22px;
 
-  .feature-item {
-    gap: 7px;
-  }
-
-  .feature-item strong {
     font-size: 9px;
+    padding: 5px 11px;
   }
 
-  .feature-item span {
-    font-size: 7.5px;
+  .article-content {
+    padding: 20px;
   }
+
+  .article-content h3 {
+    font-size: 18px;
+  }
+
+  .article-description {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .article-footer {
+    padding-top: 22px;
+  }
+
 }
 
 
@@ -763,67 +519,62 @@
 ========================================================= */
 
 @media (max-width: 767px) and (min-width: 601px) {
+
   .article-container {
-    padding: 40px 18px;
+    padding: 45px 18px;
   }
 
   .article-header {
-    max-width: 620px;
-    margin-bottom: 28px;
+    margin-bottom: 30px;
   }
 
   .article-header h2 {
-    font-size: 36px;
+    font-size: 35px;
   }
 
   .article-header p {
-    font-size: 12px;
+    font-size: 13px;
   }
 
-  .cards-wrapper {
-    grid-template-columns: 1fr;
+  .articles-grid {
     max-width: 620px;
-    gap: 20px;
+
+    grid-template-columns: 1fr;
+
+    gap: 22px;
   }
 
   .article-card {
-    padding: 20px;
-    border-radius: 17px;
+    border-radius: 18px;
   }
 
-  .card-top-content {
-    gap: 15px;
+  .article-image-wrapper {
+    padding: 11px;
   }
 
-  .card-top-content h3 {
-    font-size: 20px;
+  .article-image {
+    height: 285px;
   }
 
-  .clipboard {
-    width: 125px;
-    height: 125px;
-  }
+  .article-category {
+    top: 23px;
+    left: 24px;
 
-  .features-row {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-
-  .feature-item {
-    gap: 8px;
-  }
-
-  .feature-item strong {
     font-size: 10px;
   }
 
-  .feature-item span {
-    font-size: 8px;
+  .article-content {
+    padding: 22px;
   }
 
-  .card-bottom-banner {
-    min-height: 88px;
+  .article-content h3 {
+    font-size: 20px;
   }
+
+  .article-description {
+    font-size: 13px;
+  }
+
 }
 
 
@@ -833,8 +584,9 @@
 ========================================================= */
 
 @media (max-width: 600px) {
+
   .article-container {
-    padding: 32px 12px;
+    padding: 38px 12px;
   }
 
   .article-header {
@@ -843,7 +595,7 @@
   }
 
   .article-header h2 {
-    font-size: clamp(29px, 8vw, 35px);
+    font-size: 32px;
     margin-bottom: 8px;
   }
 
@@ -852,109 +604,74 @@
     line-height: 1.55;
   }
 
-  .cards-wrapper {
+  .articles-grid {
     width: 100%;
+
     grid-template-columns: 1fr;
-    gap: 16px;
+
+    gap: 18px;
   }
 
   .article-card {
+    border-radius: 17px;
+  }
+
+  .article-image-wrapper {
+    padding: 9px;
+  }
+
+  .article-image {
     width: 100%;
-    padding: 15px;
-    border-radius: 15px;
+    height: 235px;
+
+    border-radius: 11px;
   }
 
-  .card-top-content {
-    gap: 10px;
-    margin-bottom: 17px;
+  .article-category {
+    top: 20px;
+    left: 20px;
+
+    min-height: 27px;
+
+    padding: 4px 11px;
+
+    font-size: 8.5px;
   }
 
-  .brand-logo {
-    font-size: 12px;
-    margin-bottom: 8px;
+  .article-content {
+    padding: 19px;
   }
 
-  .paper-badge {
-    font-size: 8px;
-    padding: 4px 9px;
+  .article-content h3 {
+    font-size: 17px;
+    line-height: 1.4;
+
     margin-bottom: 9px;
   }
 
-  .card-top-content h3 {
-    font-size: 15px;
-    line-height: 1.3;
+  .article-description {
+    font-size: 12px;
+    line-height: 1.65;
+
+    -webkit-line-clamp: 4;
   }
 
-  .underline {
-    width: 28px;
-    height: 3px;
-    margin-top: 9px;
+  .article-footer {
+    padding-top: 22px;
   }
 
-  .clipboard {
-    width: 90px;
-    height: 90px;
+  .article-date {
+    font-size: 10.5px;
   }
 
-  .features-row {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
+  .article-arrow {
+    width: 35px;
+    height: 35px;
+    min-width: 35px;
 
-    padding: 9px;
-
-    margin-bottom: 15px;
-  }
-
-  .feature-item {
-    gap: 6px;
-    align-items: flex-start;
-  }
-
-  .f-icon {
-    font-size: 17px;
-    margin-top: 1px;
-  }
-
-  .feature-item strong {
-    font-size: 8.5px;
-  }
-
-  .feature-item span {
-    font-size: 7px;
-  }
-
-  .card-bottom-banner {
-    min-height: 80px;
-    padding: 10px;
-    gap: 8px;
-    border-radius: 10px;
-  }
-
-  .banner-icon-box {
-    width: 34px;
-    height: 34px;
-    min-width: 34px;
-    font-size: 14px;
-    padding: 7px;
-    border-radius: 8px;
-  }
-
-  .banner-text h4 {
-    font-size: 8.5px;
-    line-height: 1.3;
-  }
-
-  .banner-text p {
-    font-size: 7px;
-    line-height: 1.35;
-  }
-
-  .arrow-btn {
-    width: 27px;
-    height: 27px;
-    min-width: 27px;
     font-size: 10px;
   }
+
 }
 
 
@@ -964,8 +681,9 @@
 ========================================================= */
 
 @media (max-width: 480px) {
+
   .article-container {
-    padding: 28px 10px;
+    padding: 32px 10px;
   }
 
   .article-header {
@@ -980,86 +698,64 @@
     font-size: 10.5px;
   }
 
-  .cards-wrapper {
-    gap: 14px;
+  .articles-grid {
+    gap: 15px;
   }
 
   .article-card {
-    padding: 12px;
-    border-radius: 14px;
+    border-radius: 15px;
   }
 
-  .card-top-content {
-    gap: 7px;
-    margin-bottom: 14px;
-  }
-
-  .brand-logo {
-    font-size: 11px;
-  }
-
-  .paper-badge {
-    font-size: 7.5px;
-    padding: 4px 8px;
-  }
-
-  .card-top-content h3 {
-    font-size: 13px;
-  }
-
-  .clipboard {
-    width: 78px;
-    height: 78px;
-  }
-
-  .features-row {
-    gap: 6px;
+  .article-image-wrapper {
     padding: 8px;
   }
 
-  .feature-item {
-    gap: 5px;
+  .article-image {
+    height: 205px;
+    border-radius: 10px;
   }
 
-  .f-icon {
+  .article-category {
+    top: 17px;
+    left: 17px;
+
+    min-height: 25px;
+
+    padding: 4px 9px;
+
+    font-size: 7.5px;
+  }
+
+  .article-content {
+    padding: 16px;
+  }
+
+  .article-content h3 {
     font-size: 15px;
+    line-height: 1.4;
   }
 
-  .feature-item strong {
-    font-size: 7.5px;
+  .article-description {
+    font-size: 10.5px;
+    line-height: 1.65;
   }
 
-  .feature-item span {
-    font-size: 6.5px;
+  .article-footer {
+    padding-top: 19px;
   }
 
-  .card-bottom-banner {
-    min-height: 72px;
-    padding: 8px;
-    gap: 6px;
+  .article-date {
+    font-size: 9.5px;
   }
 
-  .banner-icon-box {
-    width: 30px;
-    height: 30px;
-    min-width: 30px;
-    font-size: 12px;
-    padding: 6px;
+  .article-arrow {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+
+    font-size: 9px;
   }
 
-  .banner-text h4 {
-    font-size: 7.5px;
-  }
-
-  .banner-text p {
-    font-size: 6.3px;
-  }
-
-  .arrow-btn {
-    width: 25px;
-    height: 25px;
-    min-width: 25px;
-  }
 }
 
 
@@ -1069,8 +765,9 @@
 ========================================================= */
 
 @media (max-width: 380px) {
+
   .article-container {
-    padding: 25px 8px;
+    padding: 28px 8px;
   }
 
   .article-header h2 {
@@ -1081,80 +778,57 @@
     font-size: 9.5px;
   }
 
-  .article-card {
-    padding: 10px;
+  .articles-grid {
+    gap: 13px;
   }
 
-  .card-top-content {
-    gap: 6px;
-  }
-
-  .brand-logo {
-    font-size: 10px;
-  }
-
-  .paper-badge {
-    font-size: 7px;
-    padding: 3px 7px;
-  }
-
-  .card-top-content h3 {
-    font-size: 12px;
-  }
-
-  .clipboard {
-    width: 70px;
-    height: 70px;
-  }
-
-  .features-row {
-    grid-template-columns: 1fr 1fr;
-    gap: 5px;
+  .article-image-wrapper {
     padding: 7px;
   }
 
-  .feature-item {
-    gap: 4px;
+  .article-image {
+    height: 180px;
   }
 
-  .f-icon {
-    font-size: 14px;
-  }
+  .article-category {
+    top: 15px;
+    left: 15px;
 
-  .feature-item strong {
+    min-height: 23px;
+
+    padding: 3px 8px;
+
     font-size: 7px;
   }
 
-  .feature-item span {
-    font-size: 6px;
+  .article-content {
+    padding: 14px;
   }
 
-  .card-bottom-banner {
-    min-height: 68px;
-    padding: 7px;
+  .article-content h3 {
+    font-size: 13px;
   }
 
-  .banner-icon-box {
-    width: 27px;
-    height: 27px;
-    min-width: 27px;
-    font-size: 11px;
+  .article-description {
+    font-size: 9px;
   }
 
-  .banner-text h4 {
-    font-size: 7px;
+  .article-footer {
+    padding-top: 17px;
   }
 
-  .banner-text p {
-    font-size: 5.8px;
+  .article-date {
+    font-size: 8.5px;
   }
 
-  .arrow-btn {
-    width: 23px;
-    height: 23px;
-    min-width: 23px;
+  .article-arrow {
+    width: 29px;
+    height: 29px;
+    min-width: 29px;
+
     font-size: 8px;
   }
+
 }
 
 
@@ -1164,6 +838,7 @@
 ========================================================= */
 
 @media (max-width: 320px) {
+
   .article-container {
     padding-left: 6px;
     padding-right: 6px;
@@ -1177,104 +852,32 @@
     font-size: 9px;
   }
 
-  .article-card {
-    padding: 9px;
+  .article-image {
+    height: 160px;
   }
 
-  .card-top-content h3 {
-    font-size: 11px;
+  .article-content {
+    padding: 12px;
   }
 
-  .clipboard {
-    width: 62px;
-    height: 62px;
-  }
-
-  .features-row {
-    padding: 6px;
-  }
-
-  .feature-item strong {
-    font-size: 6.5px;
-  }
-
-  .feature-item span {
-    font-size: 5.5px;
-  }
-
-  .card-bottom-banner {
-    min-height: 63px;
-  }
-
-  .banner-text h4 {
-    font-size: 6.5px;
-  }
-
-  .banner-text p {
-    font-size: 5.4px;
-  }
-}
-
-
-/* =========================================================
-   MOBILE LANDSCAPE
-========================================================= */
-
-@media (max-height: 550px) and (orientation: landscape) {
-  .article-container {
-    padding-top: 25px;
-    padding-bottom: 25px;
-  }
-
-  .article-header {
-    margin-bottom: 20px;
-  }
-
-  .article-header h2 {
-    font-size: 28px;
-  }
-
-  .article-header p {
-    font-size: 10px;
-  }
-
-  .cards-wrapper {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-  }
-
-  .article-card {
-    padding: 10px;
-  }
-
-  .card-top-content {
-    gap: 5px;
-  }
-
-  .card-top-content h3 {
+  .article-content h3 {
     font-size: 12px;
   }
 
-  .clipboard {
-    width: 70px;
-    height: 70px;
+  .article-description {
+    font-size: 8px;
   }
 
-  .features-row {
-    grid-template-columns: repeat(2, 1fr);
+  .article-date {
+    font-size: 7.5px;
   }
 
-  .feature-item strong {
-    font-size: 7px;
+  .article-arrow {
+    width: 27px;
+    height: 27px;
+    min-width: 27px;
   }
 
-  .feature-item span {
-    font-size: 6px;
-  }
-
-  .card-bottom-banner {
-    min-height: 65px;
-  }
 }
 
 
@@ -1283,6 +886,7 @@
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
   .article-container *,
   .article-container *::before,
   .article-container *::after {
@@ -1291,4 +895,5 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+
 }

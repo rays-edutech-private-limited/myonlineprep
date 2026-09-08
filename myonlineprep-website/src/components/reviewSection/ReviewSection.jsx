@@ -47,17 +47,7 @@ const ReviewSection = () => {
       details: "Google Play Reviewer",
       avatar: "A",
       avatarBg: "#007bff",
-    },
-    {
-      tag: "ABM 59 • BFM 62",
-      status: "CLEARED",
-      quote:
-        "The conceptual clarity provided in videos made tough topics extremely easy to digest. Highly satisfied!",
-      name: "Rahul Sharma",
-      details: "CAIIB Cleared • Dec 2025",
-      avatar: "R",
-      avatarBg: "#00897b",
-    },
+    }
   ];
 
   /* =========================
@@ -286,52 +276,22 @@ const ReviewSection = () => {
 
       {/* CTA */}
       <div className="cta-banner">
-        <button className="cta-button">
-           Start your CAIIB journey today <i class="fa-solid fa-arrow-right-long"></i>
-        </button>
-      </div>
+  <button
+    className="cta-button"
+    onClick={() => {
+      document.getElementById("enroll-section")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }}
+  >
+    Start your CAIIB journey today{" "}
+    <i className="fa-solid fa-arrow-right-long"></i>
+  </button>
+</div>
 
-      {/* STATS */}
-      {/* <div className="stats-container">
-
-        <div className="stat-item">
-          <span className="stat-icon">
-            🛡️
-          </span>
-
-          <div>
-            <strong>Trusted by</strong>
-            <p>10K+ Bankers</p>
-          </div>
-        </div>
-
-        <div className="stat-divider"></div>
-
-        <div className="stat-item">
-          <span className="stat-icon">
-            🎯
-          </span>
-
-          <div>
-            <strong>High Success</strong>
-            <p>Rate</p>
-          </div>
-        </div>
-
-        <div className="stat-divider"></div>
-
-        <div className="stat-item">
-          <span className="stat-icon">
-            ⭐
-          </span>
-
-          <div>
-            <strong>Top Rated</strong>
-            <p>by Learners</p>
-          </div>
-        </div>
-
-      </div> */}
+     
+      
 
     </section>
   );
