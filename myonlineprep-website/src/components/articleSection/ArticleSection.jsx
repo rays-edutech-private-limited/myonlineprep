@@ -336,6 +336,17 @@ const ArticleSection = () => {
         </div>
       )}
 
+      
+       <a
+    href="https://www.myonlineprep.com/blog/articles"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="all-articles-btn"
+  >
+    <span>All CAIIB Articles  </span>
+    <FaArrowRight />
+  </a>
+         
     </section>
   );
 };
