@@ -229,23 +229,23 @@
 ========================================================= */
 
 .icon-purple {
-  background-color: #ec4899;
+  background-color: rgb(123 45 138);
 }
 
 .icon-orange {
-  background-color: #ec4899;
+  background-color: rgb(123 45 138);
 }
 
 .icon-green {
-  background-color: #ec4899;
+  background-color: rgb(123 45 138);
 }
 
 .icon-blue {
-  background-color: #ec4899;
+  background-color: rgb(123 45 138);
 }
 
 .icon-pink {
-  background-color: #ec4899;
+  background-color: rgb(123 45 138);
 }
 
 
@@ -308,7 +308,7 @@
 }
 
 .faq-card.active .faq-toggle-btn {
-  background-color: #ec4899;
+  background-color: rgb(123 45 138);
   color: #fff;
 }
 
@@ -381,7 +381,7 @@
 
   border-radius: clamp(10px, 1vw, 14px);
 
-  border-left: clamp(4px, 0.5vw, 6px) solid #ec4899;
+  border-left: clamp(4px, 0.5vw, 6px) solid rgb(123 45 138);
 
   box-shadow:
     0 4px 20px rgba(0, 0, 0, 0.04);
@@ -474,7 +474,7 @@
     11px
     clamp(16px, 2vw, 22px);
 
-  background-color: #ec4899;
+  background-color: rgb(123 45 138);
 
   color: #fff;
 
@@ -503,7 +503,7 @@
 }
 
 .contact-support-btn:hover {
-  background-color: #ec4899;
+  background-color: rgb(123 45 138);
 
   transform: translateY(-1px);
 

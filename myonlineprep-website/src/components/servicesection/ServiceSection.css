@@ -69,12 +69,12 @@
 }
 
 .service-heading h2 span {
-  background: #ec4899;
+  background: rgb(123 45 138);
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  font-family: "Playfair Display", serif;
+    font-family: Georgia, "Times New Roman", serif;
 
   font-style: italic;
 }
@@ -196,9 +196,9 @@
 }
 
 .pink-grad .service-number {
-  color: #df187d;
+  color: rgb(123 45 138);
 
-  background: #fff0f7;
+  background: #fef0ff;
 }
 
 
@@ -297,8 +297,8 @@
 .pink-grad .service-icon-wrapper {
   background: linear-gradient(
     145deg,
-    #ef3a91,
-    #cf0870
+    rgb(123 45 138),
+    rgb(123 45 138)
   );
 
   box-shadow:
@@ -371,7 +371,7 @@
 }
 
 .pink-grad .icon-spark i {
-  background: #df197c;
+  background: rgb(123 45 138);
 }
 
 
@@ -462,7 +462,7 @@
 }
 
 .service-stat.pink-grad {
-  color: #df197b;
+  color: rgb(123 45 138);
 
   background:
     linear-gradient(
@@ -541,10 +541,10 @@
 
   border-radius: 50%;
 
-  background: #df197c;
+  background: rgb(123 45 138);
 
   box-shadow:
-    0 0 10px rgba(223, 25, 124, 0.45);
+    0 0 10px rgba(223, 25, 210, 0.45);
 
   z-index: 4;
 }

@@ -173,7 +173,7 @@
 }
 
 .highlight-text {
-  color: #ec4899;
+  color: rgb(123 45 138);
 
   font-family:
     Georgia,
@@ -299,7 +299,7 @@
 ========================================================= */
 
 .bestseller-card {
-  border: 1.5px solid #ec4899;
+  border: 1.5px solid rgb(123 45 138);
 
   box-shadow:
     0 10px 30px rgba(93, 48, 207, 0.14);
@@ -331,7 +331,7 @@
 
   color: #ffffff;
 
-  background: #ec4899;
+  background: rgb(123 45 138);
 
   border-radius: 18px;
 

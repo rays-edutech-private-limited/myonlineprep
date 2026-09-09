@@ -94,7 +94,7 @@
 }
 
 .anytime-text {
-  color: #ec4899;
+  color: rgb(123 45 138);
   position: relative;
   display: inline-block;
 }
@@ -107,7 +107,7 @@
   height: 6px;
   left: -2px;
   bottom: -10px;
-  background: #ec4899;
+  background: rgb(123 45 138);
   border-radius: 50%;
   transform: rotate(-3deg);
 }
@@ -197,7 +197,7 @@
   right: -5px;
   bottom: -4px;
   border-radius: 50%;
-  background: #ed477f;
+  background: rgb(123 45 138);
   display: flex;
   justify-content: center;
   align-items: center;
