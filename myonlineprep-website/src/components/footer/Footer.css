@@ -10,7 +10,16 @@
   position: relative;
   width: 100%;
 
-  background: #7c3aed;
+  background:
+    linear-gradient(
+      120deg,
+      #592dcc 0%,
+      #7434be 20%,
+      #943da9 40%,
+      #b54697 60%,
+      #d65383 80%,
+      #fb586f 100%
+    );
   color: #fff;
 
   font-family: 'Poppins', sans-serif;

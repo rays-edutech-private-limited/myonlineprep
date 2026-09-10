@@ -1,267 +1,732 @@
-import React, { useState } from 'react';
+
+import React, { useState } from "react";
 import "./KeyDetailsSection.css";
-import { FaCalendarAlt, FaBook, FaFileAlt, FaChevronRight, FaStar, FaClock, FaClipboardList, FaAward } from 'react-icons/fa';
+
+import {
+  FaCalendarAlt,
+  FaBook,
+  FaFileAlt,
+  FaChevronRight,
+  FaStar,
+  FaClock,
+  FaClipboardList,
+  FaAward,
+  FaRupeeSign,
+} from "react-icons/fa";
 
 const KeyDetailsSection = () => {
-  // State to handle active tab: 'dates', 'subjects', or 'pattern'
-  const [activeTab, setActiveTab] = useState('dates');
+  const [activeTab, setActiveTab] = useState("dates");
 
   return (
     <div className="key-details-container" id="exam-infos">
-      {/* Header Section */}
+
+      {/* ================= HEADER ================= */}
       <div className="key-details-header">
-        <h2>CAIIB - <span>All Key Details</span></h2>
-        <p>Exam dates, subject syllabus, fee structure — everything in one place.</p>
+        <h2>
+          CAIIB - <span>All Key Details</span>
+        </h2>
+
+        <p>
+          Exam schedule, registration dates, subjects, fees & exam pattern —
+          everything in one place.
+        </p>
       </div>
 
-      {/* Tabs Section */}
+      {/* ================= TABS ================= */}
       <div className="key-details-tabs">
-        <button 
-          className={`tab-btn ${activeTab === 'dates' ? 'active' : ''}`}
-          onClick={() => setActiveTab('dates')}
+
+        <button
+          className={`tab-btn ${
+            activeTab === "dates" ? "active" : ""
+          }`}
+          onClick={() => setActiveTab("dates")}
         >
-          <FaCalendarAlt /> Exam Dates
+          <FaCalendarAlt />
+          Exam Dates
         </button>
-        <button 
-          className={`tab-btn ${activeTab === 'subjects' ? 'active' : ''}`}
-          onClick={() => setActiveTab('subjects')}
+
+        <button
+          className={`tab-btn ${
+            activeTab === "subjects" ? "active" : ""
+          }`}
+          onClick={() => setActiveTab("subjects")}
         >
-          <FaBook /> Subjects
+          <FaBook />
+          Subjects
         </button>
-        <button 
-          className={`tab-btn ${activeTab === 'pattern' ? 'active' : ''}`}
-          onClick={() => setActiveTab('pattern')}
+
+        <button
+          className={`tab-btn ${
+            activeTab === "pattern" ? "active" : ""
+          }`}
+          onClick={() => setActiveTab("pattern")}
         >
-          <FaFileAlt /> Fees & Pattern
+          <FaFileAlt />
+          Fees & Pattern
         </button>
+
       </div>
 
-      {/* Main Card Container */}
+      {/* ================= MAIN CARD ================= */}
       <div className="key-details-card-wrapper">
-        
-        {/* CONDITIONAL RENDERING BASED ON ACTIVE TAB */}
 
-        {/* 1. EXAM DATES TAB */}
-        {activeTab === 'dates' && (
+        {/* =====================================================
+            1. EXAM DATES TAB
+        ====================================================== */}
+        {activeTab === "dates" && (
           <div className="tables-grid animate-fade">
-            {/* Registration Table Card */}
+
+            {/* ================= SCHEDULE / REGISTRATION ================= */}
             <div className="info-card">
+
               <div className="card-header purple-header">
-                <FaCalendarAlt /> Registration — Dec 2026
+                <FaCalendarAlt />
+                CAIIB Registration Schedule — March 2026
               </div>
+
+              <div className="schedule-intro">
+                <strong>Schedule for CAIIB (Certified Associate of IIB&F)</strong>
+
+                <div className="schedule-years">
+                  <span>March 2026</span>
+                  <span>September 2026</span>
+                </div>
+              </div>
+
               <div className="table-responsive">
+
                 <table className="custom-table">
+
                   <thead>
                     <tr>
-                      <th>Period</th>
+                      <th>Registration Period</th>
                       <th>Fee</th>
                     </tr>
                   </thead>
+
                   <tbody>
+
+                    {/* NORMAL REGISTRATION */}
                     <tr>
-                      <td><span className="icon-cell"><FaCalendarAlt /></span> 01 Sep – 07 Sep 2026</td>
-                      <td><span className="badge normal">Normal fee</span></td>
+                      <td>
+                        <span className="icon-cell">
+                          <FaCalendarAlt />
+                        </span>
+
+                        <div>
+                          <strong>
+                            04-Mar-2026 to 10-Mar-2026
+                          </strong>
+
+                          <small className="table-subtitle">
+                            Registration with Normal Fees
+                          </small>
+                        </div>
+                      </td>
+
+                      <td>
+                        <span className="badge normal">
+                          Normal Fee
+                        </span>
+                      </td>
                     </tr>
+
+                    {/* EXTENDED REGISTRATION */}
                     <tr>
-                      <td><span className="icon-cell"><FaCalendarAlt /></span> 08 Sep – 14 Sep 2026</td>
-                      <td><span className="badge extra">Normal + ₹500</span></td>
+                      <td>
+                        <span className="icon-cell">
+                          <FaCalendarAlt />
+                        </span>
+
+                        <div>
+                          <strong>
+                            11-Mar-2026 to 17-Mar-2026
+                          </strong>
+
+                          <small className="table-subtitle">
+                            Registration with Normal Exam Fees
+                          </small>
+                        </div>
+                      </td>
+
+                      <td>
+                        <span className="badge extra">
+                          + ₹100
+                        </span>
+                      </td>
                     </tr>
+
+                    {/* FINAL REGISTRATION */}
                     <tr>
-                      <td><span className="icon-cell"><FaCalendarAlt /></span> 15 Sep – 21 Sep 2026</td>
-                      <td><span className="badge higher">Normal + ₹1000</span></td>
+                      <td>
+                        <span className="icon-cell">
+                          <FaCalendarAlt />
+                        </span>
+
+                        <div>
+                          <strong>
+                            18-Mar-2026 to 24-Mar-2026
+                          </strong>
+
+                          <small className="table-subtitle">
+                            Final Registration
+                          </small>
+                        </div>
+                      </td>
+
+                      <td>
+                        <span className="badge higher">
+                          + ₹200
+                        </span>
+                      </td>
                     </tr>
+
                   </tbody>
+
                 </table>
+
               </div>
+
             </div>
 
-            {/* Exam Dates Table Card */}
+            {/* ================= EXAM DATES ================= */}
             <div className="info-card">
+
               <div className="card-header purple-header">
-                <FaCalendarAlt /> Exam dates — Dec 2026
+                <FaCalendarAlt />
+                Exam Dates — May & June 2026
               </div>
+
               <div className="table-responsive">
+
                 <table className="custom-table">
+
                   <thead>
                     <tr>
                       <th>Date</th>
-                      <th>Paper</th>
+                      <th>Mode</th>
+                      <th>Subject</th>
                     </tr>
                   </thead>
+
                   <tbody>
+
+                    {/* ABM */}
                     <tr>
-                      <td><span className="icon-cell"><FaCalendarAlt /></span> 08 Dec 2026</td>
-                      <td className="paper-row">Advanced Bank Management (ABM) <FaChevronRight className="chevron" /></td>
+                      <td>
+                        <span className="icon-cell">
+                          <FaCalendarAlt />
+                        </span>
+
+                        31st May 2026
+                      </td>
+
+                      <td>
+                        <span className="badge normal">
+                          Online
+                        </span>
+                      </td>
+
+                      <td className="paper-row">
+                        Advanced Bank Management
+
+                        <FaChevronRight className="chevron" />
+                      </td>
                     </tr>
+
+                    {/* BFM */}
                     <tr>
-                      <td><span className="icon-cell"><FaCalendarAlt /></span> 12 Dec 2026</td>
-                      <td className="paper-row">Bank Financial Management (BFM) <FaChevronRight className="chevron" /></td>
+                      <td>
+                        <span className="icon-cell">
+                          <FaCalendarAlt />
+                        </span>
+
+                        07th June 2026
+                      </td>
+
+                      <td>
+                        <span className="badge normal">
+                          Online
+                        </span>
+                      </td>
+
+                      <td className="paper-row">
+                        Bank Financial Management
+
+                        <FaChevronRight className="chevron" />
+                      </td>
                     </tr>
+
+                    {/* ABFM */}
                     <tr>
-                      <td><span className="icon-cell"><FaCalendarAlt /></span> 13 Dec 2026</td>
-                      <td className="paper-row">Advanced Business & Financial Mgmt <FaChevronRight className="chevron" /></td>
+                      <td>
+                        <span className="icon-cell">
+                          <FaCalendarAlt />
+                        </span>
+
+                        13th June 2026
+                      </td>
+
+                      <td>
+                        <span className="badge normal">
+                          Online
+                        </span>
+                      </td>
+
+                      <td className="paper-row">
+                        Advanced Business & Financial Management
+
+                        <FaChevronRight className="chevron" />
+                      </td>
                     </tr>
+
+                    {/* BRBL */}
                     <tr>
-                      <td><span className="icon-cell"><FaCalendarAlt /></span> 20 Dec 2026</td>
-                      <td className="paper-row">Banking Regulations & Business Laws <FaChevronRight className="chevron" /></td>
+                      <td>
+                        <span className="icon-cell">
+                          <FaCalendarAlt />
+                        </span>
+
+                        14th June 2026
+                      </td>
+
+                      <td>
+                        <span className="badge normal">
+                          Online
+                        </span>
+                      </td>
+
+                      <td className="paper-row">
+                        Banking Regulations and Business Laws
+
+                        <FaChevronRight className="chevron" />
+                      </td>
                     </tr>
+
+                    {/* ELECTIVE */}
                     <tr>
-                      <td><span className="icon-cell"><FaCalendarAlt /></span> 27 Dec 2026</td>
-                      <td className="paper-row">Elective paper <FaChevronRight className="chevron" /></td>
+                      <td>
+                        <span className="icon-cell">
+                          <FaCalendarAlt />
+                        </span>
+
+                        21st June 2026
+                      </td>
+
+                      <td>
+                        <span className="badge normal">
+                          Online
+                        </span>
+                      </td>
+
+                      <td className="paper-row elective-subjects">
+
+                        <div>1. Rural Banking</div>
+
+                        <div>
+                          2. Human Resources Management
+                        </div>
+
+                        <div>
+                          3. Information Technology & Digital Banking
+                        </div>
+
+                        <div>4. Risk Management</div>
+
+                        <div>5. Central Banking</div>
+
+                        <FaChevronRight className="chevron" />
+
+                      </td>
                     </tr>
+
                   </tbody>
+
                 </table>
+
               </div>
+
             </div>
+
           </div>
         )}
 
-        {/* 2. SUBJECTS TAB */}
-        {activeTab === 'subjects' && (
+        {/* =====================================================
+            2. SUBJECTS TAB
+        ====================================================== */}
+        {activeTab === "subjects" && (
           <div className="tables-grid animate-fade">
+
             <div className="info-card full-width">
+
               <div className="card-header purple-header">
-                <FaBook /> CAIIB Compulsory & Elective Subjects
+                <FaBook />
+                CAIIB Compulsory & Elective Subjects
               </div>
+
               <div className="table-responsive">
+
                 <table className="custom-table">
+
                   <thead>
                     <tr>
                       <th>Module Type</th>
                       <th>Subject Name</th>
                     </tr>
                   </thead>
+
                   <tbody>
+
+                    {/* ABM */}
                     <tr>
-                      <td><span className="badge normal">Compulsory</span></td>
-                      <td className="paper-row">Advanced Bank Management (ABM) <FaChevronRight className="chevron" /></td>
+                      <td>
+                        <span className="badge normal">
+                          Compulsory
+                        </span>
+                      </td>
+
+                      <td className="paper-row">
+                        Advanced Bank Management (ABM)
+                        <FaChevronRight className="chevron" />
+                      </td>
                     </tr>
+
+                    {/* BFM */}
                     <tr>
-                      <td><span className="badge normal">Compulsory</span></td>
-                      <td className="paper-row">Bank Financial Management (BFM) <FaChevronRight className="chevron" /></td>
+                      <td>
+                        <span className="badge normal">
+                          Compulsory
+                        </span>
+                      </td>
+
+                      <td className="paper-row">
+                        Bank Financial Management (BFM)
+                        <FaChevronRight className="chevron" />
+                      </td>
                     </tr>
+
+                    {/* ABFM */}
                     <tr>
-                      <td><span className="badge normal">Compulsory</span></td>
-                      <td className="paper-row">Advanced Business & Financial Management (ABFM) <FaChevronRight className="chevron" /></td>
+                      <td>
+                        <span className="badge normal">
+                          Compulsory
+                        </span>
+                      </td>
+
+                      <td className="paper-row">
+                        Advanced Business & Financial Management (ABFM)
+                        <FaChevronRight className="chevron" />
+                      </td>
                     </tr>
+
+                    {/* BRBL */}
                     <tr>
-                      <td><span className="badge normal">Compulsory</span></td>
-                      <td className="paper-row">Banking Regulations and Business Laws (BRBL) <FaChevronRight className="chevron" /></td>
+                      <td>
+                        <span className="badge normal">
+                          Compulsory
+                        </span>
+                      </td>
+
+                      <td className="paper-row">
+                        Banking Regulations and Business Laws (BRBL)
+                        <FaChevronRight className="chevron" />
+                      </td>
                     </tr>
+
+                    {/* ELECTIVE */}
                     <tr>
-                      <td><span className="badge extra">Elective</span></td>
-                      <td className="paper-row">Co-operative Banking, Rural Banking, etc. (Any One) <FaChevronRight className="chevron" /></td>
+                      <td>
+                        <span className="badge extra">
+                          Elective
+                        </span>
+                      </td>
+
+                      <td className="paper-row elective-subjects">
+
+                        <div>1. Rural Banking</div>
+
+                        <div>
+                          2. Human Resources Management
+                        </div>
+
+                        <div>
+                          3. Information Technology & Digital Banking
+                        </div>
+
+                        <div>4. Risk Management</div>
+
+                        <div>5. Central Banking</div>
+
+                        <small>
+                          Candidates have to select Any One Elective
+                        </small>
+
+                        <FaChevronRight className="chevron" />
+
+                      </td>
                     </tr>
+
                   </tbody>
+
                 </table>
+
               </div>
+
             </div>
+
           </div>
         )}
 
-        {/* 3. FEES & PATTERN TAB */}
-        {activeTab === 'pattern' && (
+        {/* =====================================================
+            3. FEES & PATTERN TAB
+        ====================================================== */}
+        {activeTab === "pattern" && (
           <div className="tables-grid animate-fade">
+
+            {/* ================= EXAM PATTERN ================= */}
             <div className="info-card">
+
               <div className="card-header purple-header">
-                <FaFileAlt /> Exam Pattern Structure
+                <FaFileAlt />
+                Exam Pattern Structure
               </div>
+
               <div className="table-responsive">
+
                 <table className="custom-table">
+
                   <thead>
                     <tr>
                       <th>Parameters</th>
                       <th>Details</th>
                     </tr>
                   </thead>
+
                   <tbody>
+
                     <tr>
-                      <td><strong>Mode of Exam</strong></td>
-                      <td>Online (Computer Based Test)</td>
+                      <td>
+                        <strong>Exam Mode</strong>
+                      </td>
+
+                      <td>
+                        Online
+                      </td>
                     </tr>
+
                     <tr>
-                      <td><strong>Questions</strong></td>
-                      <td>100 Multiple Choice Questions (MCQs)</td>
+                      <td>
+                        <strong>Compulsory Subjects</strong>
+                      </td>
+
+                      <td>
+                        4 Papers
+                      </td>
                     </tr>
+
                     <tr>
-                      <td><strong>Total Marks</strong></td>
-                      <td>100 Marks per Paper</td>
+                      <td>
+                        <strong>Elective Subject</strong>
+                      </td>
+
+                      <td>
+                        Any One Elective
+                      </td>
                     </tr>
+
                     <tr>
-                      <td><strong>Passing Criteria</strong></td>
-                      <td>Minimum 50 marks out of 100</td>
+                      <td>
+                        <strong>Exam Session</strong>
+                      </td>
+
+                      <td>
+                        May & June 2026
+                      </td>
                     </tr>
+
                     <tr>
-                      <td><strong>Negative Marking</strong></td>
-                      <td>No Negative Marking</td>
+                      <td>
+                        <strong>Exam Mode</strong>
+                      </td>
+
+                      <td>
+                        Online
+                      </td>
                     </tr>
+
                   </tbody>
+
                 </table>
+
               </div>
+
             </div>
 
+            {/* ================= FEE STRUCTURE ================= */}
             <div className="info-card">
+
               <div className="card-header purple-header">
-                <FaFileAlt /> Fee Structure Summary
+                <FaRupeeSign />
+                Fee Structure — IIBF Members
               </div>
+
               <div className="table-responsive">
+
                 <table className="custom-table">
+
                   <thead>
                     <tr>
-                      <th>Attempt Type</th>
-                      <th>Exam Fee (Approx.)</th>
+                      <th>Attempt</th>
+                      <th>Fee</th>
                     </tr>
                   </thead>
+
                   <tbody>
+
                     <tr>
-                      <td>First Attempt / Normal Period</td>
-                      <td>As per IIBF Guidelines</td>
+                      <td>
+                        <strong>First</strong>
+                      </td>
+
+                      <td>
+                        <span className="badge normal">
+                          ₹5,000*
+                        </span>
+                      </td>
                     </tr>
+
                     <tr>
-                      <td>Extended Period (1st Week)</td>
-                      <td>Normal Fee + ₹500</td>
+                      <td>
+                        <strong>Second</strong>
+                      </td>
+
+                      <td>
+                        <span className="badge normal">
+                          ₹1,300*
+                        </span>
+                      </td>
                     </tr>
+
                     <tr>
-                      <td>Extended Period (2nd Week)</td>
-                      <td>Normal Fee + ₹1000</td>
+                      <td>
+                        <strong>Third</strong>
+                      </td>
+
+                      <td>
+                        <span className="badge normal">
+                          ₹1,300*
+                        </span>
+                      </td>
                     </tr>
+
+                    <tr>
+                      <td>
+                        <strong>Fourth</strong>
+                      </td>
+
+                      <td>
+                        <span className="badge normal">
+                          ₹1,300*
+                        </span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <strong>Fifth</strong>
+                      </td>
+
+                      <td>
+                        <span className="badge normal">
+                          ₹1,300*
+                        </span>
+                      </td>
+                    </tr>
+
                   </tbody>
+
                 </table>
+
               </div>
+
+              <div className="fee-note">
+                * Fee for IIBF Members as per the provided fee structure.
+              </div>
+
             </div>
+
           </div>
         )}
 
-        {/* Bottom Feature Footer */}
+        {/* =====================================================
+            BOTTOM FEATURES
+        ====================================================== */}
         <div className="features-footer">
+
           <div className="feature-item">
-            <div className="feature-icon yellow-bg"><FaStar /></div>
+
+            <div className="feature-icon yellow-bg">
+              <FaStar />
+            </div>
+
             <div>
               <h4>All in One Place</h4>
-              <p>Dates, syllabus, fees & pattern — everything here</p>
+
+              <p>
+                Dates, subjects, fees & pattern — everything here
+              </p>
             </div>
+
           </div>
+
           <div className="feature-item">
-            <div className="feature-icon green-bg"><FaClock /></div>
+
+            <div className="feature-icon green-bg">
+              <FaClock />
+            </div>
+
             <div>
               <h4>Plan Smart</h4>
-              <p>Stay ahead with important dates & deadlines</p>
+
+              <p>
+                Stay ahead with important dates & deadlines
+              </p>
             </div>
+
           </div>
+
           <div className="feature-item">
-            <div className="feature-icon orange-bg"><FaClipboardList /></div>
+
+            <div className="feature-icon orange-bg">
+              <FaClipboardList />
+            </div>
+
             <div>
               <h4>Exam Ready</h4>
-              <p>Know the subjects & papers to prepare better</p>
+
+              <p>
+                Know the subjects & papers to prepare better
+              </p>
             </div>
+
           </div>
+
           <div className="feature-item">
-            <div className="feature-icon blue-bg"><FaAward /></div>
+
+            <div className="feature-icon blue-bg">
+              <FaAward />
+            </div>
+
             <div>
               <h4>Achieve More</h4>
-              <p>Right information today, success tomorrow!</p>
+
+              <p>
+                Right information today, success tomorrow!
+              </p>
             </div>
+
           </div>
+
         </div>
 
       </div>
@@ -270,3 +735,4 @@ const KeyDetailsSection = () => {
 };
 
 export default KeyDetailsSection;
+

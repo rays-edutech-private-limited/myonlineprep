@@ -252,7 +252,7 @@ const HeroSection = () => {
 
         {
           icon: <FaRegFileAlt />,
-          text: "200+ Full Mock Tests",
+          text: " 150+ e books",
           status: "Included",
         },
 
