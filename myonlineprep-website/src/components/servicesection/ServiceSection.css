@@ -1071,6 +1071,652 @@
 
 
 /* =========================================================
+   01 CARD - CREATIVE PACKAGE
+   ========================================================= */
+
+.creative-package {
+  isolation: isolate;
+}
+
+.creative-package .service-icon-area {
+  overflow: visible;
+}
+
+
+/* Package Orbit */
+
+.package-orbit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: 122px;
+  height: 122px;
+
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border: 2px dashed rgba(105, 53, 223, 0.20);
+
+  pointer-events: none;
+
+  animation: packageOrbit 9s linear infinite;
+}
+
+
+/* Small orbit */
+
+.package-orbit-small {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: 100px;
+  height: 100px;
+
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border: 2px solid rgba(105, 53, 223, 0.12);
+
+  pointer-events: none;
+
+  animation: packagePulse 2.8s ease-in-out infinite;
+}
+
+
+/* Package particles */
+
+.package-particle {
+  position: absolute;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #6935df;
+
+  box-shadow:
+    0 0 10px rgba(105, 53, 223, 0.4);
+
+  z-index: 4;
+}
+
+.package-one {
+  top: 8px;
+  left: 47px;
+
+  animation:
+    packageParticleOne 2.4s ease-in-out infinite;
+}
+
+.package-two {
+  left: 5px;
+  top: 48px;
+
+  width: 5px;
+  height: 5px;
+
+  animation:
+    packageParticleTwo 3s ease-in-out infinite;
+}
+
+.package-three {
+  right: 7px;
+  bottom: 24px;
+
+  width: 6px;
+  height: 6px;
+
+  animation:
+    packageParticleThree 2.7s ease-in-out infinite;
+}
+
+
+/* Blob */
+
+.creative-package .icon-blob {
+  animation:
+    packageBlob 3.2s ease-in-out infinite;
+}
+
+
+/* Circle */
+
+.creative-package .service-icon-wrapper {
+  animation:
+    packageFloat 2.7s ease-in-out infinite;
+}
+
+
+/* Card icon */
+
+.creative-package .service-icon {
+  animation:
+    packageIcon 2.2s ease-in-out infinite;
+}
+
+
+/* Spark */
+
+.creative-package .icon-spark {
+  animation:
+    packageSpark 2.2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   04 CARD - CREATIVE READY
+   ========================================================= */
+
+.creative-ready {
+  isolation: isolate;
+}
+
+.creative-ready .service-icon-area {
+  overflow: visible;
+}
+
+
+/* Success rings */
+
+.ready-orbit {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+
+  pointer-events: none;
+}
+
+.ready-orbit-one {
+  width: 120px;
+  height: 120px;
+
+  border: 2px solid rgba(223, 25, 124, 0.16);
+
+  animation:
+    readyRing 3.2s ease-in-out infinite;
+}
+
+.ready-orbit-two {
+  width: 138px;
+  height: 138px;
+
+  border: 2px dashed rgba(223, 25, 124, 0.18);
+
+  animation:
+    readyRotate 8s linear infinite;
+}
+
+
+/* Success particles */
+
+.ready-particle {
+  position: absolute;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: rgb(123 45 138);
+
+  box-shadow:
+    0 0 10px rgba(223, 25, 124, 0.4);
+
+  z-index: 4;
+}
+
+.ready-one {
+  top: 8px;
+  left: 47px;
+
+  animation:
+    readyParticleOne 2.5s ease-in-out infinite;
+}
+
+.ready-two {
+  right: 5px;
+  top: 45px;
+
+  width: 5px;
+  height: 5px;
+
+  animation:
+    readyParticleTwo 2.8s ease-in-out infinite;
+}
+
+.ready-three {
+  bottom: 10px;
+  left: 27px;
+
+  width: 6px;
+  height: 6px;
+
+  animation:
+    readyParticleThree 3s ease-in-out infinite;
+}
+
+.ready-four {
+  left: 10px;
+  bottom: 37px;
+
+  width: 4px;
+  height: 4px;
+
+  animation:
+    readyParticleFour 2.2s ease-in-out infinite;
+}
+
+
+/* Blob */
+
+.creative-ready .icon-blob {
+  animation:
+    readyBlob 3s ease-in-out infinite;
+}
+
+
+/* Circle */
+
+.creative-ready .service-icon-wrapper {
+  animation:
+    readyFloat 2.8s ease-in-out infinite;
+}
+
+
+/* Check icon */
+
+.creative-ready .service-icon {
+  animation:
+    readyCheck 2.5s ease-in-out infinite;
+}
+
+
+/* Spark */
+
+.creative-ready .icon-spark {
+  animation:
+    readySpark 2.1s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   PACKAGE KEYFRAMES
+   ========================================================= */
+
+@keyframes packageOrbit {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(360deg);
+  }
+}
+
+@keyframes packagePulse {
+  0%,
+  100% {
+    transform:
+      translate(-50%, -50%)
+      scale(0.9);
+
+    opacity: 0.35;
+  }
+
+  50% {
+    transform:
+      translate(-50%, -50%)
+      scale(1.08);
+
+    opacity: 0.75;
+  }
+}
+
+@keyframes packageBlob {
+  0%,
+  100% {
+    transform:
+      rotate(-8deg)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      rotate(8deg)
+      translateY(-7px);
+  }
+}
+
+@keyframes packageFloat {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translateY(-9px)
+      rotate(-3deg);
+  }
+}
+
+@keyframes packageIcon {
+  0%,
+  100% {
+    transform:
+      scale(1)
+      rotate(0deg);
+  }
+
+  45% {
+    transform:
+      scale(1.12)
+      rotate(-4deg);
+  }
+
+  65% {
+    transform:
+      scale(1.05)
+      rotate(3deg);
+  }
+}
+
+@keyframes packageSpark {
+  0%,
+  100% {
+    transform:
+      translateX(0)
+      scale(1);
+
+    opacity: 0.7;
+  }
+
+  50% {
+    transform:
+      translateX(8px)
+      scale(1.08);
+
+    opacity: 1;
+  }
+}
+
+@keyframes packageParticleOne {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      scale(1);
+
+    opacity: 0.6;
+  }
+
+  50% {
+    transform:
+      translateY(-11px)
+      scale(1.4);
+
+    opacity: 1;
+  }
+}
+
+@keyframes packageParticleTwo {
+  0%,
+  100% {
+    transform:
+      translate(0, 0);
+  }
+
+  50% {
+    transform:
+      translate(-7px, 8px);
+  }
+}
+
+@keyframes packageParticleThree {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translateY(9px)
+      scale(1.4);
+  }
+}
+
+
+/* =========================================================
+   READY KEYFRAMES
+   ========================================================= */
+
+@keyframes readyRing {
+  0%,
+  100% {
+    transform:
+      translate(-50%, -50%)
+      scale(0.88);
+
+    opacity: 0.3;
+  }
+
+  50% {
+    transform:
+      translate(-50%, -50%)
+      scale(1.07);
+
+    opacity: 0.75;
+  }
+}
+
+@keyframes readyRotate {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(-360deg);
+  }
+}
+
+@keyframes readyBlob {
+  0%,
+  100% {
+    transform:
+      rotate(-8deg)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      rotate(8deg)
+      translateY(-7px);
+  }
+}
+
+@keyframes readyFloat {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translateY(-10px)
+      rotate(3deg);
+  }
+}
+
+@keyframes readyCheck {
+  0%,
+  100% {
+    transform:
+      scale(1)
+      rotate(0deg);
+  }
+
+  40% {
+    transform:
+      scale(1.15)
+      rotate(-5deg);
+  }
+
+  60% {
+    transform:
+      scale(1.06)
+      rotate(4deg);
+  }
+}
+
+@keyframes readySpark {
+  0%,
+  100% {
+    transform:
+      translateX(0);
+
+    opacity: 0.7;
+  }
+
+  50% {
+    transform:
+      translateX(8px);
+
+    opacity: 1;
+  }
+}
+
+@keyframes readyParticleOne {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      scale(1);
+
+    opacity: 0.6;
+  }
+
+  50% {
+    transform:
+      translateY(-10px)
+      scale(1.4);
+
+    opacity: 1;
+  }
+}
+
+@keyframes readyParticleTwo {
+  0%,
+  100% {
+    transform:
+      translateX(0);
+  }
+
+  50% {
+    transform:
+      translateX(8px);
+  }
+}
+
+@keyframes readyParticleThree {
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(8px);
+  }
+}
+
+@keyframes readyParticleFour {
+  0%,
+  100% {
+    transform:
+      scale(1);
+
+    opacity: 0.5;
+  }
+
+  50% {
+    transform:
+      scale(1.5);
+
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   HOVER - NEW CARDS
+   ========================================================= */
+
+.creative-package:hover .service-icon-wrapper {
+  transform: scale(1.08);
+}
+
+.creative-package:hover .icon-blob {
+  transform:
+    rotate(8deg)
+    scale(1.08);
+}
+
+.creative-ready:hover .service-icon-wrapper {
+  transform: scale(1.08);
+}
+
+.creative-ready:hover .icon-blob {
+  transform:
+    rotate(8deg)
+    scale(1.08);
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .creative-package *,
+  .creative-ready *,
+  .package-orbit,
+  .package-orbit-small,
+  .package-particle,
+  .ready-orbit,
+  .ready-particle {
+    animation: none !important;
+    transition: none !important;
+  }
+
+}
+
+/* =========================================================
    PROGRESS PARTICLES
 ========================================================= */
 

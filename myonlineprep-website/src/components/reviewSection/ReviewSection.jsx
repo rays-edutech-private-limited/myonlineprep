@@ -2,10 +2,31 @@
 import React, { useState, useEffect } from "react";
 import "./ReviewSection.css";
 import { Rocket } from "lucide-react";
+import FreeMockTestModal from "../FreeMockTestModal/FreeMockTestModal";
 
 const ReviewSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleCards, setVisibleCards] = useState(4);
+  
+  
+    const [isModalOpen, setIsModalOpen] = useState(false);
+  
+    const [selectedExam, setSelectedExam] = useState("CAIIB");
+    const openMockTest = (examName) => {
+
+    setSelectedExam(examName);
+
+    setIsModalOpen(true);
+
+  };
+
+   const closeMockTest = () => {
+
+    setIsModalOpen(false);
+
+  };
+
+
 
   const reviews = [
     {
@@ -278,19 +299,21 @@ const ReviewSection = () => {
       <div className="cta-banner">
   <button
     className="cta-button"
-    onClick={() => {
-      document.getElementById("enroll-section")?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }}
+    onClick={() =>
+                openMockTest("CAIIB")
+              }
+   
   >
-    Start your CAIIB journey today{" "}
+    Attempt the Mock Test {" "}
     <i className="fa-solid fa-arrow-right-long"></i>
   </button>
 </div>
 
-     
+      <FreeMockTestModal
+        isOpen={isModalOpen}
+        onClose={closeMockTest}
+        exam={selectedExam}
+      />
       
 
     </section>

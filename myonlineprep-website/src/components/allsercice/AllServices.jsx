@@ -59,7 +59,7 @@ const AllServices = () => {
                 <div className="ico-ser">
                     <FaBullseye />
                 </div>
-              <h2>200+</h2>
+              <h2>7000+</h2>
 
               <h3>
                 Real exam
@@ -95,7 +95,7 @@ const AllServices = () => {
                 </h4>
 
                 <p>
-                  150+ hours taught by ex-bankers,
+                  300+ hours taught by ex-bankers,
                   structured for people studying
                   between shifts.
                 </p>

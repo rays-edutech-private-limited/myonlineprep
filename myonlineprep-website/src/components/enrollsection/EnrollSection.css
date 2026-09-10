@@ -425,18 +425,18 @@
 }
 
 .category-2 {
-  color: #2764d9;
-  background: #e9f1ff;
+  color: #6230d8;
+  background: #f0eaff;
 }
 
 .category-3 {
-  color: #e32d69;
-  background: #ffeaf1;
+  color: #6230d8;
+  background: #f0eaff;
 }
 
 .category-4 {
-  color: #e69717;
-  background: #fff2dc;
+  color: #6230d8;
+  background: #f0eaff;
 }
 
 
@@ -621,15 +621,15 @@
 }
 
 .check-2 {
-  background: #3674df;
+  background: #6733df;
 }
 
 .check-3 {
-  background: #ef4d82;
+  background: #6733df;
 }
 
 .check-4 {
-  background: #efa928;
+  background: #6733df;
 }
 
 
@@ -712,7 +712,7 @@
    OUTLINE BUTTONS
 ========================================================= */
 
-.outline-btn {
+/* .outline-btn {
   background: #ffffff;
 }
 
@@ -741,7 +741,7 @@
 
 .outline-btn-4:hover {
   background: #fffaf1;
-}
+} */
 
 
 /* =========================================================

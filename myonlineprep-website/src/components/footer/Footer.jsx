@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from "../../assets/img/myonlineprep-logof.png";
+import logo from "../../assets/img/myonlineprepfooter-logo.png";
 import './Footer.css';
 
 import {

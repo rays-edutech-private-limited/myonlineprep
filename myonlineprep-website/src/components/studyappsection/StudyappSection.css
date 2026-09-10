@@ -282,6 +282,8 @@
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
+  cursor: pointer;
+  user-select: none;
 }
 
 .google-play-card:hover {
@@ -396,35 +398,136 @@
 
 
 /* =========================================================
-   PHONE
+   APP SLIDER / PHONE
 ========================================================= */
 
-.study-phone-wrapper {
+.study-app-slider {
   position: absolute;
   z-index: 5;
-
-  width: clamp(280px, 31vw, 390px);
-  height: 600px;
-
+  width: clamp(280px, 31vw, 350px);
+  height: 500px;
   top: 8px;
   right: 7%;
-
-  transform: rotate(7deg);
-
   filter: drop-shadow(
     20px 20px 18px rgba(41, 28, 77, 0.25)
   );
-
-  display: flex;
-  justify-content: center;
 }
 
-.study-phone-image {
-  display: block;
+/* Main slider viewport */
+.study-app-slides {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px ;
+}
+
+/* Every image is stacked */
+.study-slide-image {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+  border-radius: 18px;
+  background-color: red;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: 100% 100%;
   object-position: center;
+   
+
+  opacity: 0;
+
+  transform:
+    translateX(45px)
+    scale(0.96);
+
+  transition:
+    opacity 0.65s ease,
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+
+  pointer-events: none;
+
+  will-change:
+    opacity,
+    transform;
+}
+
+/* Active app screen */
+.study-slide-image.study-slide-active {
+  opacity: 1;
+
+  transform:
+    translateX(0)
+    scale(1);
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   SLIDER DOTS
+========================================================= */
+
+.study-slider-dots {
+  position: absolute;
+
+  left: 50%;
+  bottom: 10px;
+
+  transform: translateX(-50%);
+
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 6px 9px;
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.78);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  box-shadow:
+    0 4px 14px rgba(35, 20, 70, 0.12);
+}
+
+.slider-dot {
+  width: 6px;
+  height: 6px;
+
+  padding: 0;
+  margin: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: #c8bde4;
+
+  cursor: pointer;
+
+  transition:
+    width 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.slider-dot:hover {
+  transform: scale(1.2);
+}
+
+.slider-dot-active {
+  width: 18px;
+  border-radius: 20px;
+  background: #813588;
 }
 
 
@@ -858,9 +961,9 @@
     font-size: 62px;
   }
 
-  .study-phone-wrapper {
-    width: 400px;
-    height: 620px;
+  .study-app-slider {
+    width: 350px;
+    height: 550px;
     right: 7%;
   }
 
@@ -869,8 +972,10 @@
     height: 590px;
     right: -20px;
   }
-
+  
 }
+
+
 
 
 /* =========================================================
@@ -884,7 +989,7 @@
     grid-template-columns: 52% 48%;
   }
 
-  .study-phone-wrapper {
+  .study-app-slider {
     width: 370px;
     height: 590px;
     right: 4%;
@@ -903,7 +1008,6 @@
   .achieve-card {
     right: -5px;
   }
-
 }
 
 
@@ -963,7 +1067,7 @@
     height: 590px;
   }
 
-  .study-phone-wrapper {
+  .study-app-slider {
     width: 315px;
     height: 555px;
     right: 3%;
@@ -1004,7 +1108,6 @@
   .bottom-feature {
     min-width: 150px;
   }
-
 }
 
 
@@ -1065,7 +1168,7 @@
     height: 560px;
   }
 
-  .study-phone-wrapper {
+  .study-app-slider {
     width: 275px;
     height: 510px;
     right: 1%;
@@ -1144,7 +1247,6 @@
   .bottom-divider {
     display: none;
   }
-
 }
 
 
@@ -1206,7 +1308,6 @@
 
   .study-right-content {
     width: 100%;
-    height: 600px;
     margin-top: 0;
   }
 
@@ -1218,12 +1319,12 @@
     top: 30px;
   }
 
-  .study-phone-wrapper {
+  .study-app-slider {
     width: 340px;
     height: 570px;
     right: 50%;
     top: 5px;
-    transform: translateX(50%) rotate(7deg);
+    transform: translateX(50%) ;
   }
 
   .aim-card {
@@ -1277,7 +1378,6 @@
   .qr-section {
     margin-left: 10px;
   }
-
 }
 
 
@@ -1403,12 +1503,12 @@
     top: 35px;
   }
 
-  .study-phone-wrapper {
+  .study-app-slider {
     width: 290px;
     height: 500px;
     right: 50%;
     top: 8px;
-    transform: translateX(50%) rotate(7deg);
+    transform: translateX(50%) ;
   }
 
   .aim-card {
@@ -1488,7 +1588,6 @@
     height: 32px;
     font-size: 11px;
   }
-
 }
 
 
@@ -1641,12 +1740,12 @@
     top: 35px;
   }
 
-  .study-phone-wrapper {
+  .study-app-slider {
     width: 260px;
     height: 445px;
     right: 50%;
     top: 10px;
-    transform: translateX(50%) rotate(7deg);
+    transform: translateX(50%) ;
   }
 
   .aim-card {
@@ -1805,7 +1904,6 @@
     height: 31px;
     font-size: 10px;
   }
-
 }
 
 
@@ -1912,7 +2010,7 @@
     top: 35px;
   }
 
-  .study-phone-wrapper {
+  .study-app-slider {
     width: 235px;
     height: 405px;
     top: 12px;
@@ -1981,7 +2079,6 @@
     width: 100%;
     font-size: 9px;
   }
-
 }
 
 
@@ -2005,7 +2102,7 @@
     font-size: 10.5px;
   }
 
-  .study-phone-wrapper {
+  .study-app-slider {
     width: 215px;
     height: 370px;
   }
@@ -2031,6 +2128,20 @@
     transform: scale(0.48);
   }
 
+  .study-slider-dots {
+    bottom: 6px;
+    gap: 4px;
+    padding: 5px 7px;
+  }
+
+  .slider-dot {
+    width: 5px;
+    height: 5px;
+  }
+
+  .slider-dot-active {
+    width: 14px;
+  }
 }
 
 
@@ -2045,6 +2156,9 @@
     box-shadow: 0 5px 18px rgba(30, 20, 60, 0.05);
   }
 
+  .slider-dot:hover {
+    transform: none;
+  }
 }
 
 
@@ -2058,6 +2172,13 @@
     transition: none;
   }
 
+  .study-slide-image {
+    transition: none;
+  }
+
+  .slider-dot {
+    transition: none;
+  }
 }
 
 
@@ -2078,5 +2199,4 @@
   .study-main-grid {
     overflow: visible;
   }
-
 }

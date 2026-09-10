@@ -30,7 +30,7 @@ const EnrollSection = () => {
         "300+ HD video lessons",
         "7,000+ MCQs with solutions",
         "200+ practice sets",
-        "8 months validity",
+        "6 months validity",
       ],
     },
 
@@ -234,7 +234,7 @@ const handleBrowseCourses = () => {
   className={`enroll-btn ${
     item.type === "bestseller"
       ? "gradient-btn"
-      : `outline-btn outline-btn-${index + 1}`
+      : `gradient-btn`
   }`}
   onClick={() => handleEnroll(item.url)}
 >
@@ -258,7 +258,7 @@ const handleBrowseCourses = () => {
           </div>
 
           <div className="stat-content">
-            <h4>1,00,000+</h4>
+            <h4>1,50,000+</h4>
             <p>
               Happy Students
               <br />
@@ -296,7 +296,7 @@ const handleBrowseCourses = () => {
           </div>
 
           <div className="stat-content">
-            <h4>200+</h4>
+            <h4>7000+</h4>
             <p>
               Mock Tests
               <br />

@@ -259,7 +259,7 @@ const HeroSection = () => {
         {
           icon: <FaCalendarAlt />,
           text: "Validity",
-          status: "8 Months",
+          status: "6 Months",
           green: true,
         },
 
@@ -581,7 +581,7 @@ const HeroSection = () => {
 
             <br />
 
-            Built by ex-bankers, for bankers.
+           <strong>Built by ex-bankers, for bankers.</strong> 
 
           </p>
 

@@ -20,6 +20,7 @@ const articles = [
     description:
       "A complete paper-wise strategy for ABM, BFM, ABFM, BRBL and the elective — what each paper demands, where candidates lose marks, and a month-wise plan for the Dec 2026 cycle.",
     date: "29th Jun 2026",
+    url: "https://www.myonlineprep.com/blog/articles/how-to-prepare-for-caiib-complete-paper-wise-strategy",
   },
 
   {
@@ -30,6 +31,7 @@ const articles = [
     description:
       "HRM, Rural Banking, IT, Risk Management, or Central Banking? A role-by-role guide to choosing the right JAIIB elective and clearing it in your first attempt.",
     date: "15th May 2026",
+    url: "https://www.myonlineprep.com/blog/articles/best-way-to-choose-caiib-elective",
   },
 
   {
@@ -40,9 +42,8 @@ const articles = [
     description:
       "A real SBI PO example breaking down basic pay, DA, HRA and the total monthly hike you can expect after clearing JAIIB and CAIIB.",
     date: "6th May 2026",
+    url: "https://www.myonlineprep.com/blog/articles/how-much-salary-increases-after-jaiib-caiib",
   },
-
- 
 ];
 
 const ArticleSection = () => {
@@ -207,13 +208,13 @@ const ArticleSection = () => {
           >
 
             {articles.map((article, index) => (
-              <a
-                href="https://www.myonlineprep.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="article-card"
-                key={index}
-              >
+             <a
+  href={article.url}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="article-card"
+  key={index}
+>
 
                 {/* =========================================
                     IMAGE
