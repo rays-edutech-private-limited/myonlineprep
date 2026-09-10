@@ -324,7 +324,7 @@ const Footer = () => {
             © 2026 Myonlineprep. Developed by{" "}
 
             <a
-              href="https://raysonline.in/"
+              href="https://raysdevtech.com/"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: "#fff" }}
