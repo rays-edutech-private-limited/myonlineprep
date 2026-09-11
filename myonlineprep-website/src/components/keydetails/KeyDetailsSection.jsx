@@ -1,5 +1,4 @@
-
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./KeyDetailsSection.css";
 
 import {
@@ -14,11 +13,163 @@ import {
   FaRupeeSign,
 } from "react-icons/fa";
 
+// API URL yahan apna actual endpoint lagayein
+const API_URL = "YOUR_API_URL_HERE";
+
 const KeyDetailsSection = () => {
   const [activeTab, setActiveTab] = useState("dates");
 
+  // ================= API DATA =================
+  const [keyDetails, setKeyDetails] = useState({
+    registration: [
+      {
+        date: "Registration dates will be notified soon.",
+        description: "Registration with Normal Fees",
+        fee: "Normal Fee",
+        feeClass: "normal",
+      },
+      {
+        date: "Registration dates will be notified soon.",
+        description:
+          "Registration with Normal Exam Fees plus Rs. 100/-",
+        fee: "+ ₹100",
+        feeClass: "extra",
+      },
+      {
+        date: "Registration dates will be notified soon.",
+        description:
+          "Registration with Normal Exam Fees plus Rs. 200/-",
+        fee: "+ ₹200",
+        feeClass: "higher",
+      },
+    ],
+
+    examDates: [
+      {
+        date: "06th Dec 2026",
+        mode: "Online",
+        subject: "Advanced Bank Management",
+      },
+      {
+        date: "12th Dec 2026",
+        mode: "Online",
+        subject: "Bank Financial Management",
+      },
+      {
+        date: "13th Dec 2026",
+        mode: "Online",
+        subject:
+          "Advance Business & Financial Management",
+      },
+      {
+        date: "20th Dec 2026",
+        mode: "Online",
+        subject:
+          "Banking Regulations and Business Laws",
+      },
+      {
+        date: "27th Dec 2026",
+        mode: "Online",
+        subject: [
+          "Rural Banking",
+          "Human Resources Management",
+          "Information Technology & Digital Banking",
+          "Risk Management",
+          "Central Banking",
+        ],
+      },
+    ],
+
+    subjects: {
+      compulsory: [
+        "Advanced Bank Management (ABM)",
+        "Bank Financial Management (BFM)",
+        "Advanced Business & Financial Management (ABFM)",
+        "Banking Regulations and Business Laws (BRBL)",
+      ],
+      elective: [
+        "Rural Banking",
+        "Human Resources Management",
+        "Information Technology & Digital Banking",
+        "Risk Management",
+        "Central Banking",
+      ],
+    },
+
+    fees: [
+      {
+        attempt: "First",
+        fee: "₹5,000*",
+      },
+      {
+        attempt: "Second",
+        fee: "₹1,300*",
+      },
+      {
+        attempt: "Third",
+        fee: "₹1,300*",
+      },
+      {
+        attempt: "Fourth",
+        fee: "₹1,300*",
+      },
+      {
+        attempt: "Fifth",
+        fee: "₹1,300*",
+      },
+    ],
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  // ================= API CALL =================
+  useEffect(() => {
+    const getKeyDetails = async () => {
+      try {
+        setLoading(true);
+
+        const response = await fetch(API_URL);
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch key details");
+        }
+
+        const result = await response.json();
+
+        console.log("Key Details API Response:", result);
+
+        /*
+          Yahan API ke response ke according mapping karenge.
+
+          Example:
+
+          setKeyDetails({
+            registration: result.registration,
+            examDates: result.exam_dates,
+            subjects: result.subjects,
+            fees: result.fees,
+          });
+        */
+
+        setLoading(false);
+      } catch (error) {
+        console.error(
+          "Key Details API Error:",
+          error
+        );
+
+        setLoading(false);
+      }
+    };
+
+    getKeyDetails();
+  }, []);
+
   return (
-    <div className="key-details-container" id="exam-infos">
+    <div
+      className="key-details-container"
+      id="exam-infos"
+    >
 
       {/* ================= HEADER ================= */}
       <div className="key-details-header">
@@ -27,8 +178,8 @@ const KeyDetailsSection = () => {
         </h2>
 
         <p>
-          Exam schedule, registration dates, subjects, fees & exam pattern —
-          everything in one place.
+          Exam schedule, registration dates, subjects,
+          fees & exam pattern — everything in one place.
         </p>
       </div>
 
@@ -76,19 +227,21 @@ const KeyDetailsSection = () => {
         {activeTab === "dates" && (
           <div className="tables-grid animate-fade">
 
-            {/* ================= SCHEDULE / REGISTRATION ================= */}
+            {/* ================= REGISTRATION ================= */}
             <div className="info-card">
 
               <div className="card-header purple-header">
                 <FaCalendarAlt />
-                CAIIB Registration Schedule — March 2026
+                CAIIB Registration Schedule — September 2026
               </div>
 
               <div className="schedule-intro">
-                <strong>Schedule for CAIIB (Certified Associate of IIB&F)</strong>
+                <strong>
+                  Schedule for CAIIB
+                  (Certified Associate of IIB&F)
+                </strong>
 
                 <div className="schedule-years">
-                  <span>March 2026</span>
                   <span>September 2026</span>
                 </div>
               </div>
@@ -106,80 +259,39 @@ const KeyDetailsSection = () => {
 
                   <tbody>
 
-                    {/* NORMAL REGISTRATION */}
-                    <tr>
-                      <td>
-                        <span className="icon-cell">
-                          <FaCalendarAlt />
-                        </span>
+                    {keyDetails.registration.map(
+                      (item, index) => (
+                        <tr key={index}>
 
-                        <div>
-                          <strong>
-                            04-Mar-2026 to 10-Mar-2026
-                          </strong>
+                          <td>
+                            <span className="icon-cell">
+                              <FaCalendarAlt />
+                            </span>
 
-                          <small className="table-subtitle">
-                            Registration with Normal Fees
-                          </small>
-                        </div>
-                      </td>
+                            <div>
 
-                      <td>
-                        <span className="badge normal">
-                          Normal Fee
-                        </span>
-                      </td>
-                    </tr>
+                              <strong>
+                                {item.date}
+                              </strong>
 
-                    {/* EXTENDED REGISTRATION */}
-                    <tr>
-                      <td>
-                        <span className="icon-cell">
-                          <FaCalendarAlt />
-                        </span>
+                              <small className="table-subtitle">
+                                {item.description}
+                              </small>
 
-                        <div>
-                          <strong>
-                            11-Mar-2026 to 17-Mar-2026
-                          </strong>
+                            </div>
+                          </td>
 
-                          <small className="table-subtitle">
-                            Registration with Normal Exam Fees
-                          </small>
-                        </div>
-                      </td>
+                          <td>
+                            <span
+                              className={`badge ${item.feeClass}`}
+                            >
+                              {item.fee}
+                            </span>
+                          </td>
 
-                      <td>
-                        <span className="badge extra">
-                          + ₹100
-                        </span>
-                      </td>
-                    </tr>
-
-                    {/* FINAL REGISTRATION */}
-                    <tr>
-                      <td>
-                        <span className="icon-cell">
-                          <FaCalendarAlt />
-                        </span>
-
-                        <div>
-                          <strong>
-                            18-Mar-2026 to 24-Mar-2026
-                          </strong>
-
-                          <small className="table-subtitle">
-                            Final Registration
-                          </small>
-                        </div>
-                      </td>
-
-                      <td>
-                        <span className="badge higher">
-                          + ₹200
-                        </span>
-                      </td>
-                    </tr>
+                        </tr>
+                      )
+                    )}
 
                   </tbody>
 
@@ -194,7 +306,7 @@ const KeyDetailsSection = () => {
 
               <div className="card-header purple-header">
                 <FaCalendarAlt />
-                Exam Dates — May & June 2026
+                Exam Dates — December 2026
               </div>
 
               <div className="table-responsive">
@@ -211,134 +323,61 @@ const KeyDetailsSection = () => {
 
                   <tbody>
 
-                    {/* ABM */}
-                    <tr>
-                      <td>
-                        <span className="icon-cell">
-                          <FaCalendarAlt />
-                        </span>
+                    {keyDetails.examDates.map(
+                      (item, index) => (
+                        <tr key={index}>
 
-                        31st May 2026
-                      </td>
+                          <td>
+                            <span className="icon-cell">
+                              <FaCalendarAlt />
+                            </span>
 
-                      <td>
-                        <span className="badge normal">
-                          Online
-                        </span>
-                      </td>
+                            {item.date}
+                          </td>
 
-                      <td className="paper-row">
-                        Advanced Bank Management
+                          <td>
+                            <span className="badge normal">
+                              {item.mode}
+                            </span>
+                          </td>
 
-                        <FaChevronRight className="chevron" />
-                      </td>
-                    </tr>
+                          <td
+                            className={`paper-row ${
+                              Array.isArray(
+                                item.subject
+                              )
+                                ? "elective-subjects"
+                                : ""
+                            }`}
+                          >
 
-                    {/* BFM */}
-                    <tr>
-                      <td>
-                        <span className="icon-cell">
-                          <FaCalendarAlt />
-                        </span>
+                            {Array.isArray(
+                              item.subject
+                            ) ? (
+                              item.subject.map(
+                                (
+                                  subject,
+                                  subjectIndex
+                                ) => (
+                                  <div
+                                    key={subjectIndex}
+                                  >
+                                    {subjectIndex + 1}.{" "}
+                                    {subject}
+                                  </div>
+                                )
+                              )
+                            ) : (
+                              item.subject
+                            )}
 
-                        07th June 2026
-                      </td>
+                            <FaChevronRight className="chevron" />
 
-                      <td>
-                        <span className="badge normal">
-                          Online
-                        </span>
-                      </td>
+                          </td>
 
-                      <td className="paper-row">
-                        Bank Financial Management
-
-                        <FaChevronRight className="chevron" />
-                      </td>
-                    </tr>
-
-                    {/* ABFM */}
-                    <tr>
-                      <td>
-                        <span className="icon-cell">
-                          <FaCalendarAlt />
-                        </span>
-
-                        13th June 2026
-                      </td>
-
-                      <td>
-                        <span className="badge normal">
-                          Online
-                        </span>
-                      </td>
-
-                      <td className="paper-row">
-                        Advanced Business & Financial Management
-
-                        <FaChevronRight className="chevron" />
-                      </td>
-                    </tr>
-
-                    {/* BRBL */}
-                    <tr>
-                      <td>
-                        <span className="icon-cell">
-                          <FaCalendarAlt />
-                        </span>
-
-                        14th June 2026
-                      </td>
-
-                      <td>
-                        <span className="badge normal">
-                          Online
-                        </span>
-                      </td>
-
-                      <td className="paper-row">
-                        Banking Regulations and Business Laws
-
-                        <FaChevronRight className="chevron" />
-                      </td>
-                    </tr>
-
-                    {/* ELECTIVE */}
-                    <tr>
-                      <td>
-                        <span className="icon-cell">
-                          <FaCalendarAlt />
-                        </span>
-
-                        21st June 2026
-                      </td>
-
-                      <td>
-                        <span className="badge normal">
-                          Online
-                        </span>
-                      </td>
-
-                      <td className="paper-row elective-subjects">
-
-                        <div>1. Rural Banking</div>
-
-                        <div>
-                          2. Human Resources Management
-                        </div>
-
-                        <div>
-                          3. Information Technology & Digital Banking
-                        </div>
-
-                        <div>4. Risk Management</div>
-
-                        <div>5. Central Banking</div>
-
-                        <FaChevronRight className="chevron" />
-
-                      </td>
-                    </tr>
+                        </tr>
+                      )
+                    )}
 
                   </tbody>
 
@@ -377,64 +416,28 @@ const KeyDetailsSection = () => {
 
                   <tbody>
 
-                    {/* ABM */}
-                    <tr>
-                      <td>
-                        <span className="badge normal">
-                          Compulsory
-                        </span>
-                      </td>
+                    {keyDetails.subjects.compulsory.map(
+                      (subject, index) => (
+                        <tr key={index}>
 
-                      <td className="paper-row">
-                        Advanced Bank Management (ABM)
-                        <FaChevronRight className="chevron" />
-                      </td>
-                    </tr>
+                          <td>
+                            <span className="badge normal">
+                              Compulsory
+                            </span>
+                          </td>
 
-                    {/* BFM */}
-                    <tr>
-                      <td>
-                        <span className="badge normal">
-                          Compulsory
-                        </span>
-                      </td>
+                          <td className="paper-row">
+                            {subject}
+                            <FaChevronRight className="chevron" />
+                          </td>
 
-                      <td className="paper-row">
-                        Bank Financial Management (BFM)
-                        <FaChevronRight className="chevron" />
-                      </td>
-                    </tr>
-
-                    {/* ABFM */}
-                    <tr>
-                      <td>
-                        <span className="badge normal">
-                          Compulsory
-                        </span>
-                      </td>
-
-                      <td className="paper-row">
-                        Advanced Business & Financial Management (ABFM)
-                        <FaChevronRight className="chevron" />
-                      </td>
-                    </tr>
-
-                    {/* BRBL */}
-                    <tr>
-                      <td>
-                        <span className="badge normal">
-                          Compulsory
-                        </span>
-                      </td>
-
-                      <td className="paper-row">
-                        Banking Regulations and Business Laws (BRBL)
-                        <FaChevronRight className="chevron" />
-                      </td>
-                    </tr>
+                        </tr>
+                      )
+                    )}
 
                     {/* ELECTIVE */}
                     <tr>
+
                       <td>
                         <span className="badge extra">
                           Elective
@@ -443,19 +446,13 @@ const KeyDetailsSection = () => {
 
                       <td className="paper-row elective-subjects">
 
-                        <div>1. Rural Banking</div>
-
-                        <div>
-                          2. Human Resources Management
-                        </div>
-
-                        <div>
-                          3. Information Technology & Digital Banking
-                        </div>
-
-                        <div>4. Risk Management</div>
-
-                        <div>5. Central Banking</div>
+                        {keyDetails.subjects.elective.map(
+                          (subject, index) => (
+                            <div key={index}>
+                              {index + 1}. {subject}
+                            </div>
+                          )
+                        )}
 
                         <small>
                           Candidates have to select Any One Elective
@@ -464,6 +461,7 @@ const KeyDetailsSection = () => {
                         <FaChevronRight className="chevron" />
 
                       </td>
+
                     </tr>
 
                   </tbody>
@@ -508,50 +506,35 @@ const KeyDetailsSection = () => {
                       <td>
                         <strong>Exam Mode</strong>
                       </td>
-
-                      <td>
-                        Online
-                      </td>
+                      <td>Online</td>
                     </tr>
 
                     <tr>
                       <td>
                         <strong>Compulsory Subjects</strong>
                       </td>
-
-                      <td>
-                        4 Papers
-                      </td>
+                      <td>4 Papers</td>
                     </tr>
 
                     <tr>
                       <td>
                         <strong>Elective Subject</strong>
                       </td>
-
-                      <td>
-                        Any One Elective
-                      </td>
+                      <td>Any One Elective</td>
                     </tr>
 
                     <tr>
                       <td>
                         <strong>Exam Session</strong>
                       </td>
-
-                      <td>
-                        May & June 2026
-                      </td>
+                      <td>December 2026</td>
                     </tr>
 
                     <tr>
                       <td>
                         <strong>Exam Mode</strong>
                       </td>
-
-                      <td>
-                        Online
-                      </td>
+                      <td>Online</td>
                     </tr>
 
                   </tbody>
@@ -583,65 +566,25 @@ const KeyDetailsSection = () => {
 
                   <tbody>
 
-                    <tr>
-                      <td>
-                        <strong>First</strong>
-                      </td>
+                    {keyDetails.fees.map(
+                      (item, index) => (
+                        <tr key={index}>
 
-                      <td>
-                        <span className="badge normal">
-                          ₹5,000*
-                        </span>
-                      </td>
-                    </tr>
+                          <td>
+                            <strong>
+                              {item.attempt}
+                            </strong>
+                          </td>
 
-                    <tr>
-                      <td>
-                        <strong>Second</strong>
-                      </td>
+                          <td>
+                            <span className="badge normal">
+                              {item.fee}
+                            </span>
+                          </td>
 
-                      <td>
-                        <span className="badge normal">
-                          ₹1,300*
-                        </span>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>
-                        <strong>Third</strong>
-                      </td>
-
-                      <td>
-                        <span className="badge normal">
-                          ₹1,300*
-                        </span>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>
-                        <strong>Fourth</strong>
-                      </td>
-
-                      <td>
-                        <span className="badge normal">
-                          ₹1,300*
-                        </span>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>
-                        <strong>Fifth</strong>
-                      </td>
-
-                      <td>
-                        <span className="badge normal">
-                          ₹1,300*
-                        </span>
-                      </td>
-                    </tr>
+                        </tr>
+                      )
+                    )}
 
                   </tbody>
 
@@ -735,4 +678,3 @@ const KeyDetailsSection = () => {
 };
 
 export default KeyDetailsSection;
-

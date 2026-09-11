@@ -7,32 +7,32 @@ const FaqSection = () => {
 
   const faqs = [
     {
-      question: "Have the JAIIB 2026 Nov Exam Dates been declared?",
-      answer: "No, the JAIIB 2026 Nov Exam is to be declared soon.",
+      question: "Have the CAIIB December 2026 exam dates been declared?",
+      answer: "Yes. Compulsory papers are held on 6, 12, 13 and 20 December 2026, and the elective paper is on 27 December 2026. Registration runs 1–21 September 2026.",
       colorClass: "badge-purple",
       iconBg: "icon-purple"
     },
     {
-      question: "When will the JAIIB 2026 May Registration start?",
-      answer: "Registration dates for the JAIIB 2026 May exam will be updated on the official website soon.",
+      question: "Who is eligible to appear for CAIIB?",
+      answer: "Candidates who have already cleared JAIIB and are regular members of the Indian Institute of Banking and Finance (IIBF) can register for CAIIB.",
       colorClass: "badge-orange",
       iconBg: "icon-orange"
     },
     {
-      question: "What does JAIIB stand for?",
-      answer: "JAIIB stands for Junior Associate of the Indian Institute of Banking and Finance.",
+      question: "How many papers does CAIIB have?",
+      answer: "CAIIB has four compulsory papers — ABM, BFM, ABFM and BRBL — plus one elective paper chosen from five options.",
       colorClass: "badge-green",
       iconBg: "icon-green"
     },
     {
-      question: "Who is the JAIIB exam intended for?",
-      answer: "The JAIIB exam is primarily intended for ordinary members of the Indian Institute of Banking and Finance (IIBF) working in the banking and financial sector.",
+      question: "What is the passing criteria for CAIIB?",
+      answer: "You need a minimum of 50/100 in each paper, or at least 45 in every paper with an overall aggregate of 50% in a single attempt.",
       colorClass: "badge-blue",
       iconBg: "icon-blue"
     },
     {
-      question: "What is the eligibility for the JAIIB exam?",
-      answer: "Candidates must have passed the 10+2 examination or equivalent in any discipline. The institute may also allow candidates who have passed the diploma in Banking recognised by the Council.",
+      question: "Which CAIIB elective should I choose?",
+      answer: "Scores are consistently higher when the elective matches your actual job role — for example Risk Management for credit or compliance roles — rather than picking one purely for its reputation of being easy",
       colorClass: "badge-pink",
       iconBg: "icon-pink"
     }

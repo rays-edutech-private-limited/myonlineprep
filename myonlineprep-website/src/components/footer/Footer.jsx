@@ -1,12 +1,11 @@
 import React from 'react';
-import logo from "../../assets/img/myonlineprepfooter-logo.png";
+import logo from "../../assets/img/logo Myonlineprep.png";
 import './Footer.css';
 
 import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
-  FaPinterestP,
   FaYoutube
 } from 'react-icons/fa';
 
@@ -83,7 +82,7 @@ const Footer = () => {
             </a>
 
             <a
-              href="https://www.instagram.com/official.myonlineprep/"
+              href="https://www.instagram.com/myonlineprep_jaiib_caiib/"
               aria-label="Instagram"
               {...openInNewTab}
             >
@@ -106,13 +105,7 @@ const Footer = () => {
               <FaXTwitter />
             </a>
 
-            <a
-              href="https://www.pinterest.com/"
-              aria-label="Pinterest"
-              {...openInNewTab}
-            >
-              <FaPinterestP />
-            </a>
+           
 
             <a
               href="https://www.youtube.com/myonlineprep"
