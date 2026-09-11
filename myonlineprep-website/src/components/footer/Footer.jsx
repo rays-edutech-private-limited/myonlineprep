@@ -43,20 +43,33 @@ const Footer = () => {
           </p>
 
           {/* Contact */}
-          <div className="footer-contact-info">
+         <div className="footer-contact-info">
 
-            <p>
-              Email :{" "}
-              <a href="mailto:info@myonlineprep.com">
-                info@myonlineprep.com
-              </a>
-            </p>
+  <p>
+    <span className="contact-icon">
+      <i className="fa-solid fa-envelope"></i>
+    </span>
 
-            <p>
-              Phone : +91 92641 49917
-            </p>
+    <span className="contact-label">Email :</span>
 
-          </div>
+    <a href="mailto:info@myonlineprep.com">
+      info@myonlineprep.com
+    </a>
+  </p>
+
+  <p>
+    <span className="contact-icon">
+      <i className="fa-solid fa-phone-flip"></i>
+    </span>
+
+    <span className="contact-label">Phone :</span>
+
+    <a href="tel:+919264149917">
+      +91 92641 49917
+    </a>
+  </p>
+
+</div>
 
           {/* Social Icons */}
           <div className="footer-social-icons">
